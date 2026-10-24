@@ -134,14 +134,10 @@ nav.top .links a.cta:hover{background:#ff2a3a;transform:translateY(-1px)}
 section{position:relative;padding:140px 0}
 
 /* prologue full-bleed */
-.pro{padding:0;min-height:130vh}
+.pro{padding:0}
 .pro .bg{position:sticky;top:0;height:100vh;overflow:hidden;background:#0b0905}
 .pro .bg img{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;opacity:.45;filter:grayscale(.3)}
 .pro .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 20%,#050505 85%)}
-.pro .txt{position:relative;margin-top:-100vh;height:130vh;display:flex;align-items:center}
-.pro .txt p{font-family:var(--serif);font-weight:700;font-size:clamp(20px,3.2vw,40px);line-height:2.1;max-width:820px;text-shadow:0 2px 24px #000}
-.pro .txt p+p{margin-top:1.4em}
-.pro em{font-style:normal;color:var(--gold-hi)}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid var(--line)}
@@ -283,6 +279,16 @@ footer .logo{font-family:var(--disp);font-size:22px;letter-spacing:.45em;color:v
  .stat .n{font-size:clamp(46px,14vw,70px)}
  .stat .l{font-size:12px}
 }
+.pro{min-height:0}
+.pro .txt{position:relative;margin-top:-100vh;height:auto;min-height:150vh;display:block;padding:24vh 0 22vh}
+.pro .prose{max-width:620px;background:rgba(5,5,5,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-left:3px solid var(--gold);padding:34px 36px}
+.pro .prose p{font-family:var(--sans);font-weight:500;font-size:clamp(17px,2.1vw,22px);line-height:2.15;letter-spacing:.04em;text-shadow:none;text-align:left;margin:0}
+.pro .prose p+p{margin-top:1.7em}
+.pro .prose p.lead{font-weight:900;font-size:clamp(22px,3vw,32px);line-height:1.7}
+.pro .prose p.hl{font-weight:900;font-size:clamp(21px,2.8vw,30px);line-height:1.7}
+.pro .ph{display:inline-block}
+.pro em{font-style:normal;color:var(--gold-hi)}
+@media(max-width:700px){.pro .txt{padding:16vh 0 18vh}.pro .prose{padding:24px 20px;margin:0 -4px}.pro .prose p{font-size:16px;line-height:2.1;letter-spacing:.03em}.pro .prose p.lead{font-size:21px}.pro .prose p.hl{font-size:20px}}
 </style>
 </head>
 <body>
@@ -312,10 +318,14 @@ footer .logo{font-family:var(--disp);font-size:22px;letter-spacing:.45em;color:v
   <div class="bg"><img data-parallax src="https://www.apiajapan.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fhero.12a78824.png&w=3840&q=75" alt="" onerror="this.remove()"></div>
   <div class="txt"><div class="wrap">
     <div class="eyebrow rv">PROLOGUE</div>
-    <p class="rv">始まりは、ひとりの釣り人だった。</p>
-    <p class="rv">大型魚に取り憑かれた男が、<br>既製品のジギングロッドを改造する。<br>やがて仲間から「欲しい」と頼まれ——</p>
-    <p class="rv"><em>1997年、アピアは生まれた。</em><br>「常に現場発信」という想いとともに。</p>
-    <p class="rv">それから30年。<br>数え切れないドラマと、数え切れない出会い。<br>この物語の続きは、あなたと一緒に。</p>
+    <div class="prose">
+      <p class="lead rv"><span class="ph">始まりは、</span><span class="ph">ひとりの釣り人だった。</span></p>
+      <p class="rv"><span class="ph">大型魚に取り憑かれた男が、</span><span class="ph">既製品のジギングロッドを</span><span class="ph">改造する。</span><span class="ph">やがて仲間から</span><span class="ph">「欲しい」と頼まれ——</span></p>
+      <p class="hl rv"><span class="ph"><em>1997年、</em></span><span class="ph"><em>アピアは生まれた。</em></span></p>
+      <p class="rv"><span class="ph">「常に現場発信」</span><span class="ph">という想いとともに。</span></p>
+      <p class="rv"><span class="ph">それから30年。</span><span class="ph">数え切れないドラマと、</span><span class="ph">数え切れない出会い。</span></p>
+      <p class="rv"><span class="ph">この物語の続きは、</span><span class="ph">あなたと一緒に。</span></p>
+    </div>
   </div></div>
 </section>
 
