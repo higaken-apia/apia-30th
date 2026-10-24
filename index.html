@@ -289,6 +289,14 @@ footer .logo{font-family:var(--disp);font-size:22px;letter-spacing:.45em;color:v
 .pro .ph{display:inline-block}
 .pro em{font-style:normal;color:var(--gold-hi)}
 @media(max-width:700px){.pro .txt{padding:16vh 0 18vh}.pro .prose{padding:24px 20px;margin:0 -4px}.pro .prose p{font-size:16px;line-height:2.1;letter-spacing:.03em}.pro .prose p.lead{font-size:21px}.pro .prose p.hl{font-size:20px}}
+/* history cards: readable */
+.hc{display:flex;flex-direction:column;height:min(60vh,540px);flex:0 0 clamp(290px,34vw,470px)}
+.hc .yy{position:static;font-family:var(--disp);font-weight:700;font-size:clamp(54px,7vw,78px);line-height:1;color:var(--gold);-webkit-text-stroke:0;padding:16px 20px 0;letter-spacing:.02em;text-shadow:0 0 30px rgba(201,162,75,.25)}
+.hc .im{position:relative;inset:auto;flex:1;min-height:0;padding:8px 24px}
+.hc .cap{position:static;padding:16px 20px 20px;background:#0d0d0d;border-top:2px solid var(--gold);font-size:clamp(15px,1.8vw,18px);font-weight:700;line-height:1.65;color:#fff}
+.hc.hl .cap::before{content:"★ MILESTONE";display:block;font-family:var(--disp);letter-spacing:.3em;font-size:10px;color:var(--gold);margin-bottom:4px;font-weight:500}
+.hc.chap{height:min(60vh,540px)}
+@media(max-width:700px){.hc{flex-basis:78vw;height:min(58vh,500px)}.hc .cap{font-size:15.5px}}
 </style>
 </head>
 <body>
@@ -475,7 +483,7 @@ const tr=document.getElementById('track');let cur=0;const marks=[];
 tr.innerHTML=H.map(h=>{
  if(!Array.isArray(h)) return `<div class="hc chap" data-ch="${h.chap}" data-y="${h.chap.startsWith('2027')?'2027':''}"><div class="cn">${h.chap}</div><h3>${h.t}</h3><p>${h.d}</p></div>`;
  const [y,t,img,hl]=h;
- return `<div class="hc ${hl?'hl':''} ${img?'':'noimg'}" data-y="${y}"><div class="im">${img?`<img loading="lazy" src="${B}${img}" alt="${y}" onerror="this.remove()">`:''}</div><div class="yy">${y}</div><div class="cap">${t}</div></div>`;
+ return `<div class="hc ${hl?'hl':''} ${img?'':'noimg'}" data-y="${y}"><div class="yy">${y}</div><div class="im">${img?`<img loading="lazy" src="${B}${img}" alt="${y}" onerror="this.remove()">`:''}</div><div class="cap">${t}</div></div>`;
 }).join('')+`<div style="flex:0 0 12vw"></div>`;
 
 /* ---------- marquee (釣果のみ・記事内の写真 / 出典: apiajapan.com/magazine/article/*) ---------- */
