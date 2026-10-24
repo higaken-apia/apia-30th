@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>APIA 30th ANNIVERSARY 1997–2027 | 仮ページ v7</title>
+<title>APIA 30th ANNIVERSARY 1997–2027 | 仮ページ v8</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -297,6 +297,52 @@ footer .logo{font-family:var(--disp);font-size:22px;letter-spacing:.45em;color:v
 .hc.hl .cap::before{content:"★ MILESTONE";display:block;font-family:var(--disp);letter-spacing:.3em;font-size:10px;color:var(--gold);margin-bottom:4px;font-weight:500}
 .hc.chap{height:min(60vh,540px)}
 @media(max-width:700px){.hc{flex-basis:78vw;height:min(58vh,500px)}.hc .cap{font-size:15.5px}}
+
+/* ===== readability pass (all text) ===== */
+.ph{display:inline-block}
+body{line-break:strict;word-break:normal;overflow-wrap:break-word}
+h1,h2,h3,h4{text-wrap:balance}
+p,li{text-wrap:pretty}
+/* prologue: no wasted space */
+.pro{position:relative;overflow:hidden;padding:0}
+.pro .bg{position:absolute;inset:0;height:auto;top:0}
+.pro .txt{margin-top:0;min-height:0;padding:16vh 0 12vh}
+@media(max-width:700px){.pro .txt{padding:11vh 0 8vh}}
+.future p br{display:none}
+@media(max-width:700px){
+ section{padding:90px 0}
+ .wrap{padding:0 20px}
+ h2.sec{font-size:27px;line-height:1.45;margin-bottom:18px}
+ .lead{font-size:15.5px;line-height:2.05}
+ .eyebrow{font-size:12px}
+ .stat .l{font-size:13px;line-height:1.7}
+ .future p{font-size:16px;line-height:2.1;padding:0 6px}
+ .pc p{font-size:14px;line-height:1.85}
+ .pc h4{font-size:21px}
+ .pj2 p{font-size:15px;line-height:1.9}
+ .pj2 h4{font-size:21px}
+ .evc .nm{font-size:14.5px;line-height:1.8}
+ .evc .dt{font-size:26px}
+ .scan .tp p{font-size:15px;line-height:1.95;min-height:0}
+ .scan .tp li{font-size:12px}
+ .scan .tp h2{font-size:30px}
+ .scan .tp{bottom:7vh}
+ .hc.chap p{font-size:14.5px;line-height:1.8}
+ .hc.chap h3{font-size:24px}
+ .msg{font-size:15px;line-height:1.85}
+ .note{font-size:12px;line-height:1.8}
+ input,textarea{font-size:16px}
+ .box{padding:22px 18px}
+ .outro h2{font-size:34px}
+ footer{font-size:12px;line-height:1.9;letter-spacing:.06em}
+ .hero .copy{font-size:17px;line-height:1.8;padding:0 10px}
+}
+
+/* ===== hero: fly-through (monochrome) ===== */
+.fly{position:absolute;inset:0;perspective:800px;perspective-origin:50% 50%;overflow:hidden;z-index:0;pointer-events:none}
+.fly img{position:absolute;left:50%;top:50%;width:var(--w,300px);height:auto;max-height:70vh;object-fit:cover;opacity:0;will-change:transform,opacity;filter:grayscale(1) contrast(1.15) brightness(.82);border:1px solid rgba(255,255,255,.18);background:#111}
+.fly img.prod{object-fit:contain;border:0;background:transparent;filter:grayscale(1) contrast(1.2) brightness(1.05) drop-shadow(0 10px 20px #000)}
+.hero .inner::before{content:"";position:absolute;left:50%;top:50%;width:min(120vw,960px);height:min(90vh,760px);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(5,5,5,.9),rgba(5,5,5,.6) 55%,transparent);z-index:-1;pointer-events:none}
 </style>
 </head>
 <body>
@@ -309,6 +355,7 @@ footer .logo{font-family:var(--disp);font-size:22px;letter-spacing:.45em;color:v
 
 <!-- HERO -->
 <header class="hero" id="top">
+  <div class="fly" id="fly"></div>
   <canvas id="cv"></canvas>
   <div class="inner">
     <div class="stack"><div class="cnt"><span id="count">0</span><em>YEARS OF APIA</em></div>
@@ -369,7 +416,7 @@ footer .logo{font-family:var(--disp);font-size:22px;letter-spacing:.45em;color:v
     <div class="eyebrow rv" style="justify-content:center">NEXT 30</div>
     <div class="now rv">2027</div>
     <h2 class="sec rv" style="margin-top:36px">そして、未来へ。</h2>
-    <p class="rv">新しい素材、新しい技術、新しいフィールド。<br>アピアはこれからも、アングラーとともに進化し続けます。</p>
+    <p class="rv">新しい素材、新しい技術、新しいフィールド。アピアはこれからも、アングラーとともに進化し続けます。</p>
   </div>
 </section>
 
@@ -566,7 +613,7 @@ function setStage(i){cs=i;const x=ST[i];
  layers.forEach((l,j)=>l.classList.toggle('on',j===i));
  [...hud.children].forEach((h,j)=>h.classList.toggle('on',j===i));
  document.getElementById('tag').textContent='◼ 0'+(i+1)+' / 0'+ST.length+' — '+x.k;
- document.getElementById('desc').textContent=x.d;
+ document.getElementById('desc').textContent=x.d;phrase(document.getElementById('desc'));
  document.getElementById('specs').innerHTML=x.sp.map(a=>`<li><b>${a[0]}</b>${a[1]}</li>`).join('');
  bxsEl.innerHTML=x.bx.map(b=>`<div class="bx" style="left:${b[0]}%;top:${b[1]}%;width:${b[2]}%;height:${b[3]}%"><span>${b[4]}</span></div>`).join('');
  if(x.fig){pimg.src=FZ+x.fig;} panel.classList.remove('on');
@@ -609,9 +656,61 @@ rs();addEventListener('resize',rs);
 
 /* community demo */
 const wall=document.getElementById('wall');const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function add(a,g,t){const d=document.createElement('div');d.className='msg';d.innerHTML=`<b>${esc(a||'名無しのアングラー')}${g?' / '+esc(g):''}</b><br>${esc(t)}`;wall.prepend(d)}
+function add(a,g,t){const d=document.createElement('div');d.className='msg';d.innerHTML=`<b>${esc(a||'名無しのアングラー')}${g?' / '+esc(g):''}</b><br>${esc(t)}`;wall.prepend(d);phrase(d)}
 [["Kenji","Foojin'Z 2代目","初めて買ったアピアのロッド。今でも大事に使っています。30周年おめでとうございます！"],["みなと","Foojin'AD","ADで人生初の座布団サイズを獲りました。ありがとうアピア！"],["Taka","GRANDAGE","試投会で出会って即決。これからも現場発信を期待しています。"]].reverse().forEach(s=>add(...s));
 document.getElementById('send').onclick=()=>{const t=document.getElementById('tx').value.trim();if(!t)return;add(nm.value.trim(),gear.value.trim(),t);nm.value=gear.value=tx.value=''};
+
+/* ---------- 読みやすさ：文節で折り返す ---------- */
+function phrase(root){
+ const seg=(window.Intl&&Intl.Segmenter)?new Intl.Segmenter('ja',{granularity:'word'}):null;
+ const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const ns=[];while(w.nextNode())ns.push(w.currentNode);
+ ns.forEach(n=>{const t=n.nodeValue;
+  if(!t.trim()||!/[\u3040-\u30ff\u4e00-\u9fff]/.test(t))return;
+  if(n.parentElement.closest('.ph,script,style,textarea,input,#typed'))return;
+  const ps=t.match(/[^、。！？）」]*[、。！？）」]*/g).filter(Boolean),out=[];
+  ps.forEach(p=>{if(p.length<=13||!seg){out.push(p);return}let c='';for(const s of seg.segment(p)){if(c&&(c+s.segment).length>12){out.push(c);c=s.segment}else c+=s.segment}if(c)out.push(c)});
+  if(out.length<2&&t.length<=13)return;
+  const f=document.createDocumentFragment();out.forEach(p=>{if(!p.trim()){f.append(p);return}const sp=document.createElement('span');sp.className='ph';sp.textContent=p;f.append(sp)});n.replaceWith(f)});
+}
+document.querySelectorAll('p,li,h3,h4,.cap,.l,.nm,.lead,.copy,.tag,.cdesc').forEach(el=>{if(!el.closest('nav'))phrase(el)});
+
+/* ---------- hero fly-through ---------- */
+(function(){
+ const mode=new URLSearchParams(location.search).get('hero');
+ const fly=document.getElementById('fly');
+ if(mode==='particles'){fly.remove();return}
+ document.getElementById('cv').style.display='none';
+ const prods=['2003.64be2550.png','2011_1.1cbd834e.png','2015_1.df2efdb7.png','2018_1.5252c249.png','2020_1.cb77c403.png','2021_1.46dc060f.png','2024_1.6b294178.png','2025_1.3f2f986b.png','2010_1.f9dbcfa2.png','2006.da55ef07.png'].map(f=>[B+f,1]);
+ const fish=CATCH.map(u=>[MB+u+'?w=600',0]);
+ const src=[];const m=Math.max(fish.length,prods.length);
+ for(let i=0;i<m;i++){if(fish[i])src.push(fish[i]);if(prods[i%prods.length]&&i<prods.length)src.push(prods[i])}
+ const N=Math.min(16,src.length),items=[];
+ const ZN=-2800,ZF=380;
+ const W=()=>innerWidth<700?Math.min(innerWidth*.52,230):Math.min(innerWidth*.26,380);
+ function place(it,z){
+  const th=Math.random()*Math.PI*2,rx=innerWidth*(.30+Math.random()*.2),ry=innerHeight*(.26+Math.random()*.18);
+  it.x=Math.cos(th)*rx;it.y=Math.sin(th)*ry;it.z=z;it.v=3.4+Math.random()*2.6;it.r=(Math.random()-.5)*10;
+  it.el.style.setProperty('--w',W()*(.8+Math.random()*.5)+'px');
+ }
+ for(let i=0;i<N;i++){
+  const el=document.createElement('img');const [u,p]=src[i];el.src=u;el.alt='';if(p)el.className='prod';
+  el.onerror=()=>{el.style.display='none';el.dataset.bad=1};
+  fly.appendChild(el);const it={el};place(it,ZN+(ZF-ZN)*(i/N));items.push(it);
+ }
+ let last=performance.now();const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ function frame(t){
+  const dt=Math.min((t-last)/16.67,3);last=t;
+  items.forEach(it=>{
+   if(!still)it.z-=it.v*dt;
+   if(it.z<ZN){place(it,ZF);const u=src[Math.floor(Math.random()*src.length)];if(!it.el.dataset.bad){it.el.src=u[0];it.el.className=u[1]?'prod':''}}
+   const a=Math.min(Math.max((ZF-it.z)/260,0),1)*Math.min(Math.max((it.z-ZN)/800,0),1);
+   it.el.style.opacity=(a*.78).toFixed(3);
+   it.el.style.transform='translate(-50%,-50%) translate3d('+it.x+'px,'+it.y+'px,'+it.z+'px) rotate('+it.r+'deg)';
+  });
+  requestAnimationFrame(frame);
+ }
+ requestAnimationFrame(frame);
+})();
 </script>
 </body>
 </html>
