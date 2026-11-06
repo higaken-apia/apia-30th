@@ -4,7 +4,16 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>APIA 30th ANNIVERSARY 1997–2027 | 仮ページ v9</title>
+<title>APIA 30th ANNIVERSARY 1997–2027</title>
+<meta name="description" content="APIA 30周年記念特設サイト。1997年の創業から2027年の30周年まで、アピアの歩みと、これからをお届けします。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="APIA">
+<meta property="og:title" content="APIA 30th ANNIVERSARY 1997–2027">
+<meta property="og:description" content="アピアは2027年に創業30周年を迎えます。30年の歩みと、これからを特設サイトでご紹介します。">
+<meta property="og:url" content="https://www.apiajapan.com/s/30th/">
+<meta property="og:image" content="https://www.apiajapan.com/s/30th/images/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -44,6 +53,9 @@ nav.top .links{display:flex;gap:26px;font-family:var(--disp);font-size:11px;lett
 nav.top .links a.cta{background:#e60013;color:#fff;padding:11px 18px;border-radius:9px;letter-spacing:.2em;font-weight:500;transition:.3s}
 nav.top .links a.cta:hover{background:#ff2a3a;transform:translateY(-1px)}
 @media(max-width:860px){nav.top .links a:not(.cta){display:none}}
+nav.top .logo{min-width:0;flex:0 1 auto}nav.top .links{flex:0 0 auto}nav.top .links a.cta{white-space:nowrap}
+@media(max-width:480px){nav.top{padding:6px 8px 6px 12px;width:calc(100% - 16px)}nav.top .logo{gap:8px}nav.top .logo img.a{height:22px}nav.top .logo img.t{height:20px}nav.top .links a.cta{padding:9px 11px;font-size:10px;letter-spacing:.1em}}
+
 .glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(201,162,75,.12),transparent 65%);transform:translate(-50%,-50%);left:50%;top:50%}
 
 /* hero */
@@ -219,8 +231,7 @@ section{position:relative;padding:140px 0}
 /* events */
 .evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:40px}
 .evc{border:1px solid var(--line);background:#0a0a0a;overflow:hidden}
-.evc .mp{height:170px;background:#111 center/cover;opacity:.8;transition:.8s}
-.evc:hover .mp{opacity:1;transform:scale(1.04)}
+.evc .mp{aspect-ratio:5/3;width:100%;background:#111 center/contain no-repeat;opacity:1}
 .evc .mpw{overflow:hidden}
 .evc .tx{padding:20px 22px 26px}
 .evc .ct{font-family:var(--disp);font-size:12px;letter-spacing:.35em;color:var(--gold)}
@@ -539,8 +550,8 @@ tr.innerHTML=H.map(h=>{
 
 /* ---------- marquee (釣果のみ・記事内の写真 / 出典: apiajapan.com/magazine/article/*) ---------- */
 const MB='https://images.microcms-assets.io/assets/832be95d744144eb8a0ccc79ce27542f/';
-const CATCH=["1021e5fb466743f2af22fd82a95955d5/S__40509451_0.jpg", "7565cb9545024b39a0438fde65c0d519/347210.jpg", "277831cf72e5490cb272e6e6d52a2195/S__38690843_0.jpg", "fe5ed5a43aa74539b290f99ff2782bac/%E3%83%90%E3%83%AC%E3%83%BC%E3%83%8C100FL.jpg", "830a7ec174ae4724b47a6251e734cf11/4-ga-1-davy.jpg", "acbb44b42b384143876f7be9a702ef9f/374837.jpg", "22c62164ecd0416780597fc824f9a0d3/IMG_5159.jpeg", "5317d6dbce9f4d3a88927c9d7c170f1f/IMG_2699.JPG", "23645aaf1f024e8f963582ccc1afa66d/S__36257809_0.jpg", "82bb8ae56e3345c19fa7a87ceaadcddf/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BB%E3%83%96%E3%83%B3.jpg", "09cdc533a66f4968ae1793559bfb8c23/%E3%83%93%E3%83%BC%E3%82%B9%E3%83%88.jpg", "2d6abcf48c0148259b01c0dd97f1badd/B164877A-EDDE-4148-9AA7-04E24FFCDAC7.jpg", "6024b338a7c44088b489e4da02c601eb/S__28368941.jpg", "b3056a6bffcb464cb02951d66cc1e245/S__420618248.jpg", "d4d865d567e54380bd4d8013a2409354/S__1254473733_0.jpg", "b5a652bdc99340888f4088f5beb7f377/S__1254473732_0.jpg", "30260a6eced84a939907984c864cb382/S__10805269_0.jpg", "0d5dc80230894c14b8d2c0c8fb7fc7e2/S__118669341%20(1).jpg", "7a2df323b2614f64a73435ebab74538f/S__118669346.jpg", "843f1350e8b647548e9701ed7c931e68/S__118669350.jpg", "57d123ae26bb488588764e41a3f087e2/S__118669352.jpg", "4c2db01db60a442b9f2dc97c5b81f149/76362.jpg", "10052e4ecfa540d28c94ae61b7560946/76364.jpg", "52db9a8dd96342f3a5118807f3317d78/76360.jpg", "99bfe5d4a3424a5bb49e30bf1ba9426d/76367.jpg", "76358599a900472a9e85ebdd48a717c2/LINE_ALBUM_%E3%83%AB%E3%82%A2%E3%83%BC%E4%BB%98%E3%81%91%E6%9B%BF%E3%81%88%E5%86%99%E7%9C%9F%E9%9B%86_260828_1.jpg", "47f747ba9a484fc2b2f4d6c09b5ef980/S__38690844_0.jpg", "de93c6d5b9434301b990828c92f3e715/S__38690846_0.jpg", "c713e377d0ea4dfa9e4507dc4f0175c0/S__420618253.jpg", "441d42c38a99486facd70c62ea62c181/S__420618254.jpg"];
-const strip=CATCH.map(u=>`<div class="it ph"><img loading="lazy" src="${MB}${u}?w=800" alt="釣果" onerror="this.parentElement.remove()"></div>`).join('');
+const CATCH=["catch-01.jpg", "catch-02.jpg", "catch-03.jpg", "catch-04.jpg", "catch-05.jpg", "catch-06.jpg", "catch-07.jpg", "catch-08.jpg", "catch-09.jpg", "catch-10.jpg", "catch-11.jpg", "catch-12.jpg", "catch-13.jpg", "catch-14.jpg", "catch-15.jpg", "catch-16.jpg", "catch-17.jpg", "catch-18.jpg", "catch-19.jpg", "catch-20.jpg", "catch-21.jpg", "catch-22.jpg", "catch-23.jpg", "catch-24.jpg", "catch-25.jpg", "catch-26.jpg", "catch-27.jpg", "catch-28.jpg", "catch-29.jpg", "catch-30.jpg", "catch-31.jpg", "catch-32.jpg", "catch-33.jpg", "catch-34.jpg", "catch-35.jpg", "catch-36.jpg", "catch-37.jpg", "catch-38.jpg", "catch-39.jpg", "catch-40.jpg", "catch-41.jpg", "catch-42.jpg", "catch-43.jpg", "catch-44.jpg", "catch-45.jpg", "catch-46.jpg", "catch-47.jpg", "catch-48.jpg"];
+const strip=CATCH.map(u=>`<div class="it ph"><img loading="lazy" src="images/catch/${u}" alt="釣果" onerror="this.parentElement.remove()"></div>`).join('');
 document.getElementById('mq').innerHTML=strip+strip;
 
 /* ---------- products ---------- */
@@ -669,6 +680,7 @@ rs();addEventListener('resize',rs);
 const wall=document.getElementById('wall');const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function add(a,g,t){const d=document.createElement('div');d.className='msg';d.innerHTML=`<b>${esc(a||'名無しのアングラー')}${g?' / '+esc(g):''}</b><br>${esc(t)}`;wall.prepend(d);phrase(d)}
 [["Kenji","Foojin'Z 2代目","初めて買ったアピアのロッド。今でも大事に使っています。30周年おめでとうございます！"],["みなと","Foojin'AD","ADで人生初の座布団サイズを獲りました。ありがとうアピア！"],["Taka","GRANDAGE","試投会で出会って即決。これからも現場発信を期待しています。"]].reverse().forEach(s=>add(...s));
+/* ユーザー交流広場：デモ表示のみ。入力内容はブラウザ内に表示するだけで、外部へは送信されません */
 document.getElementById('send').onclick=()=>{const t=document.getElementById('tx').value.trim();if(!t)return;add(nm.value.trim(),gear.value.trim(),t);nm.value=gear.value=tx.value=''};
 
 /* ---------- 読みやすさ：文節で折り返す ---------- */
@@ -692,7 +704,7 @@ document.querySelectorAll('p,li,h3,h4,.cap,.l,.nm,.lead,.copy,.tag,.cdesc').forE
  if(mode==='particles'){fly.remove();return}
  document.getElementById('cv').style.display='none';
  const prods=H.filter(Array.isArray).map(h=>h[2]).filter(Boolean).map(f=>[B+f,1]).concat(P.map(p=>[S+p[4],1]));
- const fish=CATCH.map(u=>[MB+u+'?w=600',0]);
+ const fish=CATCH.map(u=>['images/catch/'+u,0]);
  const src=[];const m=Math.max(fish.length,prods.length);
  for(let i=0;i<m;i++){if(fish[i])src.push(fish[i]);if(prods[i%prods.length]&&i<prods.length)src.push(prods[i])}
  const N=innerWidth<700?48:84,items=[];
