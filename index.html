@@ -355,6 +355,22 @@ p,li{text-wrap:pretty}
  .hero .copy{font-size:17px;line-height:1.8;padding:0 10px}
 }
 
+
+/* community: hashtag */
+.hashbox{margin-top:50px;border:1px solid var(--line);padding:clamp(26px,4vw,48px);background:rgba(255,255,255,.015);text-align:center}
+.hashbox .hk{font-family:var(--disp);letter-spacing:.35em;font-size:12px;color:var(--gold)}
+.hashbox .hash{font-weight:900;font-size:clamp(34px,7vw,92px);line-height:1.25;margin:14px 0 8px;background:linear-gradient(180deg,#fff3c4,var(--gold) 60%,#8a6a1e);-webkit-background-clip:text;background-clip:text;color:transparent;word-break:keep-all}
+.hashbox .cpy{font-family:var(--disp);letter-spacing:.3em;font-size:11px;background:none;color:var(--gold-hi);border:1px solid var(--gold);padding:7px 20px;border-radius:20px;cursor:pointer;transition:.3s}
+.hashbox .cpy:hover{background:var(--gold);color:#111}
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:34px 0 30px;text-align:left}
+.steps li{border:1px solid var(--line);padding:18px 18px 20px;font-size:15px;line-height:1.7;background:#0a0a0a}
+.steps li b{display:block;font-family:var(--disp);font-size:28px;color:var(--red);margin-bottom:4px;font-weight:700}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cta-row .btn{display:inline-block;text-decoration:none;text-align:center}
+.cta-row .btn.ghost{background:none;border:1px solid var(--gold);color:var(--gold-hi)}
+.cta-row .btn.ghost:hover{background:var(--gold);color:#111}
+@media(max-width:700px){.steps{grid-template-columns:1fr}.hashbox{padding:26px 16px}.cta-row .btn{width:100%}}
+
 /* ===== hero: fly-through (monochrome) ===== */
 .fly{position:absolute;inset:0;perspective:800px;perspective-origin:50% 50%;overflow:hidden;z-index:0;pointer-events:none}
 .fly img{position:absolute;left:50%;top:50%;width:var(--w,300px);height:auto;max-height:70vh;object-fit:cover;opacity:0;will-change:transform,opacity;filter:grayscale(1) contrast(1.15) brightness(.82);border:1px solid rgba(255,255,255,.18);background:#111}
@@ -485,18 +501,23 @@ p,li{text-wrap:pretty}
   <div class="wrap">
     <div class="eyebrow rv">COMMUNITY</div>
     <h2 class="sec rv">あなたとアピアの思い出を。</h2>
-    <p class="lead rv">お祝いメッセージや、アピア製品との思い出を投稿してください。<span class="draft">画面イメージ（保存されません）</span></p>
+    <p class="lead rv">思い出の一本や、忘れられない一匹の写真を、ハッシュタグ付きで投稿してください。XでもInstagramでも、かんたんに参加できます。</p>
     <div class="gal rv" id="gal"></div>
-    <div class="board">
-      <div class="box rv">
-        <h5>POST A MESSAGE</h5>
-        <input id="nm" placeholder="ニックネーム" maxlength="20">
-        <input id="gear" placeholder="思い出の一本（例：Foojin'Z 2代目）" maxlength="40">
-        <textarea id="tx" rows="4" placeholder="30周年おめでとうメッセージ・思い出" maxlength="200"></textarea>
-        <button class="btn" id="send">SEND</button>
-        <p class="note">※ デモ表示のみ。本実装では Supabase に保存し、承認後に公開する想定です。</p>
+    <div class="hashbox rv">
+      <div class="hk">POST WITH HASHTAG</div>
+      <div class="hash" id="hash">#アピアの思い出</div>
+      <button class="cpy" id="cpy" type="button">COPY</button>
+      <ol class="steps">
+        <li><b>01</b><span class="ph">思い出の写真や動画、</span><span class="ph">ひとことを用意する</span></li>
+        <li><b>02</b><span class="ph">ハッシュタグ</span><span class="ph">「#アピアの思い出」を</span><span class="ph">付ける</span></li>
+        <li><b>03</b><span class="ph">XまたはInstagramに</span><span class="ph">投稿する</span></li>
+      </ol>
+      <div class="cta-row">
+        <a class="btn" href="https://twitter.com/intent/tweet?hashtags=%E3%82%A2%E3%83%94%E3%82%A2%E3%81%AE%E6%80%9D%E3%81%84%E5%87%BA" target="_blank" rel="noopener">Xで投稿する</a>
+        <a class="btn ghost" href="https://x.com/hashtag/%E3%82%A2%E3%83%94%E3%82%A2%E3%81%AE%E6%80%9D%E3%81%84%E5%87%BA?f=live" target="_blank" rel="noopener">Xの投稿を見る</a>
+        <a class="btn ghost" href="https://www.instagram.com/explore/tags/%E3%82%A2%E3%83%94%E3%82%A2%E3%81%AE%E6%80%9D%E3%81%84%E5%87%BA/" target="_blank" rel="noopener">Instagramの投稿を見る</a>
       </div>
-      <div class="box rv d1"><h5>MESSAGE WALL</h5><div class="msgs" id="wall"></div></div>
+      <p class="note">※Instagramは、投稿画面でキャプションに「#アピアの思い出」を入力してください（ボタンから直接の投稿はできません）。</p>
     </div>
   </div>
 </section>
@@ -579,7 +600,7 @@ const J=[["01","新製品発表","30周年を飾る新製品を発表。開発�
 ["02","フィッシングショー出展","全国のショー会場で30周年特別展示。歴代名作の展示や限定企画を予定。","2027 / 詳細未定",'images/catch/catch-12.jpg'],
 ["03","Foojin'AD 30th 記念モデル","30周年を記念した特別なFoojin'ADを数量限定で販売予定。","2027 / 詳細未定",B+'2015_1.df2efdb7.png'],
 ["04","アピア主催 釣り大会","アングラー同士が競い、語り合う記念大会。参加受付は特設サイトで開始。","2027 / 詳細未定",S+'products-mp120fl.jpg'],
-["05","ユーザー交流広場","思い出のアピアギアや釣果、お祝いメッセージを共有できるコミュニティ。","PREVIEW BELOW",B+'2020_1.cb77c403.png']];
+["05","#アピアの思い出","思い出のアピアギアや釣果を、ハッシュタグ付きでXやInstagramに投稿しよう。","HASHTAG",B+'2020_1.cb77c403.png']];
 const pjEl=document.getElementById('pj');pjEl.className='pj2';
 pjEl.innerHTML=J.map(j=>`<a href="#community" class="rv"><div class="no">${j[0]} ${j[3].replace(/ .*/,'')}</div><h4>${j[1]}</h4><p>${j[2]}</p><div class="im"><div style="background-image:url('${j[4]}')"></div></div><div class="bt">${j[3]}</div></a>`).join('');
 
@@ -712,12 +733,10 @@ function rs(){W=cv.width=cv.offsetWidth;Hh=cv.height=cv.offsetHeight;ps=Array.fr
 rs();addEventListener('resize',rs);
 (function loop(){cx.clearRect(0,0,W,Hh);cx.fillStyle='rgba(243,220,154,.75)';ps.forEach(p=>{p.y-=p.v;if(p.y<0){p.y=Hh;p.x=Math.random()*W}cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.3);cx.fill()});requestAnimationFrame(loop)})();
 
-/* community demo */
-const wall=document.getElementById('wall');const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function add(a,g,t){const d=document.createElement('div');d.className='msg';d.innerHTML=`<b>${esc(a||'名無しのアングラー')}${g?' / '+esc(g):''}</b><br>${esc(t)}`;wall.prepend(d);phrase(d)}
-[["Kenji","Foojin'Z 2代目","初めて買ったアピアのロッド。今でも大事に使っています。30周年おめでとうございます！"],["みなと","Foojin'AD","ADで人生初の座布団サイズを獲りました。ありがとうアピア！"],["Taka","GRANDAGE","試投会で出会って即決。これからも現場発信を期待しています。"]].reverse().forEach(s=>add(...s));
-/* ユーザー交流広場：デモ表示のみ。入力内容はブラウザ内に表示するだけで、外部へは送信されません */
-document.getElementById('send').onclick=()=>{const t=document.getElementById('tx').value.trim();if(!t)return;add(nm.value.trim(),gear.value.trim(),t);nm.value=gear.value=tx.value=''};
+/* community: ハッシュタグをコピー */
+(function(){const b=document.getElementById('cpy');if(!b)return;b.onclick=function(){const t=document.getElementById('hash').textContent;
+ const done=()=>{b.textContent='COPIED';setTimeout(()=>b.textContent='COPY',1600)};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}else{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();done()}}})();
 
 /* ---------- 読みやすさ：文節で折り返す ---------- */
 function phrase(root){
