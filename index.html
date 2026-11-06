@@ -156,6 +156,8 @@ section{position:relative;padding:140px 0}
 .stat{padding:56px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stat .n{font-family:var(--disp);font-weight:700;font-size:clamp(60px,8vw,110px);line-height:1;color:var(--gold)}
 .stat .n small{font-size:.4em;margin-left:4px;color:var(--ink)}
+.stat .n{display:flex;align-items:baseline;flex-wrap:nowrap;white-space:nowrap}
+.stat .n small.jp{font-size:.24em;margin-left:10px;letter-spacing:.06em;font-weight:700}
 .stat .l{font-size:13px;color:#b9b7ae;margin-top:8px}
 
 /* horizontal history */
@@ -403,8 +405,8 @@ p,li{text-wrap:pretty}
 <div class="stats">
   <div class="stat rv"><div class="n"><span data-to="1997" data-plain>0</span></div><div class="l">ジギングロッドからスタート</div></div>
   <div class="stat rv d1"><div class="n"><span data-to="30">0</span><small>YEARS</small></div><div class="l">現場発信のものづくり</div></div>
-  <div class="stat rv d2"><div class="n"><span data-to="52">0</span><small>シリーズ</small></div><div class="l">総シリーズ数</div></div>
-  <div class="stat rv d3"><div class="n"><span data-to="348">0</span><small>アイテム</small></div><div class="l">総アイテム数</div></div>
+  <div class="stat rv d2"><div class="n"><span data-to="52">0</span><small class="jp">シリーズ</small></div><div class="l">総シリーズ数</div></div>
+  <div class="stat rv d3"><div class="n"><span data-to="348">0</span><small class="jp">アイテム</small></div><div class="l">総アイテム数</div></div>
 </div>
 
 <!-- HISTORY horizontal -->
