@@ -358,6 +358,7 @@ p,li{text-wrap:pretty}
 /* ===== hero: fly-through (monochrome) ===== */
 .fly{position:absolute;inset:0;perspective:800px;perspective-origin:50% 50%;overflow:hidden;z-index:0;pointer-events:none}
 .fly img{position:absolute;left:50%;top:50%;width:var(--w,300px);height:auto;max-height:70vh;object-fit:cover;opacity:0;will-change:transform,opacity;filter:grayscale(1) contrast(1.15) brightness(.82);border:1px solid rgba(255,255,255,.18);background:#111}
+.fly img.feat{border:1px solid rgba(243,220,154,.7);box-shadow:0 0 44px rgba(243,220,154,.35),0 0 0 1px rgba(0,0,0,.6);filter:grayscale(1) contrast(1.22) brightness(1.18)}
 .fly img.prod{object-fit:contain;border:0;background:transparent;filter:grayscale(1) contrast(1.2) brightness(1.05) drop-shadow(0 10px 20px #000)}
 .hero .inner::before{content:"";position:absolute;left:50%;top:50%;width:min(120vw,960px);height:min(90vh,760px);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(5,5,5,.9),rgba(5,5,5,.6) 55%,transparent);z-index:-1;pointer-events:none}
 </style>
@@ -714,29 +715,37 @@ document.querySelectorAll('p,li,h3,h4,.cap,.l,.nm,.lead,.copy,.tag,.cdesc').forE
  document.getElementById('cv').style.display='none';
  const prods=H.filter(Array.isArray).map(h=>h[2]).filter(Boolean).map(f=>[B+f,1]).concat(P.map(p=>[S+p[4],1]));
  const fish=CATCH.map(u=>['images/catch/'+u,0]);
- const src=[];const m=Math.max(fish.length,prods.length);
- for(let i=0;i<m;i++){if(fish[i])src.push(fish[i]);if(prods[i%prods.length]&&i<prods.length)src.push(prods[i])}
+ const FEAT=["catch-01.jpg", "catch-09.jpg", "catch-12.jpg", "catch-15.jpg", "catch-17.jpg", "catch-19.jpg", "catch-20.jpg", "catch-21.jpg", "catch-27.jpg", "catch-28.jpg", "catch-34.jpg", "catch-35.jpg", "catch-37.jpg", "catch-40.jpg", "catch-44.jpg", "catch-45.jpg", "catch-48.jpg"];
+ const mk=(u,f)=>u.concat([f]);
+ const feat=[],rest=[];
+ fish.forEach(f=>{(FEAT.indexOf(f[0].split('/').pop())>=0?feat:rest).push(mk(f,1))});
+ prods.forEach(f=>rest.push(mk(f,0)));
+ const pool=rest.concat(feat,feat,feat); /* 指定画像は出現頻度を約3倍に */
+ const pick=()=>pool[Math.floor(Math.random()*pool.length)];
  const N=innerWidth<700?48:84,items=[];
+ const first=feat.slice();while(first.length<N)first.push(pick());
+ for(let i=first.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[first[i],first[j]]=[first[j],first[i]]}
  const ZN=-2800,ZF=380;
  const W=()=>innerWidth<700?Math.min(innerWidth*.46,200):Math.min(innerWidth*.22,330);
  function place(it,z){
   const th=Math.random()*Math.PI*2,rx=innerWidth*(.30+Math.random()*.2),ry=innerHeight*(.26+Math.random()*.18);
   it.x=Math.cos(th)*rx;it.y=Math.sin(th)*ry;it.z=z;it.v=3.4+Math.random()*2.6;it.r=(Math.random()-.5)*10;
-  it.el.style.setProperty('--w',W()*(.8+Math.random()*.5)+'px');
+  it.el.style.setProperty('--w',W()*(it.feat?(1.25+Math.random()*.35):(.8+Math.random()*.5))+'px');
  }
+ function setSrc(it,u){it.feat=!!u[2];it.el.src=u[0];it.el.className=(u[1]?'prod':'')+(u[2]?' feat':'')}
  for(let i=0;i<N;i++){
-  const el=document.createElement('img');const [u,p]=src[i%src.length];el.src=u;el.alt='';if(p)el.className='prod';
+  const el=document.createElement('img');el.alt='';
   el.onerror=()=>{el.style.display='none';el.dataset.bad=1};
-  fly.appendChild(el);const it={el};place(it,ZN+(ZF-ZN)*(i/N));items.push(it);
+  fly.appendChild(el);const it={el};setSrc(it,first[i]);place(it,ZN+(ZF-ZN)*(i/N));items.push(it);
  }
  let last=performance.now();const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
  function frame(t){
   const dt=Math.min((t-last)/16.67,3);last=t;
   items.forEach(it=>{
    if(!still)it.z-=it.v*dt;
-   if(it.z<ZN){place(it,ZF);const u=src[Math.floor(Math.random()*src.length)];if(!it.el.dataset.bad){it.el.src=u[0];it.el.className=u[1]?'prod':''}}
+   if(it.z<ZN){if(!it.el.dataset.bad)setSrc(it,pick());place(it,ZF)}
    const a=Math.min(Math.max((ZF-it.z)/260,0),1)*Math.min(Math.max((it.z-ZN)/800,0),1);
-   it.el.style.opacity=(a*.78).toFixed(3);
+   it.el.style.opacity=(a*(it.feat?1:.78)).toFixed(3);
    it.el.style.transform='translate(-50%,-50%) translate3d('+it.x+'px,'+it.y+'px,'+it.z+'px) rotate('+it.r+'deg)';
   });
   requestAnimationFrame(frame);
