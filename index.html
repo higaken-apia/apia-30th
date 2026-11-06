@@ -553,6 +553,11 @@ const MB='https://images.microcms-assets.io/assets/832be95d744144eb8a0ccc79ce275
 const CATCH=["catch-01.jpg", "catch-02.jpg", "catch-03.jpg", "catch-04.jpg", "catch-05.jpg", "catch-06.jpg", "catch-07.jpg", "catch-08.jpg", "catch-09.jpg", "catch-10.jpg", "catch-11.jpg", "catch-12.jpg", "catch-13.jpg", "catch-14.jpg", "catch-15.jpg", "catch-16.jpg", "catch-17.jpg", "catch-18.jpg", "catch-19.jpg", "catch-20.jpg", "catch-21.jpg", "catch-22.jpg", "catch-23.jpg", "catch-24.jpg", "catch-25.jpg", "catch-26.jpg", "catch-27.jpg", "catch-28.jpg", "catch-29.jpg", "catch-30.jpg", "catch-31.jpg", "catch-32.jpg", "catch-33.jpg", "catch-34.jpg", "catch-35.jpg", "catch-36.jpg", "catch-37.jpg", "catch-38.jpg", "catch-39.jpg", "catch-40.jpg", "catch-41.jpg", "catch-42.jpg", "catch-43.jpg", "catch-44.jpg", "catch-45.jpg", "catch-46.jpg", "catch-47.jpg", "catch-48.jpg"];
 const strip=CATCH.map(u=>`<div class="it ph"><img loading="lazy" src="images/catch/${u}" alt="釣果" onerror="this.parentElement.remove()"></div>`).join('');
 document.getElementById('mq').innerHTML=strip+strip;
+/* 縦長の釣果写真：人の顔が見えるよう、上寄せで表示 */
+(function(){const top=['catch-01.jpg','catch-05.jpg','catch-15.jpg','catch-16.jpg','catch-19.jpg','catch-37.jpg'];
+ function fit(im){if(im.naturalHeight>im.naturalWidth){const n=im.getAttribute('src').split('/').pop();im.style.objectPosition=top.indexOf(n)>=0?'50% 4%':'50% 12%'}}
+ document.querySelectorAll('#mq .it img').forEach(im=>{if(im.complete)fit(im);else im.addEventListener('load',()=>fit(im))})})();
+
 
 /* ---------- products ---------- */
 const P=[["rs","SEABASS","Foojin'RS","これまで理想とされながら、手が届かなかった性能領域へ","products-rs.png"],
