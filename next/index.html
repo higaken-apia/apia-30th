@@ -373,7 +373,7 @@ p,li{text-wrap:pretty}
 .fly img.prod{object-fit:contain;border:0;background:transparent;filter:grayscale(1) contrast(1.2) brightness(1.05) drop-shadow(0 10px 20px #000)}
 .hero .inner::before{content:"";position:absolute;left:50%;top:50%;width:min(120vw,960px);height:min(90vh,760px);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(5,5,5,.9),rgba(5,5,5,.6) 55%,transparent);z-index:-1;pointer-events:none}
 
-.fdsec{background:#0a0a0a;padding-bottom:70px}.fdgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}@media(max-width:860px){.fdgrid{grid-template-columns:1fr}}
+.fdsec{background:#0a0a0a;padding:0 0 70px}.fjhero{min-height:760px;display:flex;align-items:center;padding:120px 0 100px}.fjhero .wrap{position:relative;z-index:3;width:100%}.fdsec .fdstrip{margin-top:30px}.fdgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}@media(max-width:860px){.fdgrid{grid-template-columns:1fr}}
 .fdlogo{width:min(460px,86%);margin:0 0 22px}.fdhl{font-family:var(--disp);font-weight:700;font-size:clamp(32px,5.4vw,66px);line-height:1.05}.fdhl i{font-style:normal;color:var(--red)}
 .fdsub{color:var(--gold-hi);font-weight:700;margin:8px 0 22px}.fdnote{color:#bbb;font-size:13px;margin-top:14px}.fdbtn{margin-top:24px;text-align:left}.fdbtn .btn{display:inline-block}
 .fdm{background:radial-gradient(ellipse at center,rgba(201,162,75,.16),rgba(201,162,75,0) 68%);padding:18px;display:flex;justify-content:center}.fdm img{max-height:560px;width:auto;max-width:100%;object-fit:contain}
@@ -403,31 +403,7 @@ p,li{text-wrap:pretty}
 .glt .r{display:block;color:var(--red);text-shadow:0 0 28px rgba(230,0,19,.55);animation:flk 4s infinite}@keyframes flk{0%,92%,100%{opacity:1}93%{opacity:.6;transform:translateX(3px)}95%{opacity:1;transform:translateX(-2px)}}
 .cnt{display:inline-flex;align-items:baseline;gap:10px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--gold);margin-bottom:16px}.cnt b{font-size:34px;color:var(--gold-hi);letter-spacing:.05em}
 @media(prefers-reduced-motion:reduce){.fxgrid,.fxbeam,.tki,.fxglow,.glt .r{animation:none!important}.bgimg{clip-path:none!important}}
-.nbg{min-height:760px;display:flex;align-items:center;padding:120px 0 110px}.nbg .wrap{position:relative;z-index:3;width:100%}
-.fxs{overflow:hidden;--mx:0;--my:0}
-.bgimg{position:absolute;right:0;top:0;height:100%;width:min(64%,900px);object-fit:cover;object-position:center;opacity:.92;z-index:0;pointer-events:none;transform:translate3d(calc(var(--mx)*-16px),calc(var(--my)*-10px),0) scale(1.05);transition:transform .25s ease-out;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%);mask-composite:intersect;clip-path:inset(0 0 100% 0)}
-.fxs.go .bgimg{animation:imgrv 1.7s cubic-bezier(.7,0,.2,1) .1s both}
-@keyframes imgrv{0%{clip-path:inset(0 0 100% 0);filter:brightness(3) saturate(0)}60%{filter:brightness(1.6) saturate(.4)}100%{clip-path:inset(0);filter:none}}
-@media(max-width:860px){.bgimg{width:100%;opacity:.4}}
-.fxgrid{position:absolute;left:-30%;right:-30%;bottom:0;height:58%;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(201,162,75,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(230,0,19,.35) 1px,transparent 1px);background-size:64px 64px;transform:perspective(520px) rotateX(64deg);transform-origin:50% 100%;animation:gridmv 3.2s linear infinite;-webkit-mask-image:linear-gradient(to top,#000 5%,transparent 88%);mask-image:linear-gradient(to top,#000 5%,transparent 88%);opacity:.7}
-@keyframes gridmv{to{background-position:0 64px,0 0}}
-.fxglow{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 50% at 78% 45%,rgba(230,0,19,.22),transparent 70%),radial-gradient(40% 40% at 25% 100%,rgba(201,162,75,.18),transparent 70%);mix-blend-mode:screen;animation:glw 5s ease-in-out infinite alternate}@keyframes glw{to{opacity:.55}}
-.fxbeam{position:absolute;top:0;bottom:0;left:30%;width:2px;z-index:2;pointer-events:none;background:linear-gradient(transparent,var(--gold-hi) 50%,transparent);box-shadow:0 0 34px 8px rgba(243,220,154,.4);opacity:0}
-.fxs.go .fxbeam{animation:beam 7s ease-in-out 1.2s infinite}@keyframes beam{0%{left:30%;opacity:0}8%{opacity:.85}55%{left:98%;opacity:.85}62%,100%{left:98%;opacity:0}}
-.hud{position:absolute;inset:24px;z-index:2;pointer-events:none;font-family:var(--disp);font-size:10px;letter-spacing:.3em;color:rgba(243,220,154,.75)}
-.hud i{position:absolute;width:22px;height:22px;border:solid var(--gold);opacity:.8}.hud i:nth-child(1){left:0;top:0;border-width:1px 0 0 1px}.hud i:nth-child(2){right:0;top:0;border-width:1px 1px 0 0}.hud i:nth-child(3){left:0;bottom:0;border-width:0 0 1px 1px}.hud i:nth-child(4){right:0;bottom:0;border-width:0 1px 1px 0}
-.hud b{position:absolute;font-weight:500}.hud .t1{left:34px;top:4px}.hud .t2{right:34px;top:4px}.hud .t3{right:34px;bottom:4px}
-.hud .t1::after{content:"_";animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
-@media(max-width:700px){.hud{inset:12px}.hud .t2,.hud .t3{display:none}}
-.tk{position:absolute;left:0;right:0;bottom:0;z-index:3;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(201,162,75,.35);border-bottom:1px solid rgba(201,162,75,.2);background:rgba(5,5,5,.7);backdrop-filter:blur(6px);padding:11px 0}
-.tki{display:inline-block;animation:tk 38s linear infinite}.tki span{font-family:var(--disp);letter-spacing:.3em;font-size:13px;color:#eee;margin:0 22px}.tki em{font-style:normal;color:var(--red);font-size:10px}
-@keyframes tk{to{transform:translateX(-50%)}}
-.glt{font-family:var(--disp);font-weight:700;line-height:.95;text-transform:uppercase}
-.glt .o{display:block;color:transparent;-webkit-text-stroke:1.5px var(--gold-hi);letter-spacing:.02em}
-.glt .r{display:block;color:var(--red);text-shadow:0 0 28px rgba(230,0,19,.55);animation:flk 4s infinite}@keyframes flk{0%,92%,100%{opacity:1}93%{opacity:.6;transform:translateX(3px)}95%{opacity:1;transform:translateX(-2px)}}
-.cnt{display:inline-flex;align-items:baseline;gap:10px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--gold);margin-bottom:16px}.cnt b{font-size:34px;color:var(--gold-hi);letter-spacing:.05em}
-@media(prefers-reduced-motion:reduce){.fxgrid,.fxbeam,.tki,.fxglow,.glt .r{animation:none!important}.bgimg{clip-path:none!important}}
-</style>
+.bgimg.fj{object-fit:contain;width:min(58%,760px)}@media(max-width:860px){.bgimg.fj{width:100%;opacity:.45}}</style>
 </head>
 <body>
 <div class="bar" id="bar"></div>
@@ -518,15 +494,15 @@ p,li{text-wrap:pretty}
 </section>
 
 <!-- FEATURE FOOJIN'AD -->
-<section id="fooj" class="fdsec"><div class="wrap"><div class="fdgrid"><div class="fdt">
+<section id="fooj" class="fdsec"><div class="fxs fjhero"><img class="bgimg fj" loading="lazy" src="images/foojin/main.png" alt="Foojin’AD 30th"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">30TH LIMITED EDITION</b><b class="t2">FOOJIN’AD / 07 MODELS</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="fdt" style="max-width:640px">
 <div class="eyebrow rv">FEATURE ／ 30TH LIMITED</div>
 <img class="rv fdlogo" src="images/foojin/logo.png" alt="Foojin’AD">
-<div class="fdhl rv">What Once Moved Us,<br><i>Returns.</i></div>
-<p class="fdsub rv">〜かつて僕らを動かしたものが、帰ってくる。</p>
+<div class="cnt"><b data-count="7">00</b> LIMITED MODELS</div>
+<div class="glt" style="font-size:clamp(30px,5.6vw,72px)"><span class="o">What Once Moved Us,</span><span class="r">Returns.</span></div>
+<p class="fdsub rv" style="margin-top:16px">〜かつて僕らを動かしたものが、帰ってくる。</p>
 <p class="lead rv">52シリーズ、348アイテム。数あるロッドの中でも、ひときわ思い入れの深いシリーズ。2027年、創業30周年の記念モデルとして、Foojin’ADがもう一度、形になります。</p>
 <p class="fdnote rv">FISHING SHOW 2027で限定予約、2027年秋に再受付。<span class="draft">仮</span></p>
-<div class="fdbtn rv"><a class="btn" href="foojin-ad/">特設ページを見る</a></div></div>
-<div class="fdm rv"><img src="images/foojin/main.png" alt="Foojin’AD 30th"></div></div></div>
+<div class="fdbtn rv"><a class="btn" href="foojin-ad/">特設ページを見る</a></div></div></div></div>
 <div class="fdstrip rv"><div class="fdtrack"><a class="fdr" href="foojin-ad/#lineup"><div class="fdi"><img loading="lazy" src="images/foojin/naturalseven77mh.png" alt="Foojin’AD NATURAL SEVEN 77MH"></div><span>NATURAL SEVEN <b>77MH</b></span></a><a class="fdr" href="foojin-ad/#lineup"><div class="fdi"><img loading="lazy" src="images/foojin/lapage88mh.png" alt="Foojin’AD LAPAGE 88MH"></div><span>LAPAGE <b>88MH</b></span></a><a class="fdr" href="foojin-ad/#lineup"><div class="fdi"><img loading="lazy" src="images/foojin/nighthawk93ml.png" alt="Foojin’AD NIGHT HAWK 93ML"></div><span>NIGHT HAWK <b>93ML</b></span></a><a class="fdr" href="foojin-ad/#lineup"><div class="fdi"><img loading="lazy" src="images/foojin/beastbrawl95mh.png" alt="Foojin’AD BEAST BRAWL 95MH"></div><span>BEAST BRAWL <b>95MH</b></span></a><a class="fdr" href="foojin-ad/#lineup"><div class="fdi"><img loading="lazy" src="images/foojin/angelshooter96mlx.png" alt="Foojin’AD ANGEL SHOOTER 96MLX"></div><span>ANGEL SHOOTER <b>96MLX</b></span></a><a class="fdr" href="foojin-ad/#lineup"><div class="fdi"><img loading="lazy" src="images/foojin/highroller104ml.png" alt="Foojin’AD HIGH ROLLER 104ML"></div><span>HIGH ROLLER <b>104ML</b></span></a><a class="fdr" href="foojin-ad/#lineup"><div class="fdi"><img loading="lazy" src="images/foojin/poderosa106m.png" alt="Foojin’AD PODEROSA 106M"></div><span>PODEROSA <b>106M</b></span></a></div></div></section>
 <!-- NEW 2027 -->
 <section id="new27" class="nbg fxs"><img class="bgimg" loading="lazy" src="images/new/main.webp" alt="2027 New Products"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">NEXT GENERATION GEAR</b><b class="t2">2027 / 09 ITEMS</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="fdt" style="max-width:620px"><div class="eyebrow rv">2027 NEW PRODUCTS</div><h2 class="sec rv" style="margin-bottom:14px">30周年の先へ、</h2><div class="cnt"><b data-count="9">00</b> NEW ITEMS</div><div class="glt" style="font-size:clamp(54px,9vw,120px)"><span class="o">2027</span><span class="r">New<br>Products</span></div><p class="lead" style="margin-top:22px"><span class="ph">ATLAS</span>、<span class="ph">NAVAL</span>、<span class="ph">GRANDAGE WORLD OCEAN EXIII</span>、<span class="ph">GRANDAGE MEGASOUL</span>、<span class="ph">LAMMTARRA108</span>、<span class="ph">BUZZ WALKER</span>、<span class="ph">bit-V</span> ほか。</p><div class="fdbtn"><a class="btn" href="new/">新製品一覧を見る</a></div></div></div><div class="tk"><div class="tki"><span>ATLAS 2027</span><em>◆</em><span>NAVAL 2027</span><em>◆</em><span>GRANDAGE WORLD OCEAN EXIII</span><em>◆</em><span>GRANDAGE MEGASOUL</span><em>◆</em><span>LAMMTARRA108FL</span><em>◆</em><span>LAMMTARRA BADEL108SPL</span><em>◆</em><span>BUZZ WALKER</span><em>◆</em><span>bit-V26</span><em>◆</em><span>bit-V35</span><em>◆</em><span>ATLAS 2027</span><em>◆</em><span>NAVAL 2027</span><em>◆</em><span>GRANDAGE WORLD OCEAN EXIII</span><em>◆</em><span>GRANDAGE MEGASOUL</span><em>◆</em><span>LAMMTARRA108FL</span><em>◆</em><span>LAMMTARRA BADEL108SPL</span><em>◆</em><span>BUZZ WALKER</span><em>◆</em><span>bit-V26</span><em>◆</em><span>bit-V35</span><em>◆</em></div></div></section>
@@ -843,9 +819,7 @@ document.querySelectorAll('p,li,h3,h4,.cap,.l,.nm,.lead,.copy,.tag,.cdesc').forE
  const done=()=>{b.textContent='COPIED';setTimeout(()=>b.textContent='COPY',1600)};
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}else{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();done()}}})();
 </script>
-<script>(function(){const s=document.querySelector('.fxs');if(!s)return;
+<script>(function(){document.querySelectorAll('.fxs').forEach(s=>{
 new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){s.classList.add('go');o.disconnect();const c=s.querySelector('[data-count]');if(c){const T=+c.dataset.count;let n=0;const t=setInterval(()=>{n++;c.textContent=String(n).padStart(2,'0');if(n>=T)clearInterval(t)},90)}}},{threshold:.15}).observe(s);
-if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})();</script><script>(function(){const s=document.querySelector('.fxs');if(!s)return;
-new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){s.classList.add('go');o.disconnect();const c=s.querySelector('[data-count]');if(c){const T=+c.dataset.count;let n=0;const t=setInterval(()=>{n++;c.textContent=String(n).padStart(2,'0');if(n>=T)clearInterval(t)},90)}}},{threshold:.15}).observe(s);
-if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})();</script></body>
+if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})})();</script></body>
 </html>

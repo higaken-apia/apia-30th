@@ -44,9 +44,35 @@ footer.f .fl a:hover{color:var(--gold-hi)}
 .sl .s{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#1b1508,#070707);color:#7a735c;font-family:var(--disp);letter-spacing:.2em;font-size:12px;padding:14px;position:relative}
 .sl .s img{width:100%;height:100%;object-fit:cover}
 .sl .s small{position:absolute;left:10px;bottom:8px;color:#8a8470;font-size:10px;letter-spacing:.25em}
-.sl .dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center;pointer-events:none}
+.sl .dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:4px;justify-content:center;z-index:3}.sl .dots i{cursor:pointer;padding:0;box-sizing:content-box;border:6px solid transparent;background-clip:padding-box}
+.sl .ar{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);color:#fff;font-size:18px;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center}.sl .ar:hover{background:var(--gold);color:#111;border-color:var(--gold)}.sl .ar.l{left:8px}.sl .ar.r{right:8px}.sl .tr{cursor:grab}.sl .tr.dg{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}.sl .s img{-webkit-user-drag:none;user-select:none}
 .sl .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3)}.sl .dots i.on{background:var(--gold)}
 .sl .n{position:absolute;right:8px;top:8px;background:rgba(0,0,0,.6);font-family:var(--disp);font-size:10px;letter-spacing:.15em;padding:2px 8px;border-radius:10px}
+
+.fxs{position:relative;overflow:hidden;--mx:0;--my:0}
+.bgimg{position:absolute;right:0;top:0;height:100%;width:min(64%,900px);object-fit:cover;object-position:center;opacity:.92;z-index:0;pointer-events:none;transform:translate3d(calc(var(--mx)*-16px),calc(var(--my)*-10px),0) scale(1.05);transition:transform .25s ease-out;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%);mask-composite:intersect;clip-path:inset(0 0 100% 0)}
+.fxs.go .bgimg{animation:imgrv 1.7s cubic-bezier(.7,0,.2,1) .1s both}
+@keyframes imgrv{0%{clip-path:inset(0 0 100% 0);filter:brightness(3) saturate(0)}60%{filter:brightness(1.6) saturate(.4)}100%{clip-path:inset(0);filter:none}}
+@media(max-width:860px){.bgimg{width:100%;opacity:.4}}
+.fxgrid{position:absolute;left:-30%;right:-30%;bottom:0;height:58%;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(201,162,75,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(230,0,19,.35) 1px,transparent 1px);background-size:64px 64px;transform:perspective(520px) rotateX(64deg);transform-origin:50% 100%;animation:gridmv 3.2s linear infinite;-webkit-mask-image:linear-gradient(to top,#000 5%,transparent 88%);mask-image:linear-gradient(to top,#000 5%,transparent 88%);opacity:.7}
+@keyframes gridmv{to{background-position:0 64px,0 0}}
+.fxglow{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 50% at 78% 45%,rgba(230,0,19,.22),transparent 70%),radial-gradient(40% 40% at 25% 100%,rgba(201,162,75,.18),transparent 70%);mix-blend-mode:screen;animation:glw 5s ease-in-out infinite alternate}@keyframes glw{to{opacity:.55}}
+.fxbeam{position:absolute;top:0;bottom:0;left:30%;width:2px;z-index:2;pointer-events:none;background:linear-gradient(transparent,var(--gold-hi) 50%,transparent);box-shadow:0 0 34px 8px rgba(243,220,154,.4);opacity:0}
+.fxs.go .fxbeam{animation:beam 7s ease-in-out 1.2s infinite}@keyframes beam{0%{left:30%;opacity:0}8%{opacity:.85}55%{left:98%;opacity:.85}62%,100%{left:98%;opacity:0}}
+.hud{position:absolute;inset:24px;z-index:2;pointer-events:none;font-family:var(--disp);font-size:10px;letter-spacing:.3em;color:rgba(243,220,154,.75)}
+.hud i{position:absolute;width:22px;height:22px;border:solid var(--gold);opacity:.8}.hud i:nth-child(1){left:0;top:0;border-width:1px 0 0 1px}.hud i:nth-child(2){right:0;top:0;border-width:1px 1px 0 0}.hud i:nth-child(3){left:0;bottom:0;border-width:0 0 1px 1px}.hud i:nth-child(4){right:0;bottom:0;border-width:0 1px 1px 0}
+.hud b{position:absolute;font-weight:500}.hud .t1{left:34px;top:4px}.hud .t2{right:34px;top:4px}.hud .t3{right:34px;bottom:4px}
+.hud .t1::after{content:"_";animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+@media(max-width:700px){.hud{inset:12px}.hud .t2,.hud .t3{display:none}}
+.tk{position:absolute;left:0;right:0;bottom:0;z-index:3;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(201,162,75,.35);border-bottom:1px solid rgba(201,162,75,.2);background:rgba(5,5,5,.7);backdrop-filter:blur(6px);padding:11px 0}
+.tki{display:inline-block;animation:tk 38s linear infinite}.tki span{font-family:var(--disp);letter-spacing:.3em;font-size:13px;color:#eee;margin:0 22px}.tki em{font-style:normal;color:var(--red);font-size:10px}
+@keyframes tk{to{transform:translateX(-50%)}}
+.glt{font-family:var(--disp);font-weight:700;line-height:.95;text-transform:uppercase}
+.glt .o{display:block;color:transparent;-webkit-text-stroke:1.5px var(--gold-hi);letter-spacing:.02em}
+.glt .r{display:block;color:var(--red);text-shadow:0 0 28px rgba(230,0,19,.55);animation:flk 4s infinite}@keyframes flk{0%,92%,100%{opacity:1}93%{opacity:.6;transform:translateX(3px)}95%{opacity:1;transform:translateX(-2px)}}
+.cnt{display:inline-flex;align-items:baseline;gap:10px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--gold);margin-bottom:16px}.cnt b{font-size:34px;color:var(--gold-hi);letter-spacing:.05em}
+@media(prefers-reduced-motion:reduce){.fxgrid,.fxbeam,.tki,.fxglow,.glt .r{animation:none!important}.bgimg{clip-path:none!important}}
+.bgimg.fj{object-fit:contain;width:min(58%,760px)}@media(max-width:860px){.bgimg.fj{width:100%;opacity:.45}}.phero.fd{min-height:92vh;display:flex;align-items:center;padding:150px 0 110px}.phero.fd .wrap{position:relative;z-index:3;width:100%}.hlx{font-size:clamp(30px,6vw,80px)!important;margin-bottom:10px}.phero.fd .hs{margin-top:14px}
 
 .phero.fd{padding-bottom:0}.phero.fd .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:end}@media(max-width:860px){.phero.fd .grid2{grid-template-columns:1fr}}
 .phero.fd .logo30{width:min(560px,90%);margin:0 0 26px}
@@ -81,10 +107,8 @@ summary::after{content:"+";position:absolute;right:6px;top:50%;transform:transla
 .mainrod{background:radial-gradient(ellipse at center,rgba(201,162,75,.16),rgba(201,162,75,0) 68%);padding:20px;display:flex;justify-content:center}
 </style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
 <div class="links"><a href="../foojin-ad/" class="on">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
-<header class="phero fd"><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FOOJIN’AD</div>
-<div class="grid2"><div><img class="logo30" src="../images/foojin/logo.png" alt="Foojin’AD"><div class="hl">What Once Moved Us,<br><i>Returns.</i></div><p class="hs">〜かつて僕らを動かしたものが、帰ってくる。</p>
-<div class="row"><a class="btn red" href="#lineup">全7モデルを見る</a><a class="btn ghost" href="#order">限定予約について</a></div></div>
-<div><img class="rodmain" src="../images/foojin/main.png" alt="Foojin’AD 30th"></div></div></div></header>
+<header class="phero fd fxs"><img class="bgimg fj" src="../images/foojin/main.png" alt="Foojin’AD 30th"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">30TH LIMITED EDITION</b><b class="t2">FOOJIN’AD / 07 MODELS</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FOOJIN’AD</div><img class="logo30" src="../images/foojin/logo.png" alt="Foojin’AD"><div class="cnt"><b data-count="7">00</b> LIMITED MODELS</div><div class="glt hlx"><span class="o">What Once Moved Us,</span><span class="r">Returns.</span></div><p class="hs">〜かつて僕らを動かしたものが、帰ってくる。</p>
+<div class="row"><a class="btn red" href="#lineup">全7モデルを見る</a><a class="btn ghost" href="#order">限定予約について</a></div></div><div class="tk"><div class="tki"><span>NATURAL SEVEN 77MH</span><em>◆</em><span>LAPAGE 88MH</span><em>◆</em><span>NIGHT HAWK 93ML</span><em>◆</em><span>BEAST BRAWL 95MH</span><em>◆</em><span>ANGEL SHOOTER 96MLX</span><em>◆</em><span>HIGH ROLLER 104ML</span><em>◆</em><span>PODEROSA 106M</span><em>◆</em><span>NATURAL SEVEN 77MH</span><em>◆</em><span>LAPAGE 88MH</span><em>◆</em><span>NIGHT HAWK 93ML</span><em>◆</em><span>BEAST BRAWL 95MH</span><em>◆</em><span>ANGEL SHOOTER 96MLX</span><em>◆</em><span>HIGH ROLLER 104ML</span><em>◆</em><span>PODEROSA 106M</span><em>◆</em></div></div></header>
 <section id="movie" style="padding-bottom:30px"><div class="wrap"><div class="eyebrow rv">MOVIE</div><h2 class="sec rv">動画で見る Foojin’AD<span class="draft">仮動画</span></h2>
 <div class="vid rv" id="vid" data-id="NhVPSCJy-IY"><div class="cv"><div class="pl">▶</div><span>音ありで見る</span></div></div></div></section>
 <section id="story"><div class="wrap" style="max-width:860px"><div class="eyebrow rv">STORY</div><h2 class="sec rv">アピアが、もう一度<br>形にしたかった一本。</h2>
@@ -103,10 +127,18 @@ function phrase(root){const seg=(window.Intl&&Intl.Segmenter)?new Intl.Segmenter
   const ps=t.match(/[^、。！？）」]*[、。！？）」]*/g).filter(Boolean),out=[];
   ps.forEach(p=>{if(p.length<=13||!seg){out.push(p);return}let c='';for(const s of seg.segment(p)){if(c&&(c+s.segment).length>12){out.push(c);c=s.segment}else c+=s.segment}if(c)out.push(c)});
   if(out.length<2&&t.length<=13)return;const f=document.createDocumentFragment();out.forEach(p=>{if(!p.trim()){f.append(p);return}const sp=document.createElement('span');sp.className='ph';sp.textContent=p;f.append(sp)});n.replaceWith(f)})}
-document.querySelectorAll('p.lead,.rd p,.card p,li').forEach(phrase);
+document.querySelectorAll('p.lead,p.sub,.rd p,.card p,li').forEach(phrase);
 /* sliders */
-document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),ds=sl.querySelectorAll('.dots i'),nn=sl.querySelector('.n');if(!tr)return;
- tr.addEventListener('scroll',()=>{const i=Math.round(tr.scrollLeft/tr.clientWidth);ds.forEach((d,j)=>d.classList.toggle('on',j===i));if(nn)nn.textContent=(i+1)+' / '+ds.length},{passive:true})});
+document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),ds=[...sl.querySelectorAll('.dots i')],nn=sl.querySelector('.n');if(!tr)return;
+ const go=i=>{const n=ds.length;i=(i+n)%n;tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'})};
+ const cur=()=>Math.round(tr.scrollLeft/tr.clientWidth);
+ tr.addEventListener('scroll',()=>{const i=cur();ds.forEach((d,j)=>d.classList.toggle('on',j===i));if(nn)nn.textContent=(i+1)+' / '+ds.length},{passive:true});
+ sl.querySelector('.ar.l').onclick=e=>{e.stopPropagation();go(cur()-1)};sl.querySelector('.ar.r').onclick=e=>{e.stopPropagation();go(cur()+1)};
+ ds.forEach((d,j)=>d.onclick=e=>{e.stopPropagation();go(j)});
+ let dn=false,sx=0,sc=0,mv=false;tr.addEventListener('mousedown',e=>{dn=true;mv=false;sx=e.pageX;sc=tr.scrollLeft});
+ window.addEventListener('mousemove',e=>{if(!dn)return;const d=e.pageX-sx;if(Math.abs(d)>4){mv=true;tr.classList.add('dg')}if(mv)tr.scrollLeft=sc-d});
+ window.addEventListener('mouseup',()=>{if(!dn)return;dn=false;if(mv){tr.classList.remove('dg');go(cur())}});
+ tr.addEventListener('dragstart',e=>e.preventDefault())});
 </script><script>(function(){const v=document.getElementById('vid'),id=v.dataset.id;
 const mk=(q)=>{const f=document.createElement('iframe');f.src='https://www.youtube.com/embed/'+id+'?'+q;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.title='Foojin’AD';f.loading='lazy';return f};
 let f=mk('autoplay=1&mute=1&loop=1&playlist='+id+'&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1');
