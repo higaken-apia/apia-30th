@@ -74,7 +74,7 @@ footer.f .fl a:hover{color:var(--gold-hi)}
 @media(prefers-reduced-motion:reduce){.fxgrid,.fxbeam,.tki,.fxglow,.glt .r{animation:none!important}.bgimg{clip-path:none!important}}
 .bgimg.fj{object-fit:contain;width:min(58%,760px)}@media(max-width:860px){.bgimg.fj{width:100%;opacity:.45}}.phero.fd{min-height:92vh;display:flex;align-items:center;padding:150px 0 110px}.phero.fd .wrap{position:relative;z-index:3;width:100%}.hlx{font-size:clamp(30px,6vw,80px)!important;margin-bottom:10px}.phero.fd .hs{margin-top:14px}
 
-.phero.fd{padding-bottom:0}.phero.fd .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:end}@media(max-width:860px){.phero.fd .grid2{grid-template-columns:1fr}}
+.phero.fd .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:end}@media(max-width:860px){.phero.fd .grid2{grid-template-columns:1fr}}
 .phero.fd .logo30{width:min(560px,90%);margin:0 0 26px}
 .phero.fd .rodmain{max-height:78vh;margin:0 auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
 .hl{font-family:var(--disp);font-weight:700;font-size:clamp(34px,6.4vw,84px);line-height:1.05;margin-bottom:10px}.hl i{font-style:normal;color:var(--red)}
@@ -139,7 +139,9 @@ document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),d
  window.addEventListener('mousemove',e=>{if(!dn)return;const d=e.pageX-sx;if(Math.abs(d)>4){mv=true;tr.classList.add('dg')}if(mv)tr.scrollLeft=sc-d});
  window.addEventListener('mouseup',()=>{if(!dn)return;dn=false;if(mv){tr.classList.remove('dg');go(cur())}});
  tr.addEventListener('dragstart',e=>e.preventDefault())});
-</script><script>(function(){const v=document.getElementById('vid'),id=v.dataset.id;
+</script><script>(function(){document.querySelectorAll('.fxs').forEach(s=>{
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){s.classList.add('go');o.disconnect();const c=s.querySelector('[data-count]');if(c){const T=+c.dataset.count;let n=0;const t=setInterval(()=>{n++;c.textContent=String(n).padStart(2,'0');if(n>=T)clearInterval(t)},90)}}},{threshold:.15}).observe(s);
+if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})})();</script><script>(function(){const v=document.getElementById('vid'),id=v.dataset.id;
 const mk=(q)=>{const f=document.createElement('iframe');f.src='https://www.youtube.com/embed/'+id+'?'+q;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.title='Foojin’AD';f.loading='lazy';return f};
 let f=mk('autoplay=1&mute=1&loop=1&playlist='+id+'&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1');
 new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){v.prepend(f);o.disconnect()}},{rootMargin:'200px'}).observe(v);
