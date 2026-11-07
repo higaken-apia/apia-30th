@@ -72,11 +72,34 @@ footer.f .fl a:hover{color:var(--gold-hi)}
 .show{display:none;margin-top:18px;border:2px dashed var(--gold);padding:20px;text-align:center}.show.on{display:block}.show b{font-family:var(--disp);letter-spacing:.2em;color:var(--gold-hi)}
 .fd{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;border:1px solid var(--gold);padding:30px;background:linear-gradient(135deg,#1a1405,#0a0a0a)}@media(max-width:800px){.fd{grid-template-columns:1fr;padding:20px}}
 .ev{display:grid;gap:10px;margin-top:26px}.ev a{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border:1px solid var(--line);padding:16px 20px}.ev a:hover{border-color:var(--gold)}.ev b{font-family:var(--disp);letter-spacing:.1em;color:var(--gold-hi)}
-</style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
+
+.fxs{position:relative;overflow:hidden;--mx:0;--my:0}
+.bgimg{position:absolute;right:0;top:0;height:100%;width:min(64%,900px);object-fit:cover;object-position:center;opacity:.92;z-index:0;pointer-events:none;transform:translate3d(calc(var(--mx)*-16px),calc(var(--my)*-10px),0) scale(1.05);transition:transform .25s ease-out;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 40%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 24%,#000 76%,transparent 100%);mask-composite:intersect;clip-path:inset(0 0 100% 0)}
+.fxs.go .bgimg{animation:imgrv 1.7s cubic-bezier(.7,0,.2,1) .1s both}
+@keyframes imgrv{0%{clip-path:inset(0 0 100% 0);filter:brightness(3) saturate(0)}60%{filter:brightness(1.6) saturate(.4)}100%{clip-path:inset(0);filter:none}}
+@media(max-width:860px){.bgimg{width:100%;opacity:.4}}
+.fxgrid{position:absolute;left:-30%;right:-30%;bottom:0;height:58%;z-index:1;pointer-events:none;background-image:linear-gradient(rgba(201,162,75,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(230,0,19,.35) 1px,transparent 1px);background-size:64px 64px;transform:perspective(520px) rotateX(64deg);transform-origin:50% 100%;animation:gridmv 3.2s linear infinite;-webkit-mask-image:linear-gradient(to top,#000 5%,transparent 88%);mask-image:linear-gradient(to top,#000 5%,transparent 88%);opacity:.7}
+@keyframes gridmv{to{background-position:0 64px,0 0}}
+.fxglow{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(60% 50% at 78% 45%,rgba(230,0,19,.22),transparent 70%),radial-gradient(40% 40% at 25% 100%,rgba(201,162,75,.18),transparent 70%);mix-blend-mode:screen;animation:glw 5s ease-in-out infinite alternate}@keyframes glw{to{opacity:.55}}
+.fxbeam{position:absolute;top:0;bottom:0;left:30%;width:2px;z-index:2;pointer-events:none;background:linear-gradient(transparent,var(--gold-hi) 50%,transparent);box-shadow:0 0 34px 8px rgba(243,220,154,.4);opacity:0}
+.fxs.go .fxbeam{animation:beam 7s ease-in-out 1.2s infinite}@keyframes beam{0%{left:30%;opacity:0}8%{opacity:.85}55%{left:98%;opacity:.85}62%,100%{left:98%;opacity:0}}
+.hud{position:absolute;inset:24px;z-index:2;pointer-events:none;font-family:var(--disp);font-size:10px;letter-spacing:.3em;color:rgba(243,220,154,.75)}
+.hud i{position:absolute;width:22px;height:22px;border:solid var(--gold);opacity:.8}.hud i:nth-child(1){left:0;top:0;border-width:1px 0 0 1px}.hud i:nth-child(2){right:0;top:0;border-width:1px 1px 0 0}.hud i:nth-child(3){left:0;bottom:0;border-width:0 0 1px 1px}.hud i:nth-child(4){right:0;bottom:0;border-width:0 1px 1px 0}
+.hud b{position:absolute;font-weight:500}.hud .t1{left:34px;top:4px}.hud .t2{right:34px;top:4px}.hud .t3{right:34px;bottom:4px}
+.hud .t1::after{content:"_";animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+@media(max-width:700px){.hud{inset:12px}.hud .t2,.hud .t3{display:none}}
+.tk{position:absolute;left:0;right:0;bottom:0;z-index:3;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(201,162,75,.35);border-bottom:1px solid rgba(201,162,75,.2);background:rgba(5,5,5,.7);backdrop-filter:blur(6px);padding:11px 0}
+.tki{display:inline-block;animation:tk 38s linear infinite}.tki span{font-family:var(--disp);letter-spacing:.3em;font-size:13px;color:#eee;margin:0 22px}.tki em{font-style:normal;color:var(--red);font-size:10px}
+@keyframes tk{to{transform:translateX(-50%)}}
+.glt{font-family:var(--disp);font-weight:700;line-height:.95;text-transform:uppercase}
+.glt .o{display:block;color:transparent;-webkit-text-stroke:1.5px var(--gold-hi);letter-spacing:.02em}
+.glt .r{display:block;color:var(--red);text-shadow:0 0 28px rgba(230,0,19,.55);animation:flk 4s infinite}@keyframes flk{0%,92%,100%{opacity:1}93%{opacity:.6;transform:translateX(3px)}95%{opacity:1;transform:translateX(-2px)}}
+.cnt{display:inline-flex;align-items:baseline;gap:10px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--gold);margin-bottom:16px}.cnt b{font-size:34px;color:var(--gold-hi);letter-spacing:.05em}
+@media(prefers-reduced-motion:reduce){.fxgrid,.fxbeam,.tki,.fxglow,.glt .r{animation:none!important}.bgimg{clip-path:none!important}}
+.bgimg.fj{object-fit:contain;width:min(58%,760px)}@media(max-width:860px){.bgimg.fj{width:100%;opacity:.45}}.fsb{object-position:center 62%}.phero.fsh{min-height:92vh;display:flex;align-items:center;padding:150px 0 110px}.phero.fsh .wrap{position:relative;z-index:3;width:100%}.phero.fsh .sub{max-width:560px}</style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
 <div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/" class="on">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
-<header class="phero"><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FS2027</div>
-<h1>Fishing Show<br><i>2027</i></h1><p class="sub">30周年のAPIAブースへ。限定アイテム、30周年Foojin’AD、ここでしか出会えない時間を用意して待っています。<span class="draft">仮：内容は確認用</span></p>
-<div class="row"><a class="btn red" href="#merch">限定アイテムを見る</a><a class="btn ghost" href="#info">会期・会場</a></div></div></header>
+<header class="phero fsh fxs"><img class="bgimg fsb" src="../images/fs/main.webp" alt="APIA FISHING SHOW 2027 BOOTH"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">APIA BOOTH 2027</b><b class="t2">2027.1.22-24 / YOKOHAMA</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FS2027</div><div class="cnt"><b>3</b> DAYS ／ 2027.1.22–24</div><h1 class="glt" style="font-size:clamp(50px,10.5vw,140px)"><span class="o">Fishing Show</span><span class="r">2027</span></h1><p class="sub">30周年のAPIAブースへ。限定アイテム、30周年Foojin’AD、ここでしか出会えない時間を用意して待っています。<span class="draft">仮：内容は確認用</span></p>
+<div class="row"><a class="btn red" href="#merch">限定アイテムを見る</a><a class="btn ghost" href="#info">会期・会場</a></div></div><div class="tk"><div class="tki"><span>FISHING SHOW 2027</span><em>◆</em><span>2027.1.22-24</span><em>◆</em><span>PACIFICO YOKOHAMA</span><em>◆</em><span>APIA BOOTH</span><em>◆</em><span>30TH LIMITED</span><em>◆</em><span>FOOJIN’AD</span><em>◆</em><span>WISH LIST</span><em>◆</em><span>FISHING SHOW 2027</span><em>◆</em><span>2027.1.22-24</span><em>◆</em><span>PACIFICO YOKOHAMA</span><em>◆</em><span>APIA BOOTH</span><em>◆</em><span>30TH LIMITED</span><em>◆</em><span>FOOJIN’AD</span><em>◆</em><span>WISH LIST</span><em>◆</em></div></div></header>
 
 <section id="info"><div class="wrap"><div class="eyebrow rv">INFORMATION</div><h2 class="sec rv">釣りフェス2027<br>会期・会場</h2>
 <div class="info rv"><div class="card"><b>DATE</b><div>2027/1/22（金）〜24（日）<span class="draft">要確認</span></div></div><div class="card"><b>VENUE</b><div>パシフィコ横浜（みなとみらい）</div></div><div class="card"><b>BOOTH</b><div>APIAブース　No.―――<span class="draft">仮</span></div></div><div class="card"><b>OPEN</b><div>10:00〜17:00（予定）<span class="draft">仮</span></div></div></div>
@@ -110,7 +133,7 @@ function phrase(root){const seg=(window.Intl&&Intl.Segmenter)?new Intl.Segmenter
   const ps=t.match(/[^、。！？）」]*[、。！？）」]*/g).filter(Boolean),out=[];
   ps.forEach(p=>{if(p.length<=13||!seg){out.push(p);return}let c='';for(const s of seg.segment(p)){if(c&&(c+s.segment).length>12){out.push(c);c=s.segment}else c+=s.segment}if(c)out.push(c)});
   if(out.length<2&&t.length<=13)return;const f=document.createDocumentFragment();out.forEach(p=>{if(!p.trim()){f.append(p);return}const sp=document.createElement('span');sp.className='ph';sp.textContent=p;f.append(sp)});n.replaceWith(f)})}
-document.querySelectorAll('p.lead,.rd p,.card p,li').forEach(phrase);
+document.querySelectorAll('p.lead,p.sub,.rd p,.card p,li').forEach(phrase);
 /* sliders */
 document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),ds=[...sl.querySelectorAll('.dots i')],nn=sl.querySelector('.n');if(!tr)return;
  const go=i=>{const n=ds.length;i=(i+n)%n;tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'})};
@@ -134,4 +157,6 @@ const op=v=>$('wl').classList.toggle('open',v);$('wlfab').onclick=()=>op(true);$
 $('wlshow').onclick=()=>{$('wls').classList.toggle('on')};
 $('wlclr').onclick=()=>{L=[];save();render()};
 $('wlcopy').onclick=()=>{const t='【APIA FS2027 欲しいものリスト】\n'+L.map(x=>'・'+x.name).join('\n');(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>alert('コピーしました')).catch(()=>alert(t))};
-render()})();</script></body></html>
+render()})();</script><script>(function(){document.querySelectorAll('.fxs').forEach(s=>{
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){s.classList.add('go');o.disconnect();const c=s.querySelector('[data-count]');if(c){const T=+c.dataset.count;let n=0;const t=setInterval(()=>{n++;c.textContent=String(n).padStart(2,'0');if(n>=T)clearInterval(t)},90)}}},{threshold:.15}).observe(s);
+if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})})();</script></body></html>
