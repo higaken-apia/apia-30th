@@ -457,7 +457,7 @@ p,li{text-wrap:pretty}
 .sl .ar:hover{background:rgba(255,255,255,.2)!important;color:#fff!important;border-color:rgba(255,255,255,.6)!important}
 .phero .crumb a:hover,footer.f .fl a:hover{color:#fff!important}
 
-.scan{display:none!important}
+.scan .panel{display:none!important}
 /* next 30: slash reveal (no ring, no pop) */
 .nx .ring{display:none!important}
 .nx .yr{position:relative;display:inline-block;color:transparent;-webkit-text-stroke:2px #55513f}
@@ -555,6 +555,19 @@ p,li{text-wrap:pretty}
     <div class="nxw"><span>NEW MATERIAL</span><span>NEW TECHNOLOGY</span><span>NEW FIELD</span></div>
     <h2 class="sec rv" style="margin-top:44px">そして、未来へ。</h2>
     <p class="rv">新しい素材、新しい技術、新しいフィールド。アピアはこれからも、アングラーとともに進化し続けます。</p>
+  </div>
+</section>
+
+<!-- SCAN : ROD TECHNOLOGY -->
+<section class="scan" id="scan">
+  <div class="pin">
+    <div id="lys"></div>
+    <canvas id="scancv"></canvas>
+    <div class="line" id="scanline"></div>
+    <div id="bxs"></div>
+    <div class="hud" id="hud"></div>
+    <div class="panel" id="panel"><img id="panelimg" alt=""></div>
+    <div class="tp"><div class="tag" id="tag"></div><h2 id="typed"></h2><p id="desc"></p><ul id="specs"></ul></div>
   </div>
 </section>
 
@@ -742,6 +755,61 @@ function onScroll(){
 }
 addEventListener('scroll',onScroll,{passive:true});tr.addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
 (function(){let dn=false,sx=0,sl=0,mv=false;tr.addEventListener('mousedown',e=>{dn=true;mv=false;sx=e.pageX;sl=tr.scrollLeft});addEventListener('mousemove',e=>{if(!dn)return;const d=e.pageX-sx;if(Math.abs(d)>4){mv=true;tr.classList.add('dg')}if(mv)tr.scrollLeft=sl-d});addEventListener('mouseup',()=>{dn=false;tr.classList.remove('dg')});const st=()=>tr.clientWidth*.7;document.getElementById('hprev').onclick=()=>tr.scrollBy({left:-st(),behavior:'smooth'});document.getElementById('hnext').onclick=()=>tr.scrollBy({left:st(),behavior:'smooth'})})();
+
+/* ---------- scan: ROD TECHNOLOGY (出典: apiajapan.com/s/rod/foojin-z-6th/) ---------- */
+const FZ='https://www.apiajapan.com/static/assets/images/foojin-z-2025/';
+const ST=[
+ {k:"X-FORCE100",t:"カーボン含有率100.0%。",d:"業界初の製法。45°にクロスしたカーボン繊維を1枚のプリプレグで成型し、グラススクリームを排除。ティップブレの収束と感度を引き上げる。",bg:"pro-x-force100.jpg",fig:"img-xforce.jpg",sp:[["CARBON","100.0%"],["CROSS","45°"],["GLASS SCRIM","0"]],bx:[[18,30,38,36,"45° CROSS CARBON"],[52,50,30,28,"PURE CARBON 100%"]]},
+ {k:"TORAYCA® 3rd GEN",t:"第3世代カーボンだけで。",d:"超高弾性M46X、高弾性M40X、中弾性T1100G。3つの先端素材が出揃い、Foojin'Z 6thは第3世代カーボンのみで構成される。",bg:"pro-foozin-z.png",fig:"img-torayca.jpg",sp:[["M46X","46t"],["M40X","40t"],["T1100G","33t"]],bx:[[10,18,62,60,"TORAYCA® M46X / M40X / T1100G"]]},
+ {k:"NANO JOINT",t:"継ぎ目を、感じさせない。",d:"NANOALLOY®技術を採用したアピア独自のジョイント。超高精度研磨のPut-in方式で、印籠継を超えるパフォーマンスを実現。",bg:"pro-nano-joint.jpg",fig:null,sp:[["PUT-IN","SYSTEM"],["NANOALLOY®","TECH"]],bx:[[22,34,44,34,"NANO JOINT / PUT-IN"]]},
+ {k:"SHIELD TECH Light",t:"軽さと強さを両立する外装。",d:"繊細なブランクを守る特殊テープ「シールドテックライト」。アンサンドフィニッシュで、強い外装と極限の感度を両立。",bg:"pro-shield-tech-light.jpg",fig:null,sp:[["SHIELD TECH","LIGHT"],["FINISH","UNSANDED"]],bx:[[20,36,60,14,"SHIELD TECH LIGHT"]]},
+ {k:"FUJI TORZITE",t:"軽く、滑らかに。",d:"軽量で滑りのいいFUJIチタンフレーム「TORZITE」リングを全機種に搭載。",bg:"pro-torzite.jpg",fig:null,sp:[["FRAME","TITANIUM"],["RING","TORZITE"]],bx:[[28,28,22,38,"FUJI TORZITE"]]}
+];
+const lys=document.getElementById('lys');lys.innerHTML=ST.map(x=>`<div class="ly"><div class="lph" style="background-image:url('${FZ}${x.bg}')"></div><div class="xr" style="background-image:url('${FZ}${x.bg}')"></div></div>`).join('');
+const layers=[...lys.children],bxsEl=document.getElementById('bxs'),hud=document.getElementById('hud');
+hud.innerHTML=ST.map((x,i)=>`<div>0${i+1} ${x.k}</div>`).join('');
+const sc=document.getElementById('scan'),scv=document.getElementById('scancv'),scx=scv.getContext('2d'),sline=document.getElementById('scanline'),typed=document.getElementById('typed'),panel=document.getElementById('panel'),pimg=document.getElementById('panelimg');
+let sw,sh,cs=-1;function srs(){sw=scv.width=scv.offsetWidth;sh=scv.height=scv.offsetHeight}srs();addEventListener('resize',srs);
+let tkn=-1;
+function buildTyped(T){const seg=(window.Intl&&Intl.Segmenter)?new Intl.Segmenter('ja',{granularity:'word'}):null;
+ const parts=[];let c='';const flush=()=>{if(c){parts.push(c);c=''}};
+ if(seg){for(const w of seg.segment(T)){if(c&&(c+w.segment).length>9&&!/^[、。，．]/.test(w.segment)){flush()}c+=w.segment;if(/[、。]$/.test(w.segment))flush()}flush()}else parts.push(T);
+ let idx=0;typed.innerHTML=parts.map(p=>'<span class="ph">'+[...p].map(ch=>'<span class="c" data-i="'+(idx++)+'">'+ch+'</span>').join('')+'</span>').join('');
+ typed._n=idx;tkn=-1}
+function setStage(i){cs=i;const x=ST[i];
+ layers.forEach((l,j)=>l.classList.toggle('on',j===i));
+ [...hud.children].forEach((h,j)=>h.classList.toggle('on',j===i));
+ buildTyped(x.t);
+ document.getElementById('tag').textContent='◼ 0'+(i+1)+' / 0'+ST.length+' — '+x.k;
+ document.getElementById('desc').textContent=x.d;phrase(document.getElementById('desc'));
+ document.getElementById('specs').innerHTML=x.sp.map(a=>`<li><b>${a[0]}</b>${a[1]}</li>`).join('');
+ bxsEl.innerHTML=x.bx.map(b=>`<div class="bx" style="left:${b[0]}%;top:${b[1]}%;width:${b[2]}%;height:${b[3]}%"><span>${b[4]}</span></div>`).join('');
+ if(x.fig){pimg.src=FZ+x.fig;} panel.classList.remove('on');
+}
+function scanTick(){
+ const r=sc.getBoundingClientRect(),p=Math.min(Math.max(-r.top/(sc.offsetHeight-innerHeight),0),.9999);
+ const f=p*ST.length,i=Math.floor(f),q=f-i;
+ if(i!==cs)setStage(i);
+ const bxp=q*118,L=layers[i],ph=L.children[0],xr=L.children[1];
+ L.style.transform='perspective(1400px) rotateY('+((q-.5)*5)+'deg) scale('+(1.14-.08*q)+') translateX('+((.5-q)*2)+'%)';
+ xr.style.clipPath='inset(0 '+Math.max(0,100-bxp)+'% 0 0)';
+ ph.style.opacity=1-.62*Math.min(q*1.25,1);ph.style.filter='brightness('+(1-.35*Math.min(q*1.25,1))+') saturate('+(1-.5*Math.min(q*1.25,1))+')';
+ const N=typed._n||0,k=Math.floor(Math.min(q/.45,1)*N);
+ if(k!==tkn){tkn=k;typed.querySelectorAll('.c').forEach((c,j)=>{c.classList.toggle('s',j<k);c.classList.toggle('l',j===k-1&&k<N)})}
+ [...bxsEl.children].forEach((b,j)=>b.classList.toggle('on',q>.3+j*.15&&q<.93));
+ if(ST[i].fig)panel.classList.toggle('on',q>.35&&q<.93);
+ const lx=bxp/100*sw;sline.style.left=lx+'px';sline.style.opacity=(q>.02&&q<.88)?1:0;
+ scx.clearRect(0,0,sw,sh);
+ const step=46,cols=Math.ceil(sw/step),rows=Math.ceil(sh/step),fade=Math.min(q*6,1)*Math.min((1-q)*5,1);scx.lineWidth=1;
+ for(let a=0;a<=cols;a++)for(let b=0;b<=rows;b++){
+   const x=a*step,y=b*step,a2=(x<lx?Math.max(0,1-(lx-x)/(sw*.4)):0)*fade;
+   if(a2<=.02)continue;
+   scx.fillStyle='rgba(255,255,255,'+a2*.9+')';scx.fillRect(x-1,y-1,2,2);
+   if(a<cols&&(a+b)%3===0){scx.strokeStyle='rgba(230,0,19,'+a2*.5+')';scx.beginPath();scx.moveTo(x,y);scx.lineTo(x+step,y);scx.stroke()}
+   if(b<rows&&(a*2+b)%4===0){scx.strokeStyle='rgba(255,255,255,'+a2*.3+')';scx.beginPath();scx.moveTo(x,y);scx.lineTo(x,y+step);scx.stroke()}
+ }
+}
+addEventListener('scroll',scanTick,{passive:true});scanTick();
 
 /* cursor glow */
 const gl=document.getElementById('glow');addEventListener('mousemove',e=>{gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px'});
