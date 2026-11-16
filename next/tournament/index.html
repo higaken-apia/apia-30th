@@ -44,7 +44,8 @@ footer.f .fl a:hover{color:var(--gold-hi)}
 .sl .s{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#1b1508,#070707);color:#7a735c;font-family:var(--disp);letter-spacing:.2em;font-size:12px;padding:14px;position:relative}
 .sl .s img{width:100%;height:100%;object-fit:cover}
 .sl .s small{position:absolute;left:10px;bottom:8px;color:#8a8470;font-size:10px;letter-spacing:.25em}
-.sl .dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:6px;justify-content:center;pointer-events:none}
+.sl .dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:4px;justify-content:center;z-index:3}.sl .dots i{cursor:pointer;padding:0;box-sizing:content-box;border:6px solid transparent;background-clip:padding-box}
+.sl .ar{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);color:#fff;font-size:18px;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center}.sl .ar:hover{background:var(--gold);color:#111;border-color:var(--gold)}.sl .ar.l{left:8px}.sl .ar.r{right:8px}.sl .tr{cursor:grab}.sl .tr.dg{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}.sl .s img{-webkit-user-drag:none;user-select:none}
 .sl .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3)}.sl .dots i.on{background:var(--gold)}
 .sl .n{position:absolute;right:8px;top:8px;background:rgba(0,0,0,.6);font-family:var(--disp);font-size:10px;letter-spacing:.15em;padding:2px 8px;border-radius:10px}
 .mode{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:100;background:#111;border:1px solid var(--gold);border-radius:40px;padding:6px;display:flex;gap:4px;box-shadow:0 8px 30px #000}
@@ -53,7 +54,12 @@ footer.f .fl a:hover{color:var(--gold-hi)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px;counter-reset:s}@media(max-width:800px){.steps{grid-template-columns:1fr 1fr}}
 .steps .card{counter-increment:s}.steps .card::before{content:"0" counter(s);font-family:var(--disp);color:var(--gold);font-size:28px;display:block}
 .vw{display:none}.vw.on{display:block}
-.cmp{width:100%;border-collapse:collapse;margin-top:26px;font-size:13px}.cmp td,.cmp th{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}.cmp th{background:#111;color:var(--gold)}</style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
+.cmp{width:100%;border-collapse:collapse;margin-top:26px;font-size:13px}.cmp td,.cmp th{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}.cmp th{background:#111;color:var(--gold)}
+/* hover: no gold */
+.btn.ghost:hover,.cta-row .btn.ghost:hover,.hashbox .cpy:hover{background:rgba(255,255,255,.12)!important;color:#fff!important}
+.sl .ar:hover{background:rgba(255,255,255,.2)!important;color:#fff!important;border-color:rgba(255,255,255,.6)!important}
+.phero .crumb a:hover,footer.f .fl a:hover{color:#fff!important}
+</style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
 <div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/" class="on">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
 <header class="phero"><div class="wrap"><div class="crumb"><a href="../">30TH</a> / BATTLE</div><h1>Online<br><i>Seabass Battle</i></h1><p class="sub">2027年秋、全国の釣り人で競うオンライン大会。<span class="draft">仮：内容は未定</span></p></div></header>
 
@@ -78,9 +84,17 @@ function phrase(root){const seg=(window.Intl&&Intl.Segmenter)?new Intl.Segmenter
   const ps=t.match(/[^、。！？）」]*[、。！？）」]*/g).filter(Boolean),out=[];
   ps.forEach(p=>{if(p.length<=13||!seg){out.push(p);return}let c='';for(const s of seg.segment(p)){if(c&&(c+s.segment).length>12){out.push(c);c=s.segment}else c+=s.segment}if(c)out.push(c)});
   if(out.length<2&&t.length<=13)return;const f=document.createDocumentFragment();out.forEach(p=>{if(!p.trim()){f.append(p);return}const sp=document.createElement('span');sp.className='ph';sp.textContent=p;f.append(sp)});n.replaceWith(f)})}
-document.querySelectorAll('p.lead,.rd p,.card p,li').forEach(phrase);
+document.querySelectorAll('p.lead,p.sub,.rd p,.card p,li').forEach(phrase);
 /* sliders */
-document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),ds=sl.querySelectorAll('.dots i'),nn=sl.querySelector('.n');if(!tr)return;
- tr.addEventListener('scroll',()=>{const i=Math.round(tr.scrollLeft/tr.clientWidth);ds.forEach((d,j)=>d.classList.toggle('on',j===i));if(nn)nn.textContent=(i+1)+' / '+ds.length},{passive:true})});
+document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),ds=[...sl.querySelectorAll('.dots i')],nn=sl.querySelector('.n');if(!tr)return;
+ const go=i=>{const n=ds.length;i=(i+n)%n;tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'})};
+ const cur=()=>Math.round(tr.scrollLeft/tr.clientWidth);
+ tr.addEventListener('scroll',()=>{const i=cur();ds.forEach((d,j)=>d.classList.toggle('on',j===i));if(nn)nn.textContent=(i+1)+' / '+ds.length},{passive:true});
+ sl.querySelector('.ar.l').onclick=e=>{e.stopPropagation();go(cur()-1)};sl.querySelector('.ar.r').onclick=e=>{e.stopPropagation();go(cur()+1)};
+ ds.forEach((d,j)=>d.onclick=e=>{e.stopPropagation();go(j)});
+ let dn=false,sx=0,sc=0,mv=false;tr.addEventListener('mousedown',e=>{dn=true;mv=false;sx=e.pageX;sc=tr.scrollLeft});
+ window.addEventListener('mousemove',e=>{if(!dn)return;const d=e.pageX-sx;if(Math.abs(d)>4){mv=true;tr.classList.add('dg')}if(mv)tr.scrollLeft=sc-d});
+ window.addEventListener('mouseup',()=>{if(!dn)return;dn=false;if(mv){tr.classList.remove('dg');go(cur())}});
+ tr.addEventListener('dragstart',e=>e.preventDefault())});
 </script><script>const MODE='simple';function setM(m){document.querySelectorAll('.vw').forEach(v=>v.classList.toggle('on',v.id==='v-'+m));document.querySelectorAll('.mode button').forEach(b=>b.classList.toggle('on',b.dataset.m===m))}
 document.querySelectorAll('.mode button').forEach(b=>b.onclick=()=>setM(b.dataset.m));setM(MODE);</script></body></html>
