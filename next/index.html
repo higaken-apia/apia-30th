@@ -403,7 +403,55 @@ p,li{text-wrap:pretty}
 .glt .r{display:block;color:var(--red);text-shadow:0 0 28px rgba(230,0,19,.55);animation:flk 4s infinite}@keyframes flk{0%,92%,100%{opacity:1}93%{opacity:.6;transform:translateX(3px)}95%{opacity:1;transform:translateX(-2px)}}
 .cnt{display:inline-flex;align-items:baseline;gap:10px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--gold);margin-bottom:16px}.cnt b{font-size:34px;color:var(--gold-hi);letter-spacing:.05em}
 @media(prefers-reduced-motion:reduce){.fxgrid,.fxbeam,.tki,.fxglow,.glt .r{animation:none!important}.bgimg{clip-path:none!important}}
-.bgimg.fj{object-fit:contain;width:min(58%,760px)}@media(max-width:860px){.bgimg.fj{width:100%;opacity:.45}}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}</style>
+.bgimg.fj{object-fit:contain;width:min(58%,760px)}@media(max-width:860px){.bgimg.fj{width:100%;opacity:.45}}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}.fsb{object-position:center 62%}
+/* history: free scroll */
+.hs{height:auto!important;padding:90px 0 70px!important}
+.hs .pin{position:relative!important;height:auto!important;overflow:hidden!important}
+.hs .track{overflow-x:auto;scroll-snap-type:x proximity;padding:16px 32px 20px!important;transform:none!important;scrollbar-width:none;cursor:grab;-webkit-overflow-scrolling:touch}.hs .track::-webkit-scrollbar{display:none}.hs .track.dg{cursor:grabbing;scroll-snap-type:none}
+.hs .hc{scroll-snap-align:start;user-select:none;-webkit-user-select:none}.hs .hc img{-webkit-user-drag:none}
+.hs .hprog{position:relative;z-index:2}
+.hnav{display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:16px 32px 0;position:relative;z-index:2;font-family:var(--disp);letter-spacing:.3em;font-size:10px;color:var(--mute)}
+.hnav button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.5);color:#fff;font-size:20px;cursor:pointer}.hnav button:hover{background:rgba(255,255,255,.14)}
+/* next 30 */
+.future::before{display:none!important}.future .now{display:none}
+.nx{position:relative;background:radial-gradient(60% 55% at 50% 40%,#15120b,#050505 72%)!important;padding:150px 0 160px!important}
+.nx .yr{font-family:var(--disp);font-weight:700;font-size:clamp(110px,28vw,400px);line-height:.95;color:transparent;-webkit-text-stroke:2px #5a5648;letter-spacing:.01em;font-variant-numeric:tabular-nums;transition:filter .6s}
+.nx .yr.lit{background:linear-gradient(180deg,#fff7d6,#e0b655 55%,#8c6a22);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:0;filter:drop-shadow(0 0 34px rgba(201,162,75,.55));animation:ypop .9s cubic-bezier(.2,1.4,.3,1)}
+@keyframes ypop{0%{transform:scale(.94)}60%{transform:scale(1.035)}100%{transform:none}}
+.nx .ring{position:absolute;left:50%;top:36%;width:18px;height:18px;border:2px solid rgba(243,220,154,.85);border-radius:50%;transform:translate(-50%,-50%) scale(0);opacity:0;pointer-events:none}.nx.go2 .ring{animation:ringx 1.5s ease-out}
+@keyframes ringx{0%{opacity:.9;transform:translate(-50%,-50%) scale(0)}100%{opacity:0;transform:translate(-50%,-50%) scale(70)}}
+.nx .ln{height:1px;width:0;background:linear-gradient(90deg,transparent,#e0b655,transparent);margin:30px auto 0;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}.nx.go2 .ln{width:min(520px,70%)}
+.nx .nxw{display:flex;gap:clamp(12px,3.4vw,44px);justify-content:center;flex-wrap:wrap;margin-top:30px}
+.nx .nxw span{font-family:var(--disp);letter-spacing:.22em;font-size:clamp(13px,2.1vw,24px);color:transparent;-webkit-text-stroke:1px #5a5648;opacity:.35;transform:translateY(12px);transition:opacity .6s,transform .6s,color .6s}
+.nx.go2 .nxw span{opacity:1;transform:none;color:#f3dc9a;-webkit-text-stroke:0;text-shadow:0 0 20px rgba(243,220,154,.35)}
+.nx.go2 .nxw span:nth-child(1){transition-delay:.5s}.nx.go2 .nxw span:nth-child(2){transition-delay:.85s}.nx.go2 .nxw span:nth-child(3){transition-delay:1.2s}
+/* stories */
+.sty{background:#080808;padding:100px 0}
+.sts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}@media(max-width:1000px){.sts{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.sts{grid-template-columns:1fr;gap:10px}}
+.stc{all:unset;box-sizing:border-box;cursor:pointer;position:relative;display:flex;flex-direction:column;gap:6px;border:1px solid var(--line);background:linear-gradient(180deg,#101010,#080808);padding:20px 20px 18px;min-height:250px;transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.stc:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.4)}.stc:focus-visible{outline:2px solid #fff}
+.stn{font-family:var(--disp);font-weight:700;font-size:56px;line-height:.95;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35)}
+.stj{font-family:var(--disp);letter-spacing:.3em;font-size:10px;color:var(--red);font-weight:700}
+.stt{font-family:var(--disp);font-size:clamp(18px,1.9vw,23px);letter-spacing:.04em;line-height:1.2;color:#fff}
+.stg{font-size:12.5px;line-height:1.75;color:#bdb9aa;flex:1}
+.stm{display:flex;justify-content:space-between;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:10px;margin-top:4px;font-size:11px;color:var(--mute)}.stm i{font-style:normal;font-family:var(--disp);letter-spacing:.14em;color:#fff;white-space:nowrap}.stm em{font-style:normal}
+.rdr{position:fixed;inset:0;z-index:300}.rdr[hidden]{display:none}.rbk{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(6px)}
+.rpn{position:absolute;left:50%;top:3vh;bottom:3vh;width:min(920px,94vw);transform:translateX(-50%);background:#0b0b0b;border:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;overflow:hidden}
+.rtop{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}.rtabs{display:flex;flex:1;overflow-x:auto;scrollbar-width:none}.rtabs::-webkit-scrollbar{display:none}
+.rtabs button{all:unset;cursor:pointer;box-sizing:border-box;padding:14px 18px;white-space:nowrap;font-family:var(--disp);letter-spacing:.12em;font-size:12px;color:var(--mute);border-right:1px solid var(--line);display:flex;gap:8px;align-items:center}.rtabs button b{color:var(--red)}.rtabs button.on{color:#fff;background:#151515}
+.rx{all:unset;cursor:pointer;width:54px;text-align:center;font-size:28px;color:#fff;flex:0 0 54px;display:flex;align-items:center;justify-content:center}.rx:hover{background:#1a1a1a}
+.rprog{height:2px;background:var(--line)}.rprog i{display:block;height:100%;width:0;background:var(--red)}
+.rbody{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:0 clamp(18px,4vw,48px)}
+.rin{max-width:720px;margin:0 auto;padding:36px 0 60px}.reb{font-family:var(--disp);letter-spacing:.3em;font-size:11px;color:var(--red);font-weight:700}
+.rh{font-size:clamp(20px,3vw,30px);line-height:1.5;font-weight:900;margin:10px 0 8px}.rtg{color:var(--gold-hi);font-weight:700;margin-bottom:6px}
+.rchips{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 8px}.rchips a{font-size:12px;border:1px solid var(--line);padding:5px 12px;border-radius:30px;color:#cfcdc4}.rchips a:hover{border-color:#fff;color:#fff}
+.rc{margin-top:34px}.rc h4{font-size:clamp(18px,2.4vw,22px);font-weight:900;margin-bottom:12px;padding-left:12px;border-left:3px solid var(--red)}
+.rc p{font-size:15.5px;line-height:2.05;color:#d8d6cd;margin-bottom:1em;text-align:justify;text-justify:inter-character;line-break:normal;text-wrap:wrap}
+.rcta{margin-top:34px;text-align:center}.rnx{margin-top:34px;border-top:1px solid var(--line);padding-top:22px;text-align:right}.rnx button{all:unset;cursor:pointer;font-family:var(--disp);letter-spacing:.1em;font-size:13px;color:#fff;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:3px}
+/* decoration cleanup */
+.fxglow,.fxbeam{display:none!important}.hc:hover{border-color:var(--line)!important}
+.fjr,.fdm{background:none!important}
+</style>
 </head>
 <body>
 <div class="bar" id="bar"></div>
@@ -448,8 +496,8 @@ p,li{text-wrap:pretty}
 <div class="stats">
   <div class="stat rv"><div class="n"><span data-to="1997" data-plain>0</span></div><div class="l">ジギングロッドからスタート</div></div>
   <div class="stat rv d1"><div class="n"><span data-to="30">0</span><small>YEARS</small></div><div class="l">現場発信のものづくり</div></div>
-  <div class="stat rv d2"><div class="n"><span data-to="52">0</span><small class="jp">シリーズ</small></div><div class="l">総シリーズ数</div></div>
-  <div class="stat rv d3"><div class="n"><span data-to="348">0</span><small class="jp">アイテム</small></div><div class="l">総アイテム数</div></div>
+  <div class="stat rv d2"><div class="n"><span data-to="52">0</span><small class="jp">シリーズ</small></div><div class="l">ロッド総シリーズ数</div></div>
+  <div class="stat rv d3"><div class="n"><span data-to="348">0</span><small class="jp">アイテム</small></div><div class="l">ロッド総アイテム数</div></div>
 </div>
 
 <!-- HISTORY horizontal -->
@@ -461,6 +509,7 @@ p,li{text-wrap:pretty}
     </div>
     <div class="track" id="track"></div>
     <div class="hprog"><i id="hp"></i></div>
+    <div class="hnav"><span>SWIPE / DRAG</span><button id="hprev" aria-label="前へ">‹</button><button id="hnext" aria-label="次へ">›</button></div>
   </div>
 </section>
 
@@ -470,12 +519,19 @@ p,li{text-wrap:pretty}
   <div class="v"><iframe src="https://player.vimeo.com/video/1090707240?background=1&autoplay=1&loop=1&muted=1#t=15s" allow="autoplay" title="APIA movie 2"></iframe><div class="t"><small>CRAFT</small>最高の品質を、追求し続ける。</div></div>
 </div>
 
+<!-- STORIES -->
+<section id="stories" class="sty"><div class="wrap"><div class="eyebrow rv">30 YEARS, 4 STORIES</div><h2 class="sec rv" style="margin-bottom:12px"><span class="ph">宇津木が綴る、</span><span class="ph">4つのストーリー。</span></h2><p class="lead rv" style="margin-bottom:30px">創業から、Foojin’、そして30周年へ。気になるストーリーを選んでください。</p><div class="sts"><button class="stc rv" data-i="0"><span class="stn">01</span><span class="stj">創業</span><b class="stt">THE ORIGIN</b><span class="stg">創業の原点。今につながるAPIAの始まり。</span><span class="stm"><em class="rt" data-i="0"></em><i>STORYを読む →</i></span></button><button class="stc rv" data-i="1"><span class="stn">02</span><span class="stj">Foojin’Z</span><b class="stt">FIELD DRIVEN DESIGN</b><span class="stg">フィールド特化という新しい発想。シーバスロッドのあり方を変えた初代Foojin'Z。</span><span class="stm"><em class="rt" data-i="1"></em><i>STORYを読む →</i></span></button><button class="stc rv" data-i="2"><span class="stn">03</span><span class="stj">Foojin’Z</span><b class="stt">THE NEW BLACK</b><span class="stg">Foojin’の原点を、現代のストリートカルチャーへ。</span><span class="stm"><em class="rt" data-i="2"></em><i>STORYを読む →</i></span></button><button class="stc rv" data-i="3"><span class="stn">04</span><span class="stj">Foojin’AD</span><b class="stt">WHAT ONCE MOVED US, RETURNS.</b><span class="stg">APIAのブランド形成に大きな影響を与えたFoojin’AD。その記憶と価値を現代に再構築する。</span><span class="stm"><em class="rt" data-i="3"></em><i>STORYを読む →</i></span></button></div></div></section>
+<div class="rdr" id="rdr" hidden><div class="rbk" id="rbk"></div><div class="rpn" role="dialog" aria-modal="true"><div class="rtop"><div class="rtabs" id="rtabs"></div><button class="rx" id="rx" aria-label="閉じる">×</button></div><div class="rprog"><i id="rpg"></i></div><div class="rbody" id="rbody"></div></div></div>
+
 <!-- FUTURE -->
-<section id="future" class="future">
+<section id="future" class="future nx">
+  <div class="ring"></div>
   <div class="wrap">
-    <div class="eyebrow rv" style="justify-content:center">NEXT 30</div>
-    <div class="now rv">2027</div>
-    <h2 class="sec rv" style="margin-top:36px">そして、未来へ。</h2>
+    <div class="eyebrow" style="justify-content:center">NEXT 30</div>
+    <div class="yr" id="yrc" aria-label="2027">1997</div>
+    <div class="ln"></div>
+    <div class="nxw"><span>NEW MATERIAL</span><span>NEW TECHNOLOGY</span><span>NEW FIELD</span></div>
+    <h2 class="sec rv" style="margin-top:44px">そして、未来へ。</h2>
     <p class="rv">新しい素材、新しい技術、新しいフィールド。アピアはこれからも、アングラーとともに進化し続けます。</p>
   </div>
 </section>
@@ -621,7 +677,7 @@ pjEl.innerHTML=J.map(j=>`<a href="#community" class="rv"><div class="no">${j[0]}
 const E=[["YOKOHAMA","2027/1/22-24","釣りフェス 2027 ／ みなとみらいパシフィコ横浜",[139.64,35.46]],
 ["OSAKA","2027/2/5-7","APIAギャラリーイベント ／ APIA新町ベース",[135.50,34.69]],
 ["KITAKYUSHU","2027/3/20-21","西日本釣り博2027 ／ 西日本総合展示場",[130.88,33.89]]];
-if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))document.getElementById('evs').innerHTML=E.map(e=>`<div class="evc rv"><div class="mpw"><canvas class="mp" data-lo="${e[3][0]}" data-la="${e[3][1]}"></canvas></div><div class="tx"><div class="ct">${e[0]}</div><div class="dt">${e[1]}</div><div class="nm">${e[2]}</div></div></div>`).join('');
+if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))if(document.getElementById('evs'))document.getElementById('evs').innerHTML=E.map(e=>`<div class="evc rv"><div class="mpw"><canvas class="mp" data-lo="${e[3][0]}" data-la="${e[3][1]}"></canvas></div><div class="tx"><div class="ct">${e[0]}</div><div class="dt">${e[1]}</div><div class="nm">${e[2]}</div></div></div>`).join('');
 
 
 /* ---------- events: dotted regional map (original design, no external map data) ---------- */
@@ -668,15 +724,15 @@ function onScroll(){
  const h=document.documentElement,y=scrollY;
  document.getElementById('bar').style.width=(y/(h.scrollHeight-innerHeight)*100)+'%';
  // horizontal
- const r=hs.getBoundingClientRect(),total=hs.offsetHeight-innerHeight,p=Math.min(Math.max(-r.top/total,0),1);
- const dist=tr.scrollWidth-innerWidth+32;tr.style.transform=`translateX(${-dist*p}px)`;hp.style.width=(p*100)+'%';
+ const p=tr.scrollWidth>tr.clientWidth?tr.scrollLeft/(tr.scrollWidth-tr.clientWidth):0;hp.style.width=(p*100)+'%';
  const mid=innerWidth*.5;let c=null;
  for(const el of cards){const b=el.getBoundingClientRect();if(b.left<mid&&b.right>0){if(el.dataset.ch)curCh=el.dataset.ch;if(el.dataset.y)c=el.dataset.y}}
  if(c&&yrb.textContent!==c)yrb.textContent=c;chn.textContent=curCh;
  // parallax
  document.querySelectorAll('[data-parallax]').forEach(im=>{const b=im.parentElement.getBoundingClientRect();im.style.transform=`translateY(${b.top*-.08}px) scale(1.04)`});
 }
-addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+addEventListener('scroll',onScroll,{passive:true});tr.addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+(function(){let dn=false,sx=0,sl=0,mv=false;tr.addEventListener('mousedown',e=>{dn=true;mv=false;sx=e.pageX;sl=tr.scrollLeft});addEventListener('mousemove',e=>{if(!dn)return;const d=e.pageX-sx;if(Math.abs(d)>4){mv=true;tr.classList.add('dg')}if(mv)tr.scrollLeft=sl-d});addEventListener('mouseup',()=>{dn=false;tr.classList.remove('dg')});const st=()=>tr.clientWidth*.7;document.getElementById('hprev').onclick=()=>tr.scrollBy({left:-st(),behavior:'smooth'});document.getElementById('hnext').onclick=()=>tr.scrollBy({left:st(),behavior:'smooth'})})();
 
 /* ---------- scan: ROD TECHNOLOGY (出典: apiajapan.com/s/rod/foojin-z-6th/) ---------- */
 const FZ='https://www.apiajapan.com/static/assets/images/foojin-z-2025/';
@@ -811,5 +867,31 @@ document.querySelectorAll('p,li,h3,h4,.cap,.l,.nm,.lead,.copy,.tag,.cdesc').forE
 </script>
 <script>(function(){document.querySelectorAll('.fxs').forEach(s=>{
 new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){s.classList.add('go');o.disconnect();const c=s.querySelector('[data-count]');if(c){const T=+c.dataset.count;let n=0;const t=setInterval(()=>{n++;c.textContent=String(n).padStart(2,'0');if(n>=T)clearInterval(t)},90)}}},{threshold:.15}).observe(s);
-if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})})();</script></body>
+if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})})();</script><script>(function(){
+const D=[{"t": "THE ORIGIN", "jp": "創業", "sub": "創業の原点。今につながるAPIAの始まり。", "tag": "", "ch": [{"h": "運命を変えた一冊の雑誌", "p": ["1990年代、釣りに夢中だった20代前半の頃。たまたま雑誌で目にした、茂木陽一さんが紹介するスーパーディープジギングに衝撃を受けました。", "そこには、奄美大島で水深100m以上から、10kgを超える巨大なカンパチを釣るという記事が掲載されていました。当時はまだ新素材ラインと呼ばれていたPEライン。その伸び率はナイロンラインなどと比べて極めて小さく、水深100mを超えるディープエリアを攻略できる画期的な釣法でした。", "当時の自分は、さまざまなルアーフィッシングに興味を持ち、メジロやハマチのジギングにも夢中になっていました。そんな自分にとって、10kgオーバーのカンパチをジギングで釣るという世界は、あまりにも魅力的でした。", "「自分も10kgオーバーのカンパチを釣りたい！」", "そう思い立ち、とりあえずワールドマリン奄美へ向かいましたが、当時持っていたタックルではまったく歯が立ちませんでした。", "帰ってから、持っていたお金をほとんど使うくらいの勢いでタックルを揃え、再びワールドマリン奄美へ。そして、13kgのカンパチをキャッチすることができました。", "今思えば、あの雑誌との出会い、そして2回目の挑戦で実際にカンパチを釣ってしまったことが、自分の人生を大きく変えるきっかけになりました。"]}, {"h": "奄美に集まったレジェンドたち", "p": ["当時は今とは比べ物にならないくらい魚はいっぱいいて、100m以深ではメタルジグを見たことがない魚たちで溢れていた時代でした。", "ワールドマリン奄美では、茂木陽一さんをはじめ、キャプテンの工藤さん、クルーの山下一美さんなど、多くの方からたくさんのことを学びました。", "REDともワールドマリンがきっかけで知り合いましたし、茂木さんから「釣りの天才少年」と紹介されたのが、当時の鈴木斉くんでした。", "今やGTルアーの世界的なカリスマブランドとなったカーペンターさんも、ワールドマリンから生まれました。永井誠一さん、中村豪さん、平松慶さんなど、現在の釣り界を代表するレジェンドたちは皆奄美に集まっていました。", "振り返ってみても、本当にすごい時代だったと思います。"]}, {"h": "常識を覆した改造バスロッド", "p": ["そんな頃、久保浩一さんが奄美で48kgのカンパチを釣り上げたというニュースが流れました。しかも、使用したロッドは自分で改造したバスロッドだというのです。", "それまでスーパーディープジギングといえば、GTロッドに近い8フィート以上のロッドで、200〜300gくらいのメタルジグをしゃくっていました。とにかく重労働でしたし、それでもロッドはボキボキとよく折れました。", "そんな中、バスロッドでスーパーディープジギングを行い、しかも特大のカンパチをキャッチしたという話は、自分の常識は完全に吹っ飛び、そのロッドと釣り方に強烈に興味が湧きました。", "すぐに知り合いを通じて久保さんを紹介してもらい、自宅に押しかけてロッド作りを教えてもらいました。", "久保さんに教えてもらった通り、最初はバスロッドの改造から始まり、その後、アメリカからブランクを輸入してオリジナルロッドを製作するようになりました。その頃にはすっかりベイトタックルでのディープジギングにのめり込んでいました。"]}, {"h": "自分と仲間のためにロッドを作る", "p": ["REDやほかの仲間たちからもロッドを作ってほしいと依頼されるようになり、1997年8月、気付けば会社を登記し、APIAがスタートしていました。", "「よし、起業しよう！」と大きな決意をして始めたわけではありません。", "自分が夢中になってロッドを作り、そのロッドにブランド名を付ける。そんな感覚に近いスタートアップでした。", "その後、REDをはじめ数人の仲間でチームを作り、さまざまな場所に遠征釣行へ行きました。", "当時は、日本中まだまだディープジギングをやっていない所だらけだったので、徳之島や南西諸島、北海道、小笠原など、大抵の場所はすごく釣れました。IGFA世界記録を1つ、JGFA日本記録を4つ取ったのもその頃です。", "中でも小笠原は本当によく釣れたので何度も通いました。", "REDとは同じチームで何度も遠征に行きましたが、その頃から彼は特別でした。いつもデカいのを釣っていたし、彼自身も複数の日本記録を持っていました。", "APIAのロッドも、最初はハンドメイドからのスタートでした。その後、国内のロッド工場をいくつも訪ね、オリジナルブランクを製作してもらうようになり、釣り方や求められる性能に合わせて、少しずつ進化していきました。"]}, {"h": "そして、もう一度原点へ", "p": ["50歳まであと数年となった頃、ふと、自分が本当にやりたい釣り、そして若い頃にやりたかった釣りは何だったのかと考えるようになりました。", "APIAを創業した頃の、あのジギングに夢中になっていた時代。", "自分にとってあの頃の経験はやはり特別なもので、今でもフィールドに立つと、巨魚に魅せられたあの頃と同じ気持ちになっています。"]}], "cta": null}, {"t": "FIELD DRIVEN DESIGN", "jp": "Foojin’Z", "sub": "フィールド特化という新しい発想。シーバスロッドのあり方を変えた初代Foojin'Z。", "tag": "", "ch": [{"h": "APIAの原点", "p": ["APIAの始まりは、自宅の一室でロッドを組み立てるところからでした。", "そして、その約1年後となる1997年。奈良県の片隅に小さな事務所を構え、有限会社アピアを設立しました。", "01 | ORIGINでも触れましたが、創業当初のAPIAはオフショアロッド専門メーカー。なかでもジギングロッドを主力としていました。", "当時、プロスタッフのRED（中村祐介）とは、まだAPIAを立ち上げる前からのジギング仲間。奄美大島、トカラ列島、小笠原、北海道など、国内のさまざまなフィールドへ一緒に遠征していました。気がつけば、もう30年以上の付き合いになります。"]}, {"h": "Foojin’goから始まったシーバスへの挑戦", "p": ["2000年頃にはシーバスにもよく行っていました。", "私はジギングと同じように、さぁこれからはPEラインが主流になるぞ！と思っていたのですが、ジギングと違ってシーバスロッドはキャスティングの快適さがとても重要です。そんな中、登場したばかりの全く異質なこのPEラインには、シーバスアングラーの間では賛否がありました。", "ロッドが対応していなかったので、PEでキャストするとトラブルが連発しました。ただ強度と絶対的な感度は比べるまでもなかったので、これだけ性質の違うラインなら当然ブランクもそれに合わせて作る必要があると思っていました。", "そう考え始めると、ああしたらこうしたらと色々とアイデア浮かんできます。気が付けばシーバスロッドの試作品を作っていました。", "その後、取引のある問屋さんや小売店の担当者に、シーバスロッドにチャレンジしようと思っていると話しました。", "すると高額なシーバスロッドでは、あの3つのブランドには絶対敵わない。やめとけと何回か言われました。それでもPEラインの出現で、シーバスシーンは大きく変わるはずだとの確信もありました。", "そして2002年。APIA初のシーバスロッド『Foojin’go（風神号）』をリリースします。現在まで続くフウジンシリーズの原点です。", "風神号はキャスティング性能を重視して開発したロッドでした。もちろんPEラインを使ってもトラブルは極力出ないようにセッティングしました。", "当時ある雑誌で各社のロッドを投げ比べして飛距離を検証するという企画がありました。確か18グラムと28グラムを投げて何メートル飛ぶかという、今の雑誌なら絶対に考えられない、YouTubeみたいな企画でした。そしてどちらのウェイトでも2位の飛距離だったFoojin’goは、関東では知る人ぞ知るロッドになっていきました。"]}, {"h": "村岡昌憲との出会い", "p": ["この頃、ちょうどRED自身もシーバスフィッシングへと活動の軸を移していました。", "東京エリアで若手のシーバステスターを探していた私は、REDに相談してみることにしました。", "「会ったことはないけど、村岡くんという子がネットを使った活動で知名度を上げてきているよ」", "REDから返ってきたのは、そんな答えでした。", "早速、雑誌社を通じて村岡さんにコンタクトを取ってもらいました。すると、返ってきたのは実に率直な言葉でした。", "村岡：「Foojin’goを送ってください。いいと思ったら協力します。自分がいいと思わないものは使えないので」", "早速、Foojin’goの全3機種を送りました。", "それから約1か月後、村岡さんから連絡がありました。", "村岡：「めちゃくちゃ飛びますね。びっくりしました。いつもフルキャストしていた川幅を楽にオーバーして、対岸にルアーを引っ掛けてしまうんです。テスターを引き受けますよ」", "そして、続けてこんな提案がありました。", "村岡：「僕がメインフィールドにしている東京湾奥に特化したロッドが欲しいので、作りませんか？」", "私：「東京湾奥（ワンオク）？」", "村岡：「正しくはワンオウと呼ぶんですが、自分はワンオクと呼んでいます。これからは東京湾奥がシーバスの聖地となります。今から勝負をかけましょう」", "さらに", "村岡：「これからは絶対にPEラインです。PEでキャストしてトラブらないことが絶対条件です。」", "まだシーバス業界では新参者だった私ですが、この村岡さんの言葉には迷いなく乗ることができました。", "「やりましょう！」", "こうして翌2003年、シーバスロッドとしてはおそらく初めて、フィールドや釣りのスタイルに特化したシリーズ『Foojin’Z』が誕生することになります。"]}, {"h": "フィールドに特化するという発想", "p": ["ルアーではなく、フィールドに合わせてロッドを作る。", "今では当たり前のように感じるかもしれませんが、当時のシーバスロッドには、まだあまりなかった発想でした。", "そして、このシリーズにラインナップする個性的なモデルたちには、それぞれペットネームを付けることにしました。", "ところが、いざ名前を考え始めるとなかなか進まない。初めてのことでもあり、頭を悩ませていました。", "そこでREDに相談してみると、", "RED：「東京湾で使うなら都会っぽい名前がいいっすね。ブラック・サバスというバンドに『Neon Knights』って曲があるんですが、どうっすか？」", "私：「めちゃくちゃカッコええやん！そのままではあれなので、Sを取って『NEON KNIGHT』にしよう！」", "そんなやり取りから、最初のモデル名が決まりました。", "するとREDからも具体的なアイデアが飛び出します。", "RED：「そしたら自分も作って欲しいモデルがあります。これから東京湾の干潟では、ウェーディングが絶対にスタンダードになってきます。ウェーディングで使いやすいスペックに特化しましょう！」", "さらに、", "RED：「あと、那珂川でどうしてもパワーファイトが必要なポイントがあるんです。おそらく全国にもこういう場所はいっぱいあるはずなので、ランカーに絞ったパワーファイト用のモデルはどうですか？」", "こうして、3人の頭の中で少しずつFoojin’Zの全貌が形になっていきました。", "当時のブラックバスロッドには、ピッチング専用やクランキング専用など、釣り方に応じた専用設計がすでに存在していました。", "しかし、オカッパリでラン＆ガンを基本とするシーバスフィッシングでは、フィールドやシチュエーションそのものに特化させるという発想は、まだ新しいものでした。", "その考え方を具体的に提案してくれたのが、後にシーバスフィッシング界を代表する存在となる、若き日の村岡昌憲とRED中村だったのです。", "このとき私は、大袈裟ではなく、新しい世代によるシーバスシーンの夜明けを感じていました。"]}, {"h": "3本から始まったFoojin’Z", "p": ["そして2003年、初代Foojin’Zは3機種でスタートします。", "【NEON KNIGHT 83L】", "村岡昌憲プロデュース。東京湾奥の釣りに特化したモデル。", "【FLOW HUNT 93ML】", "RED中村プロデュース。干潟でのウェーディングに特化したモデル。", "【BEAST BRAWL 86MH】", "RED中村プロデュース。ランカーシーバスとのパワーファイトに特化したモデル。", "この3本から始まったFoojin’Zは、その後も20年以上にわたって進化を続けることになります。", "現在では、シーバスロッドとしては最も長く継続しているシリーズの一つになったのではないでしょうか。", "もちろん、2003年のあの頃、私たちはそんな未来を想像もしていませんでした。", "ただ、目の前にあるフィールドをどう攻略するか。そのために、どんなロッドが必要なのか。", "REDと村岡さん、そして私。当時3人で交わした会話の中に、Foojin’Zの原点がありました。", "今振り返っても、あの頃のやり取りは、つい先日のことのように思い出されます。"]}], "cta": null}, {"t": "THE NEW BLACK", "jp": "Foojin’Z", "sub": "Foojin’の原点を、現代のストリートカルチャーへ。", "tag": "", "ch": [{"h": "アピアの原点", "p": ["アピアの始まりは、自宅の一室でロッドを組み立てるところからでした。", "そして、その約1年後となる1997年。奈良県の片隅に構えた小さな事務所で、有限会社アピアは産声を上げました。", "ご存じの方も多いと思いますが、創業当初のアピアはオフショアロッド専門メーカー。なかでもジギングロッドを主力としていました。", "当時、プロスタッフのRED（中村祐介）とは、まだアピアを立ち上げる前からのジギング仲間。奄美大島、トカラ列島、小笠原、北海道など、国内のさまざまなフィールドへ一緒に遠征していました。気がつけば、もう30年以上の付き合いになります。"]}, {"h": "Foojin’goから始まったシーバスへの挑戦", "p": ["そんなアピアが、初めてシーバスロッドに挑戦したのが2002年。『Foojin’go（風神号）』のリリースでした。現在まで続くフウジンシリーズの原点です。", "この頃、偶然にもRED自身もシーバスフィッシングへと活動の軸を移していました。", "東京エリアで若手のシーバステスターを探していた私は、REDに相談してみることにしました。", "「会ったことはないけど、村岡くんという子がネットを使った活動で知名度を上げてきているよ」", "REDから返ってきたのは、そんな答えでした。", "早速、雑誌社を通じて村岡さんにコンタクトを取ってもらいました。すると、返ってきたのは実に率直な言葉でした。", "村岡：「Foojin’goを送ってください。いいと思ったら協力します。自分がいいと思わないものは使えないので」", "早速、Foojin’goの全3機種を送りました。", "それから約1か月後、村岡さんから連絡がありました。", "村岡：「めちゃくちゃ飛びますね。びっくりしました。いつもフルキャストしていた川幅を楽にオーバーして、対岸にルアーを引っ掛けてしまうんです。テスターを引き受けます」", "そして、続けてこんな提案がありました。", "村岡：「僕がメインフィールドにしている東京湾奥に特化したロッドが欲しいので、作りませんか？」", "私：「東京湾奥（ワンオク）？」", "村岡：「正しくはワンオウと呼ぶんですが、自分はワンオクと呼んでいます。これからは東京湾奥がシーバスの聖地となります。今から勝負をかけましょう」", "当時の私にとって、これはかなり衝撃的な話でした。", "それまでシーバスフィッシングの聖地といえば、湘南サーフというイメージを持っていたからです。", "まだシーバス業界では新参者だった私ですが、村岡さんの言葉には迷いなく乗ることができました。", "「やりましょう！」", "こうして翌2003年、シーバスロッドとしてはおそらく初めて、フィールドや釣りのスタイルに特化したシリーズ『Foojin’Z』が誕生することになります。"]}, {"h": "フィールドに特化するという発想", "p": ["ルアーではなく、フィールドに合わせてロッドを作る。", "今では当たり前のように感じるかもしれませんが、当時のシーバスロッドには、まだあまりなかった発想でした。", "そして、このシリーズにラインナップする個性的なモデルたちには、それぞれペットネームを付けることにしました。", "ところが、いざ名前を考え始めるとなかなか進まない。初めてのことでもあり、頭を悩ませていました。", "そこでREDに相談してみると、", "RED：「東京湾で使うなら都会っぽい名前がいいっすね。ブラック・サバスというバンドに『Neon Knights』って曲があるんですが、どうっすか？」", "私：「めちゃくちゃカッコええやん！そのままではあれなので、Sを取って『NEON KNIGHT』にしよう！」", "そんなやり取りから、最初のモデル名が決まりました。", "するとREDからも具体的なアイデアが飛び出します。", "RED：「そしたら自分も作って欲しいモデルがあります。これから東京湾の干潟では、ウェーディングが絶対にスタンダードになってきます。ウェーディングで使いやすいスペックに特化しましょう！」", "さらに、", "RED：「あと、那珂川でどうしてもパワーファイトが必要なポイントがあるんです。おそらく全国にもこういう場所はいっぱいあるはずなので、ランカーに絞ったパワーファイト用のモデルはどうですか？」", "こうして、3人の頭の中で少しずつFoojin’Zの全貌が形になっていきました。", "当時のブラックバスロッドには、ピッチング専用やクランキング専用など、釣り方に応じた専用設計がすでに存在していました。", "しかし、オカッパリでラン＆ガンを基本とするシーバスフィッシングでは、フィールドやシチュエーションそのものに特化させるという発想は、まだ新しいものでした。", "それを提案してくれたのが、後にシーバスフィッシング界を代表する存在となる、若き日の村岡昌憲とRED中村だったのです。", "このとき私は、大袈裟ではなく、新しい世代によるシーバスシーンの夜明けを感じていました。"]}, {"h": "3本から始まったFoojin’Z", "p": ["そして2003年、初代Foojin’Zは3機種でスタートします。", "【NEON KNIGHT 83L】", "村岡昌憲プロデュース。東京湾奥の釣りに特化したモデル。", "【FLOW HUNT 93ML】", "RED中村プロデュース。干潟でのウェーディングに特化したモデル。", "【BEAST BRAWL 86MH】", "RED中村プロデュース。ランカーシーバスとのパワーファイトに特化したモデル。", "この3本から始まったFoojin’Zは、その後も20年以上にわたって進化を続けることになります。", "現在では、シーバスロッドとしては最も長く継続しているシリーズの一つになったのではないでしょうか。", "もちろん、2003年のあの頃、私たちはそんな未来を想像もしていませんでした。", "ただ、目の前にあるフィールドをどう攻略するか。そのために、どんなロッドが必要なのか。", "REDと村岡さん、そして私。当時3人で交わした会話の中に、Foojin’Zの原点がありました。", "今振り返っても、あの頃のやり取りは、つい先日のことのように思い出されます。"]}], "cta": ["FS限定アイテムを見る", "fs2027/#merch"]}, {"t": "WHAT ONCE MOVED US, RETURNS.", "jp": "Foojin’AD", "sub": "APIAのブランド形成に大きな影響を与えたFoojin’AD。その記憶と価値を現代に再構築する。", "tag": "〜かつて僕らを動かしたものが、帰ってくる。", "ch": [{"h": "52シリーズ、348アイテムの歴史", "p": ["APIAの30年の歩みの中で、私たちは実に数多くのロッドをリリースしてきました。", "あらためて振り返り、数えてみたところ、52シリーズ、348アイテムにものぼります。", "それぞれのシリーズに、それぞれのストーリーがあります。その中でも、私自身にとって、そして株式会社アピアにとって、ひときわ思い入れの深いシリーズがFoojin’ADです。"]}, {"h": "APIAが大きく変わった2011年", "p": ["1997年、ジギングロッドからスタートしたAPIAは、2002年のシーバスロッドのリリースを機に、ショアロッドへと舵を切りました。", "村岡昌憲、RED中村、濱本国彦。現在ではレジェンドと呼ばれる彼らとともに、フィールドから生まれる発想を形にし、アングラーが本当に求める専用アイテムを作り上げてきました。", "そして、APIAにとって大きな転機となったのが2011年です。", "当時、APIAにはさまざまな才能が集まり始めていました。", "現在のAPIAロゴが誕生したのも、この年です。APIAロゴからロッドのロゴに至るまで、APIAにとって重要なグラフィックデザインは、2011年から現在に至るまで同じデザイナーさんが手掛けています。", "そして、同年にリリースしたFoojin’ADをきっかけに、当時まだ黎明期にあったYouTubeで「APIA TV」の配信をスタートしました。", "当時のAPIA TVのクリエーター”クリボー”は、ひとことで言えばとにかくルーズ。遅刻はするし、すぐ連絡はつかなくなるし。", "ただしセンスは抜群！！", "今でもREDと松尾さんが出演したATV.2を最初に見た時の衝撃は忘れられません！私自身、釣りの動画を初めてカッコいいと思ったくらいでした。", "クリボーはフレームレートをわざと映画と同じ24コマに落とし（通常は30〜60コマ）、独特のねっとりとした映像に仕上げたりしていました。その後のタッグバトルをはじめとする、初期の映像コンテンツはクリボーが手掛けた物です。", "配信当時、「あの映像を作ったクリエーターを紹介してほしい」という問い合わせもあったくらいだったので、APIA TVが業界に与えた影響は、少なからずあったと思います。", "他にもAPIA TVのためのオリジナル楽曲を、宇多田ヒカルのツアーDJや、ナイキのCMのトラックなどを担当した”DJ UPPERCUT”さんに制作していただいたり、ロッドを作って売るだけではない、新しいブランドのあり方に挑戦していました。", "振り返れば、あの頃の取り組みは、シーバスフィッシングの世界における、APIAの存在感を大きく押し上げた時代だったと思います。"]}, {"h": "アングラーの記憶に残るFoojin’AD", "p": ["今でも、アピアのアンバサダーやユーザーの方々から、「Foojin’ADをきっかけにシーバスフィッシングにのめり込んだ」という話を耳にすることがあります。", "それは、私たちにとって何よりもうれしいことです。", "ロッドの設計においても、ランカーシーバスを獲ることを強く意識したブランクに四軸カーボンを採用し、全モデルにコルクグリップを採用するなど、当時のシーバスロッドにはない自由な発想で、尖ったスペックを次々と形にしていきました。", "そうした既成概念にとらわれないものづくりも、Foojin’ADが当時トップランナーとして支持された大きな要因だったと思います。", "ちなみに、現在のAPIAロッドを象徴する帯デザインも、このFoojin’ADから始まりました。", "そういえばFoojin’ADには、私の中で忘れられないエピソードが2つあります。", "ビーストブロウルやエンゼルシューターのテストを担当していた濱本さんですが、初めて企画からテストまで完全監修したナチュラルセブン77MHは、このFoojin’ADから生まれました。", "正直最初に企画を聞いたとき、こんなニッチなスペックが売れるんだろうかと思っていました。（松尾さんからヴァンクールの企画を聞いた時も同じことを思っていました）", "ただあまりにも熱く語る濱本さんに根負けした私は、その後ナチュラルセブンの開発を始めました。", "ただこのナチュラルセブンは私の予想に反して、ADの中で2番目に売れた年もあったくらいでした。", "もう一つは、2011年にFoojin’ADを初めてリリースした2年後、追加モデルとしてナチュラルセブン77MH、ヴァンクール92H、ハイローラー104MLをリリースしました。", "開発段階でネーミングを決める際、ナチュラルセブンは決めていたのですが、他の2つはどちらに付けるか迷っていました。そして村岡さんと松尾さんそれぞれに、", "「VANCOOR（フランス語で勝者）とHIGH ROLLER（カジノで高額ベットするギャンブラー）どっちがいいですか？」と聞きました。", "すると村岡さんはハイローラー、松尾さんはヴァンクールと見事に分かれ、すんなりと決定しました。", "共に今の6代目ゼータでも続く人気モデルで、特にハイローラーは村岡さんの代名詞のような存在ですが、もしかしたら逆の名前になっていかもしれません。"]}, {"h": "役目を終えても、残り続けるもの", "p": ["語り始めれば尽きることのないFoojin’ADですが、2021年、TORAYCA第3世代カーボンの採用を機に、APIAには2度目の大きな転機が訪れます。", "フラッグシップシリーズは5代目Foojin’Zへと進化し、2011年の登場から10年にわたって展開してきたFoojin’ADは、その役割を終えることとなりました。", "しかし、シリーズとしての役割を終えたからといって、Foojin’ADがAPIAに残したものまで過去のものになったわけではありません。"]}, {"h": "30周年、Foojin’ADが再び帰ってくる", "p": ["2027年、APIAは創業30周年を迎えます。", "この節目に、私自身の思い入れはもちろん、今なお多くのアングラーに愛されるFoojin’ADを、もう一度形にしたいと考えました。", "今回の記念モデルでは、Foojin’ADの名を冠しながら、現在のAPIAが誇る素材と技術を投入したブランクを組み合わせました。", "単なる復刻ではありません。", "APIAの歴史を象徴するシリーズに、私たちがこの30年で積み重ねてきた技術と、これから目指すものを込めた記念モデルです。"]}, {"h": "そして、次の30年へ", "p": ["これからも私たちは、最高基準を追求し、革新に挑み続けます。", "そして、その研鑽の先にこそ、私たちが追い求める「Angler’s Utopia（アングラーズユートピア）」があると信じています。", "かつて僕らを動かしたものが、帰ってくる。", "それは過去に戻るためではなく、これからのAPIAを動かすために。"]}], "cta": ["Foojin’AD 特設ページへ", "foojin-ad/"]}];const $=id=>document.getElementById(id);const rdr=$('rdr'),body=$('rbody'),tabs=$('rtabs');
+const esc=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+document.querySelectorAll('.rt').forEach(e=>{const d=D[+e.dataset.i];const n=d.ch.reduce((a,c)=>a+c.h.length+c.p.join('').length,0);e.textContent='約'+Math.max(1,Math.round(n/550))+'分で読めます'});
+tabs.innerHTML=D.map((d,i)=>'<button data-i="'+i+'"><b>'+String(i+1).padStart(2,'0')+'</b><span>'+d.t+'</span></button>').join('');
+function show(i){const d=D[i];tabs.querySelectorAll('button').forEach((b,j)=>b.classList.toggle('on',j===i));
+ let h='<div class="rin"><div class="reb">'+String(i+1).padStart(2,'0')+' ｜ '+esc(d.t)+'</div><h3 class="rh">'+esc(d.sub)+'</h3>'+(d.tag?'<p class="rtg">'+esc(d.tag)+'</p>':'');
+ h+='<div class="rchips">'+d.ch.filter(c=>c.h).map((c,k)=>'<a href="#" data-k="'+k+'">'+esc(c.h)+'</a>').join('')+'</div>';
+ d.ch.forEach((c,k)=>{h+='<section class="rc" id="rc'+k+'">'+(c.h?'<h4>'+esc(c.h)+'</h4>':'')+c.p.map(p=>'<p>'+esc(p)+'</p>').join('')+'</section>'});
+ if(d.cta)h+='<div class="rcta"><a class="btn red" href="'+d.cta[1]+'">'+d.cta[0]+'</a></div>';
+ h+='<div class="rnx">'+(i<D.length-1?'<button data-n="'+(i+1)+'">次のストーリー　'+String(i+2).padStart(2,'0')+' '+esc(D[i+1].t)+' →</button>':'')+'</div></div>';
+ body.innerHTML=h;body.scrollTop=0;$('rpg').style.width='0'}
+function open(i){show(i);rdr.hidden=false;document.documentElement.style.overflow='hidden'}
+function close(){rdr.hidden=true;document.documentElement.style.overflow=''}
+document.querySelectorAll('.stc').forEach(b=>b.onclick=()=>open(+b.dataset.i));
+tabs.onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i)};
+$('rx').onclick=$('rbk').onclick=close;addEventListener('keydown',e=>{if(e.key==='Escape'&&!rdr.hidden)close()});
+body.addEventListener('click',e=>{const a=e.target.closest('a[data-k]');if(a){e.preventDefault();const t=document.getElementById('rc'+a.dataset.k);body.scrollTo({top:t.offsetTop-70,behavior:'smooth'})}const n=e.target.closest('button[data-n]');if(n)show(+n.dataset.n)});
+body.addEventListener('scroll',()=>{const m=body.scrollHeight-body.clientHeight;$('rpg').style.width=(m>0?body.scrollTop/m*100:0)+'%'},{passive:true});
+})();
+/* NEXT 30 */
+(function(){const sec=document.getElementById('future'),y=document.getElementById('yrc');if(!sec||!y)return;
+const done=()=>{y.textContent='2027';y.classList.add('lit');sec.classList.add('go2')};
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){done();return}
+new IntersectionObserver((es,o)=>{if(!es[0].isIntersecting)return;o.disconnect();const t0=performance.now(),T=2400;
+(function f(t){const p=Math.min((t-t0)/T,1),e=1-Math.pow(1-p,3);y.textContent=String(1997+Math.round(30*e));if(p<1)requestAnimationFrame(f);else done()})(t0)},{threshold:.35}).observe(sec)})();
+</script></body>
 </html>
