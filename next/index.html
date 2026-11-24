@@ -585,6 +585,9 @@ html,body{overflow-x:clip}
  .s2-rpn{border:0}.s2-chap .s2-cn{font-size:60px}.s2-go{min-width:0;width:100%}
 }
 
+#stories .s2-go{background:transparent;border:1px solid var(--red);color:#fff;transition:background .3s,border-color .3s}
+#stories .s2-ft:hover .s2-go,#stories .s2-cd:hover .s2-go,#stories .s2-ft:focus-visible .s2-go,#stories .s2-cd:focus-visible .s2-go{background:var(--red);border-color:var(--red)}
+@media(max-width:900px),(hover:none){#stories .s2-go,#stories .s2-ft:hover .s2-go,#stories .s2-cd:hover .s2-go{background:var(--red);border-color:var(--red)}}
 </style>
 </head>
 <body>
