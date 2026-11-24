@@ -589,6 +589,126 @@ html,body{overflow-x:clip}
 #stories .s2-go{background:transparent;border:1px solid var(--red);color:#fff;transition:background .3s,border-color .3s}
 #stories .s2-ft:hover .s2-go,#stories .s2-cd:hover .s2-go,#stories .s2-ft:focus-visible .s2-go,#stories .s2-cd:focus-visible .s2-go{background:var(--red);border-color:var(--red)}
 @media(max-width:900px),(hover:none){#stories .s2-go,#stories .s2-ft:hover .s2-go,#stories .s2-cd:hover .s2-go{background:var(--red);border-color:var(--red)}}
+/* VOICES */
+#voices,.s3-rdr{--red:#e60013}
+#voices button,.s3-rdr button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left;margin:0;padding:0}
+#voices *,.s3-rdr *{box-sizing:border-box}
+
+.s3-ltr{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;margin:44px 0 56px;padding:26px 30px;border:1px solid var(--line);background:linear-gradient(90deg,rgba(255,255,255,.04),transparent)}
+.s3-ltr .s3-lm{font-family:var(--disp);letter-spacing:.3em;font-size:11px;color:var(--red);writing-mode:vertical-rl;border-left:2px solid var(--red);padding-left:12px;height:100%;min-height:90px}
+.s3-ltr p{font-size:clamp(15px,1.8vw,19px);line-height:2;font-weight:500}
+.s3-ltr .s3-sg{margin-top:10px;font-size:12px;color:var(--mute)}.s3-ltr .s3-sg b{color:#fff;font-size:14px;margin-left:8px}
+.s3-dr{display:inline-block;margin-left:8px;font-size:10px;letter-spacing:.1em;padding:1px 8px;background:rgba(255,255,255,.1);color:#bbb;vertical-align:middle}
+/* featured */
+.s3-ft{display:grid;grid-template-columns:6fr 5fr;min-height:520px;border:1px solid var(--line);background:#0d0d0d;position:relative;overflow:hidden;width:100%;transition:border-color .3s}
+.s3-ft .s3-im{position:relative;overflow:hidden;background:radial-gradient(60% 55% at 50% 45%,#2a2a2a,#0b0b0b 75%)}
+.s3-ft .s3-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 40%;transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.s3-ft:hover .s3-im img{transform:scale(1.05)}
+.s3-ft .s3-im::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--red),transparent 80%)}
+.s3-ft .s3-bd{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center}
+.s3-fl{display:flex;align-items:center;gap:12px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--red);margin-bottom:18px}
+.s3-fl i{font-style:normal;background:var(--red);color:#fff;padding:2px 10px;letter-spacing:.2em;font-size:11px}
+.s3-ft h3{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.4vw,44px);line-height:1.15;letter-spacing:.02em;margin-bottom:6px}
+.s3-ft .s3-jp{color:var(--mute);font-size:13px;letter-spacing:.12em;margin-bottom:26px}
+.s3-q{position:relative;font-size:clamp(17px,2vw,24px);font-weight:700;line-height:1.7;padding-left:22px;border-left:3px solid var(--red);margin-bottom:22px;color:#fff}
+.s3-q small{display:block;font-size:11px;font-weight:400;color:var(--mute);letter-spacing:.1em;margin-top:6px}
+.s3-sub{color:#bdbbb3;font-size:14px;margin-bottom:26px;max-width:480px}
+.s3-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.s3-meta span{font-family:var(--disp);letter-spacing:.14em;font-size:12px;border:1px solid var(--line);padding:3px 12px;color:#ccc}
+.s3-meta span b{color:#fff;font-weight:600}
+.s3-go{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;background:var(--red);color:#fff;font-weight:700;font-size:15px;letter-spacing:.08em;padding:16px 26px;min-width:290px;transition:.3s}
+.s3-go i{font-style:normal;font-size:20px;transition:transform .3s}
+.s3-ft:hover .s3-go i,.s3-cd:hover .s3-go i{transform:translateX(8px)}
+.s3-ft:hover .s3-go,.s3-cd:hover .s3-go{background:#ff1a2c}
+/* cards */
+.s3-sub-h{display:flex;align-items:center;gap:16px;margin:60px 0 20px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--mute)}.s3-sub-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.s3-cds{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.s3-cd{display:flex;flex-direction:column;border:1px solid var(--line);background:#0d0d0d;overflow:hidden;transition:border-color .3s,transform .3s}
+.s3-cd:hover{border-color:rgba(255,255,255,.4);transform:translateY(-4px)}
+.s3-cd .s3-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+.s3-cd .s3-im img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.s3-cd:hover .s3-im img{transform:scale(1.07)}
+.s3-cd .s3-im::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.75));z-index:1}
+.s3-cd .s3-no{position:absolute;left:14px;top:10px;z-index:2;font-family:var(--disp);font-size:42px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.8);letter-spacing:.04em}
+.s3-cd .s3-rt{position:absolute;right:12px;top:14px;z-index:2;font-family:var(--disp);font-size:11px;letter-spacing:.16em;background:rgba(0,0,0,.65);padding:3px 10px;border:1px solid var(--line)}
+.s3-cd .s3-typo{display:flex;align-items:center;justify-content:center;height:100%;background:radial-gradient(60% 70% at 30% 30%,#3a0a0f,#0c0c0c 70%)}
+.s3-cd .s3-typo b{font-family:var(--disp);font-size:clamp(70px,9vw,120px);font-weight:700;letter-spacing:.04em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.9)}
+.s3-cd .s3-typo b em{font-style:normal;color:var(--red);-webkit-text-stroke:0}
+.s3-cd .s3-bd{padding:22px 22px 20px;flex:1;display:flex;flex-direction:column}
+.s3-cd .s3-q{font-size:16px;padding-left:16px;margin-bottom:16px;line-height:1.7;flex:1}
+.s3-cd h3{font-family:var(--disp);font-size:20px;letter-spacing:.04em;line-height:1.25}
+.s3-cd .s3-jp{font-size:12px;color:var(--mute);margin:4px 0 14px}
+.s3-cd .s3-go{width:100%;min-width:0;padding:13px 18px;font-size:14px;background:transparent;border:1px solid var(--red);color:#fff}
+.s3-cd:hover .s3-go{background:var(--red);border-color:var(--red)}
+/* reader */
+.s3-rdr{position:fixed;inset:0;z-index:300;display:none}.s3-rdr.on{display:block}
+.s3-rbk{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(6px)}
+.s3-rpn{position:absolute;inset:0;margin:auto;max-width:1120px;height:100%;background:#0b0b0b;display:flex;flex-direction:column;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.s3-rtop{display:flex;align-items:center;gap:14px;padding:12px 20px;border-bottom:1px solid var(--line)}
+.s3-rtop .s3-t{font-family:var(--disp);letter-spacing:.2em;font-size:12px;color:var(--mute);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.s3-rtop .s3-t b{color:#fff;margin-left:8px}
+.s3-rx{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;font-size:20px;text-align:center;line-height:36px}.s3-rx:hover{background:#fff;color:#000}
+.s3-rprog{height:3px;background:rgba(255,255,255,.08)}.s3-rprog i{display:block;height:100%;width:0;background:var(--red)}
+.s3-rmain{flex:1;display:grid;grid-template-columns:250px 1fr;min-height:0}
+.s3-rail{border-right:1px solid var(--line);padding:34px 22px;overflow:auto}
+.s3-rail .s3-rh{font-family:var(--disp);letter-spacing:.3em;font-size:11px;color:var(--red);margin-bottom:14px}
+.s3-rail button{display:flex;gap:12px;width:100%;padding:12px 0;border-bottom:1px solid var(--line);color:#8d8b84;font-size:13px;line-height:1.5;transition:.25s}
+.s3-rail button b{font-family:var(--disp);font-weight:500;letter-spacing:.1em;color:#555;transition:.25s}
+.s3-rail button.on{color:#fff}.s3-rail button.on b{color:var(--red)}
+.s3-rail .s3-rt2{margin-top:22px;font-size:11px;color:var(--mute);letter-spacing:.1em}
+.s3-rbody{overflow:auto;padding:0 clamp(22px,5vw,70px) 80px;scroll-behavior:smooth}
+.s3-rhero{padding:56px 0 30px}
+.s3-rhero .s3-k{font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--red);margin-bottom:12px}
+.s3-rhero h1{font-family:var(--disp);font-size:clamp(28px,4.4vw,52px);line-height:1.15;letter-spacing:.02em;margin-bottom:8px}
+.s3-rhero .s3-jp{color:var(--mute);font-size:13px;letter-spacing:.1em;margin-bottom:20px}
+.s3-rhero .s3-by{display:flex;gap:14px;align-items:center;font-size:12px;color:var(--mute)}.s3-rhero .s3-by b{color:#fff;font-size:13px}.s3-rhero .s3-by::before{content:"";width:26px;height:1px;background:var(--red)}
+.s3-chap{max-width:680px;padding-top:50px}
+.s3-chap .s3-cn{font-family:var(--disp);font-size:78px;line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35);letter-spacing:.04em}
+.s3-chap .s3-cn small{font-size:11px;letter-spacing:.3em;-webkit-text-stroke:0;color:var(--red);margin-left:12px;vertical-align:middle}
+.s3-chap h2{font-size:clamp(21px,2.6vw,28px);font-weight:900;line-height:1.5;margin:6px 0 22px}
+.s3-chap p{font-size:16px;line-height:2.05;margin-bottom:1.3em;color:#dedcd4;text-align:justify}
+.s3-chap p.pq{font-size:20px;font-weight:700;color:#fff;border-left:3px solid var(--red);padding:4px 0 4px 20px;margin:1.6em 0}
+.s3-rend{max-width:680px;margin-top:70px;padding-top:30px;border-top:1px solid var(--line)}
+.s3-sign{text-align:right;font-size:12px;color:var(--mute)}.s3-sign b{display:block;color:#fff;font-size:15px;margin-top:2px}
+.s3-nxt{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:34px;padding:22px 24px;border:1px solid var(--line);width:100%;transition:.3s}
+.s3-nxt:hover{border-color:var(--red);background:rgba(230,0,19,.06)}
+.s3-nxt small{display:block;font-family:var(--disp);letter-spacing:.3em;font-size:11px;color:var(--red)}
+.s3-nxt b{font-family:var(--disp);font-size:20px;letter-spacing:.04em}
+.s3-nxt i{font-style:normal;font-size:24px;color:var(--red)}
+.s3-cta2{display:inline-block;margin-top:18px;background:var(--red);color:#fff;padding:14px 24px;font-weight:700;font-size:14px;letter-spacing:.06em;text-decoration:none}
+.s3-chips{display:none}
+@media(max-width:900px){
+ .s3-ft{grid-template-columns:1fr}.s3-ft .s3-im{height:360px}.s3-cds{grid-template-columns:1fr}.s3-ltr{grid-template-columns:1fr}.s3-ltr .s3-lm{writing-mode:horizontal-tb;border-left:0;border-bottom:2px solid var(--red);padding:0 0 8px;min-height:0}
+ .s3-rmain{grid-template-columns:1fr;grid-template-rows:auto 1fr}.s3-rail{display:none}
+ .s3-chips{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;border-bottom:1px solid var(--line);scrollbar-width:none}.s3-chips::-webkit-scrollbar{display:none}
+ .s3-chips button{flex:none;font-family:var(--disp);font-size:12px;letter-spacing:.12em;padding:6px 14px;border:1px solid var(--line);color:#aaa}.s3-chips button.on{background:var(--red);border-color:var(--red);color:#fff}
+ .s3-rpn{border:0}.s3-chap .s3-cn{font-size:60px}.s3-go{min-width:0;width:100%}
+}
+
+.s3-vc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.s3-vk{display:flex;flex-direction:column;border:1px solid var(--line);background:#0d0d0d;overflow:hidden;transition:border-color .3s,transform .3s;width:100%}
+.s3-vk .s3-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
+.s3-vk .s3-im img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.s3-vk .s3-im::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.7));z-index:1}
+.s3-vk .s3-nm{position:absolute;left:18px;bottom:14px;z-index:2}
+.s3-vk .s3-nm b{display:block;font-size:26px;font-weight:900;letter-spacing:.08em;line-height:1.2}
+.s3-vk .s3-nm span{font-family:var(--disp);letter-spacing:.26em;font-size:11px;color:#d6d3c9}
+.s3-vk .s3-st{position:absolute;right:12px;top:14px;z-index:2;font-family:var(--disp);font-size:11px;letter-spacing:.16em;background:rgba(0,0,0,.65);padding:3px 10px;border:1px solid var(--line)}
+.s3-vk .s3-bd{padding:22px;flex:1;display:flex;flex-direction:column}
+.s3-vk .s3-q{font-size:15px;padding-left:16px;margin-bottom:18px;flex:1;line-height:1.75;min-height:5.2em}
+.s3-vk .s3-q.dim{color:var(--mute);font-weight:500;border-left-color:rgba(255,255,255,.2)}
+.s3-vk .s3-mt{font-family:var(--disp);letter-spacing:.14em;font-size:12px;color:var(--mute);margin-bottom:14px}
+.s3-vk .s3-go{width:100%;min-width:0;padding:13px 18px;font-size:14px;background:transparent;border:1px solid var(--red);color:#fff}
+.s3-vk.on:hover{border-color:rgba(255,255,255,.4);transform:translateY(-4px)}
+.s3-vk.on:hover .s3-im img{transform:scale(1.07)}
+.s3-vk.on:hover .s3-go{background:var(--red)}.s3-vk.on:hover .s3-go i{transform:translateX(8px)}
+.s3-vk.off{cursor:default}.s3-vk.off .s3-go{border-color:rgba(255,255,255,.25);color:#9a988f}
+.s3-vk.off .s3-im img{filter:grayscale(.5) brightness(.85)}
+.s3-vn{margin-top:22px;font-size:12px;color:var(--mute)}
+.s3-vh{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.s3-bk{display:inline-block;margin-top:14px;border:1px solid var(--line);padding:12px 22px;font-size:13px}
+@media(max-width:900px){.s3-vc{grid-template-columns:1fr}.s3-vk .s3-go{background:var(--red)}}
+@media(hover:none){.s3-vk.on .s3-go{background:var(--red)}}
+
 </style>
 </head>
 <body>
@@ -662,6 +782,18 @@ html,body{overflow-x:clip}
 <div class="s2-ltr rv"><div class="s2-lm">LETTER</div><div><p>APIAの30年を、いつか自分の言葉で残したかった。<br>うまくいった話も、そうでない話も。ここに書いたのは、すべて本当にあったことです。<span class="s2-dr">仮：文面は確認用</span></p><div class="s2-sg">株式会社アピア<b>代表取締役　宇津木善生</b></div></div></div>
 <div id="s2ftw"></div><div class="s2-sub-h">MORE STORIES</div><div class="s2-cds" id="s2cds"></div></div></section>
 <div class="s2-rdr" id="s2rdr"><div class="s2-rbk" id="s2rbk"></div><div class="s2-rpn" role="dialog" aria-modal="true"><div class="s2-rtop"><div class="s2-t" id="s2rt">STORY<b></b></div><button class="s2-rx" id="s2rx" aria-label="閉じる">×</button></div><div class="s2-rprog"><i id="s2rpg"></i></div><div class="s2-chips" id="s2chips"></div><div class="s2-rmain"><nav class="s2-rail" id="s2rail"></nav><div class="s2-rbody" id="s2rbody"></div></div></div></div>
+
+<!-- VOICES -->
+<section class="sty s3sec" id="voices"><div class="wrap">
+<div class="eyebrow rv">30 YEARS, 3 VOICES</div>
+<div class="s3-vh"><div><h2 class="sec rv">30年を、共に歩いた<br>3人の言葉。</h2><p class="lead rv">創業当初からAPIAと歩み、30年を支えてきた3人のアンバサダーが、この節目にAPIAへの想いを綴りました。</p></div></div>
+<div class="s3-vc" id="s3vc"></div>
+<p class="s3-vn">※掲載は五十音順です。<span class="s3-dr">仮：文面は確認用</span></p>
+</div></section>
+<div class="s3-rdr" id="s3rdr"><div class="s3-rbk" id="s3rbk"></div><div class="s3-rpn" role="dialog" aria-modal="true">
+<div class="s3-rtop"><div class="s3-t" id="s3rt">VOICE<b></b></div><button class="s3-rx" id="s3rx" aria-label="閉じる">×</button></div>
+<div class="s3-rprog"><i id="s3rpg"></i></div><div class="s3-chips" id="s3chips"></div>
+<div class="s3-rmain"><nav class="s3-rail" id="s3rail"></nav><div class="s3-rbody" id="s3rbody"></div></div></div></div>
 
 <!-- FUTURE -->
 <section id="future" class="future nx">
@@ -1051,6 +1183,40 @@ document.addEventListener('click',e=>{
  const n=e.target.closest('.s2-nxt');if(n){open(+n.dataset.n);return}
  const b=e.target.closest('#s2rail button,#s2chips button');if(b){const t=document.getElementById('s2c'+b.dataset.k);B.scrollTo({top:t.offsetTop-10,behavior:'smooth'});return}
  if(e.target.id==='s2rbk'||e.target.id==='s2rx')close();});
+addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+
+})();
+(function(){
+
+const V={"t": "Apiaとハマーの思い出いっぱい", "jp": "濱本 国彦", "ch": [{"h": "エピローグ", "p": ["アピアの前身、スパルタスのまだその前のブランド（知ってる人はほぼ居ないと思うが）の時に話は遡る。", "もちろん俺がまだ「何者」でも無かった一人の釣り人だった頃、、、", "「うちの竿がさぁ～」っていうフレーズを使う釣り人に出会ったのである。", "ん？「うちの竿」ってどういう事？ってなるよね(笑)貴方がロッドを作ってるの？貴方がロッドメーカーでもやってるの？って思うよね！(笑)", "まだこの下りで、「宇津木さん」の存在は知らない。普通にその当時のブランドのロッドを先に知ってしまう。(笑)", "しかもジギングロッドだったので僕には縁が無かったし、興味もなかった。(笑)", "その当時、宇津木さんが作っていたジギングロッドを使って、釣行を共にしていた「うちの竿がさぁ～」って言ってた人に地元で会った事が全ての物語の始まりだった！", "その頃から数年が経ち・・・", "僕の釣りは相も変わらずローカルで魚と戯れる日々であった。ネットもそんなに無かった時代だったので全てが手探りの時代だったが、新しい釣りに会うのが楽しくて仕方なかったのを良く覚えてる。そんな時代にジギングロッドメーカーだったアピアが「シーバスロッド」を手掛ける事を耳にした。しかも社長がテストも兼ねて高知に来るらしい。社長に興味は無いが(笑)新しく生まれてくるシーバスロッドは是非見てみたい！", "そこで触らせて貰ったのが初代「Foojin go」だった。この時、正直僕の釣りと照らし合わせた時「ピンッ！」と来るものは無かったのを覚えてる。というのも高知で巨大なタイリクスズキを狙っていた俺には響くものは無かったのが正直な所だろう。", "しかし、宇津木さんとの面識を持たせて貰ったことがきっかけでシーバスロッドの次のステージとなった「メバル」タックルで俺に声が掛った次第だ！そう知る人ぞ知るフロートリグの先駆けとなった「風神玉」そして専用ロッドの「風神丸」の登場となるのである、これが2004年頃の出来事。その後、新しいラインナップとなる「FoojinZ」シリーズが発売となり、マサッチの作った「ネオンナイト」と出会う。", "これは衝撃だったねぇ～！投げて「なんじゃこりゃ！」操作して「どうなっとんじゃこれは！」シーバス掛けて「笑うしかねぇ~な！」ってな具合だった。(笑)", "それまでのシーバスロッドに求めていた（パワーファイトでは無く通常ゲームのね）ものが全て詰まってるやん！という位の衝撃だった。すぐに売って下さいってなるよね！(笑)"]}, {"h": "最高の一匹に出会った日", "p": ["僕がアピアのロッドで釣ったシーバスの中で一番の思い出と言えば。当時のFoojinZ、フローハントで釣りあげた「116ｃｍ.13ｋｇ」のタイリクスズキモンスターだ！", "ＭＬクラスのロッドでＰＥ1.2号、リーダー20lbで釣り上げてしまった。完全にタックルバランスの勝利だったと思う。無我夢中だったファイト中でも悲鳴を上げる事無くしっかりとモンスターをコントロール出来たアピアのロッドのポテンシャルを嫌という程感じさせられたのだ。", "このモンスターと出会ったのが2006年12月の事、風神玉を世に出したのが2004年だった事もあり、この12月いっぱいでテスターとかの肩書きから卒業しようと思っていたのだが、この一匹に出会った事が俺の人生を変える事になってしまった。", "宇津木さんからシーバスのテスターとしての付き合いを打診され、プロとしての時計が進み始めたのである。", "そんな折に、、宇津木社長は言ってくれた「四国に濱本国彦あり！」って位にしましょう！と！", "しかし、、そんな事になれる訳が無いと思ったし、マサッチやREDと肩を並べてフィッシングしょーに呼ばれても俺の居場所なんてその時は有る訳もなく、ただ時間だけが過ぎたの良く覚えている。この先、どうなるんだろうなんて思う事もなく「やれる事をやるだけか！」とブログを書きまくり、釣りに行きまくり、魚釣りまくって、人と繋がりまくった！"]}, {"h": "ただ待つだけでなく！", "p": ["時は流れ2回目のフィッシングショーに行かせて貰った時、ふと思った事が有った。", "マサッチやREDのトークショーを聞きに来てくれるお客様が全員「プロ」の方だけを見ている事を！まぁ～当たり前の事なのだが、、、", "聞いてくれてる人、集まってくれてる人が「隣の人」と繋がれたり、話が出来たすると面白いんじゃね？と・・・・", "これがきっかけで「ソルトウォーターアングラーズパーティー」「SWAP」を開催する運びとなった。「香川にどれくらいのアングラーが居るんだろう！」そんな単純な発想で大きな釣り人の忘年会をやる事に、宇津木さんや、RED、マサッチはすぐ賛同してくれた「面白そうじゃん」っと！今思えばアピアとの繋がり、アピアでの繋がりに助けられる事でスタートした「自分からの発信」という形を進める事が出来たのかも知れない。", "宇津木社長に何かを与えられ、何かを提案されて動くと言うより、自分で「アピアの濱本はここじゃ！」と思って貰える活動を我武者羅に探しまくっていた頃だな。"]}, {"h": "兎に角挑戦", "p": ["宇津木さんから出てくるのは常に「新しい事の模索」「新しい事への挑戦」業界でやって無かった「バトル企画」もそうだし、アピアの中で「タッグバトル」をやるなんて、とんでもない面白い事を雑誌や映像コンテンツを取り込み、巻きこんでユーザーの皆様に如何に楽しんで貰えるかを考えていた。", "「ボイリングポイント」のロケなんて２日間で10ｍのシーバスを二人で釣りましょ~！しかも陸っぱりで！はい！もう、笑いしかない企画よね！結果はやれちゃったけどね。（笑）", "決して筋書きを描く事無く、僕らは現場で「ガチ」の釣りを展開した。それが面白かった、そりゃー面白いだろう！やってる僕らがあれほど面白いと感じながらフィールドに向き合い対戦相手に向き合い。そして時にはバトル終わりで涙を流した事だってあったからね。", "書こうと思ってもこんなシナリオは決して書く事なんて出来ない物語を僕らで作りあげて来た事は本当に楽しさしか残っていないよ。", "地合い待ちで早朝、車の中で寝落ちして地合いを逃してしまった鳥取ロケ！", "満身創痍で挑んで行きも帰りもフェリーの中で同じ寝相（力尽きて前のめりに倒れた人みたいに）で微動だにしないマサッチが居た佐渡ロケ", "REDと一緒に深夜の温泉で語り明かした島根での打ち上げの夜。", "全ての時間を全力で向き合った「挑戦」だったから、今も良き思い出として思い出せるんだと思う。"]}, {"h": "めんどくさいタイム（笑）", "p": ["話は少し脱線するが・・・・(笑)", "俺がウイスキーを覚えるきっかけになったのが宇津木さんだった。", "そしてそのウイスキーを楽しんだのが「BAR桑山」という新町にあるお店だ。", "宇津木さん、RED、マサッチ、俺は、、、このお店でウイスキーを楽しみながらついつい話が熱を帯びて来て、数々のディベートを繰り広げたのである。", "歳が近いのもあるがそれぞれの熱量が半端ないので時にエキサイトしてしまって来たのである。まぁ～そんな中でも俺が一番エキサイトし・・・それを斜め後ろから冷静に見て来たマサッチが命名した「めんどくさいタイム」が勃発して行ったのだ。(笑)", "アピアを思うからこそ、アピアに関わる人たちの事を思えばこそ、ぶつかる事だってあっていいと思ってた。", "ただ・・・冷静に考えれば社長に噛みつくテスターなんて・・・・(笑)", "普通なら速効で首だろ！(笑)", "でも、俺達が一つで居続ける事が出来ているのは、「腹の中に残さない」この時間が有ったからだと思ってる・・・（俺だけかもしれないが(笑)）", "信頼関係が生まれ、次のステージへの模索をし、時にはダメ出しや修正点を言い合える仲であるからこそ、このめんどくさいタイムは貴重だったんだと思いたい。"]}, {"h": "毎回最高傑作のロッド達", "p": ["時は流れてFoojinADが世に出た頃、アピアはシーバス業界の飛ぶ鳥を落とすどころか、、、飛んでる鳥を掴み捕れる程の盛り上がりを魅せていた。", "皆が輝いていた、皆が最高の瞬間を味わっていた。", "お客様からの声、反応、釣果、全てがキラキラしてたと思う。", "僕がビーストブロウルを監修し始め、クワトロコレクションでメーターオーバーに出会い、ADビーストでメーターオーバーに会えた後に「ナチュラル7」を世に出せたのもこの頃だった。", "僕が地元で釣りをするにあたって長いロッドが必要な場所よりも「小場所」の方が圧倒的に多く、それまではマサッチの作ったネオンナイトやイブランを使っていた訳だけど、、", "俺の小場所専用ロッドが欲しくなり宇津木さんに打診した。何度かの打診に「しゃーないですね・・・」的に渋々首を縦に振ってくれた。", "わがまま言いまくって数本のプロトを経て世に出たADナチュラル7は・・・", "「こんな硬いロッドで・・・」とか「バイト弾くんですけど」とか・・・", "僕の小場所に対するアプローチがまだまだ浸透していなかった当時は受け入れて頂けるのに時間が掛った。でも、各質問や疑問に丁寧に丁寧に僕は向き合った。", "そんな時はこうしてみて！それならこうしてみたら！的な対応をし続けた。", "自分自身の発信も「小場所のススメ」と銘打ちトコトン続けた。", "そうすると2年位経った頃だったかな・・・・少しづつセールスが伸び、数年後にはADの中でトップセールスに近づく程に、アングラーの皆に支持して貰えるまでに「ナチュラル7」は成長させて貰ったのである。", "こんな形で作られるにも色んな物語があって、アピアのロッド達は、毎回その時代の最高傑作として進化して来たのである。その逆に宇津木さんの苦労は多かったと思う。だってその物語を一緒に作ってきた相手がマサッチやREDなのだから・・・笑", "一筋縄では進まないのは理解出来そうでしょ！笑"]}, {"h": "ルアープロダクト", "p": ["僕のシーバスプロとしての最高傑作は前も後ろもない。", "それは「ラムラタ」である。もちろんね", "当時、ドリフトというメソッドを言葉にして明確に表現できる人は居なかったし、ナチュラルドリフトって言葉に対しての理解度はほぼ無かった。", "僕は「ラムタラ」を通じてシーバスを掛ける前の「所作」を皆に伝える事で必死だった。", "「巻くな」「巻き過ぎるな」と言い続けた。。。が。。。何も伝わらない時間が長く続いた。", "雑誌社のライターさんに２時間も３時間も電話取材で伝え続けてもほんの少ししか理解してもらえなかった。そりゃ～そうだろう！そのライターさんだってやったことが無い見た事が無いのだから・・・・", "しかし、継続は力なりである。言い続ける事で、見せ続ける事で、伝える気持ちを持ち続ける事で、少しづつではあるが「巻き過ぎるな」の本当の意味と、その為の「所作」が伝わって行った。ルアーだけじゃなく、ライン、ロッドを自分と一体化させる事で全てをコントロール出来る様になる。そして「ラムタラ」で「釣れました！」と報告を受ける事をめっちゃ増えて行った。使ってくれてる皆のスキルが確実に上がって来るのが見てて分った。嬉しかったし、作って良かった。", "ファーストプロトから実に２年の歳月を要したのは、デザイナーさんと俺の頭の中が完全にリンク出来るのに掛った時間でもあった。本当に苦労したよ！", "宇津木さんと澤さんが出来上がった「ラムタラ」片手に香川に営業に来た日・・・・雪が降る中、各店舗を回り、頭を下げ、ルアーを営業して回った事が懐かしいよ！"]}, {"h": "山あれば谷もやってくる・・それでも！", "p": ["アピアの勢いも少し陰りを見せたタイミングが来てしまった時期が有った。", "皆がさぼった訳でもなく、胡坐をかいた訳でもなかったが、その前の勢いが大き過ぎて一息ついてしまった感じも否めなかった。", "宇津木さんが少しの間忘れていた事、、、楽しい釣りの為に皆で納得出来るロッドを作りたい！という事、人任せでは結局良い物は出来ないって事を思い出した宇津木さんは強かった！マジで凄いと思えるほど１からカーボンの事を勉強し、頭の中のロッドビルディングのパズルを組み立てていったのだ。怖い程に完成形に近い物で送られてくるプロト達。投げる喜び、飛ばせる楽しさ、魚との対話が楽しめるロッド達にどんどん磨きがかかって来る。", "面白い程に進化する宇津木さんの頭の中が具現化して生まれてくるロッド達はシーバスのみならず、ライトゲーム、ショアキャスティング、ロックショア、オフショア、そしてビッグベイトの全盛を向える事になったシーバスロッド「メガソウル」など、フルにラインナップを広げるまでになっていった。", "これもまた宇津木社長の「挑戦」だったのかも知れない。", "もしかしたら会社を潰してしまうかも知れない程のダメージだったかも知れない時に逆に奮起し、新しいプロダクトを生める！", "この時「この人、ホンマに凄いじゃん」っと思ったのである。", "まぁ～余り褒め過ぎてもあれなので（笑）この位で。（笑）"]}, {"h": "これからのアピアと俺", "p": ["もう30年なのか？まだまだ30年なのか？", "節目である事に変わりは無いが、これからのアピアを考えると「通過点」だと思いたい。俺たちの釣りに対する火はまだまだ燃え続ける訳だからね！", "そう考えると「もう限界」って言ってしまえばそれまで！", "「うちの竿、プロダクト達は、まだまだこれからも進化しちゃうぜ！」と思い続けて、お客様に喜んで頂ける、アピアファミリーの一員として釣りに携わり続けたい。", "俺の人生に大きく関わる事になった「アピア」という会社、そして「宇津木善生」との出会いは奇跡だったかも！", "社長とプロの枠を超え「戦友」「盟友」と言った方がしっくり来るかも！", "「有難う！感謝！」そんな言葉だけでは薄すぎる「絆」を作ってこれたのは本当に嬉しいし俺の人生の「宝」の一つである事に間違いは無い。", "そして、この作文の中に(笑)が多数出てくるのを感じて頂いているだろう！", "そうなんだよね、色んな事が有りましたよ！でも、結局僕がApiaに残り続けられたのは「楽しかった」から最終的には「笑って居られたから」だったんだと分を書きながら改めてそう感じ、思い起こせて良かったなと思ってます。", "まだもう少し続くであろう俺の釣り人生をよろしくお願い致します。"]}], "sig": "ApiaProスタッフ　濱本国彦"};
+const IM={nakamura:"images/voices/nakamura.jpg",hamamoto:"images/voices/hamamoto.jpg",muraoka:"images/voices/muraoka.jpg"};
+const P=[
+ {id:'nakamura',n:'中村 祐介',e:'NAKAMURA YUSUKE'},
+ {id:'hamamoto',n:'濱本 国彦',e:'HAMAMOTO KUNIHIKO',on:true,q:'「うちの竿がさぁ～」っていうフレーズを使う釣り人に出会ったのである。',qs:'すべての物語の始まり'},
+ {id:'muraoka',n:'村岡 昌憲',e:'MURAOKA MASANORI'}];
+const pad=n=>String(n).padStart(2,'0');
+const rt=Math.max(1,Math.round(V.ch.reduce((a,c)=>a+c.p.join('').length,0)/500));
+document.getElementById('s3vc').innerHTML=P.map(p=>`<${p.on?'button':'div'} class="s3-vk ${p.on?'s3-on':'s3-off'}" ${p.on?'data-open="1"':''}><div class="s3-im"><img src="${IM[p.id]}" alt="${p.n}"><span class="s3-st">${p.on?'約'+rt+'分':'COMING SOON'}</span><div class="s3-nm"><b>${p.n}</b><span>${p.e}</span></div></div><div class="s3-bd">${p.on?`<div class="s3-q">${p.q}<small>— ${p.qs}</small></div><div class="s3-mt">${V.ch.length} CHAPTERS</div><span class="s3-go">読む<i>→</i></span>`:`<div class="s3-q s3-dim">30年の想いを、執筆中です。</div><div class="s3-mt">— CHAPTERS</div><span class="s3-go">COMING SOON</span>`}</div></${p.on?'button':'div'}>`).join('');
+const R=document.getElementById('s3rdr'),B=document.getElementById('s3rbody'),rail=document.getElementById('s3rail'),chips=document.getElementById('s3chips');
+function openV(){
+ document.querySelector('#s3rt').innerHTML='VOICE<b>濱本 国彦</b>';
+ let h=`<div class="s3-rhero"><div class="s3-k">VOICE ／ 約${rt}分</div><h1>${V.t}</h1><div class="s3-jp">濱本 国彦　HAMAMOTO KUNIHIKO</div><div class="s3-by"><span>文</span><b>濱本国彦</b></div></div>`;
+ V.ch.forEach((c,k)=>{h+=`<section class="s3-chap" id="s3c${k}"><div class="s3-cn">${pad(k+1)}<small>CHAPTER</small></div><h2>${c.h}</h2>`+c.p.map(p=>`<p${/^「.{4,60}」$/.test(p)?' class="s3-pq"':''}>${p}</p>`).join('')+'</section>';});
+ h+=`<div class="s3-rend"><div class="s3-sign">${V.sig.replace('　','<b>')}</b></div><div class="s3-nxt" style="cursor:default"><div><small>COMING SOON</small><b>中村 祐介 ／ 村岡 昌憲 の言葉は、近日公開</b></div></div><button class="s3-bk" id="s3bk">TOPへ戻る</button></div>`;
+ B.innerHTML=h;B.scrollTop=0;
+ rail.innerHTML='<div class="s3-rh">CHAPTERS</div>'+V.ch.map((c,k)=>`<button data-k="${k}"><b>${pad(k+1)}</b><span>${c.h}</span></button>`).join('')+`<div class="s3-rt2">約${rt}分</div>`;
+ chips.innerHTML=V.ch.map((c,k)=>`<button data-k="${k}">${pad(k+1)}</button>`).join('');
+ R.classList.add('s3-on');document.documentElement.style.overflow='hidden';spy();}
+function close(){R.classList.remove('s3-on');document.documentElement.style.overflow=''}
+function spy(){const cs=[...B.querySelectorAll('.s3-chap')];let a=0;cs.forEach((c,k)=>{if(c.offsetTop-B.scrollTop<B.clientHeight*.4)a=k});
+ document.querySelectorAll('#s3rail button,#s3chips button').forEach(b=>b.classList.toggle('s3-on',+b.dataset.k===a));
+ const m=B.scrollHeight-B.clientHeight;document.getElementById('s3rpg').style.width=(m>0?B.scrollTop/m*100:0)+'%';}
+B.addEventListener('scroll',spy,{passive:true});
+document.addEventListener('click',e=>{
+ if(e.target.closest('#voices [data-open]')){openV();return}
+ if(e.target.id==='s3bk'){close();return}
+ const b=e.target.closest('#s3rail button,#s3chips button');if(b){const t=document.getElementById('s3c'+b.dataset.k);B.scrollTo({top:t.offsetTop-10,behavior:'smooth'});return}
+ if(e.target.id==='s3rbk'||e.target.id==='s3rx')close();});
 addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 
 })();
