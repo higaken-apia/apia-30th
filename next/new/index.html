@@ -145,6 +145,24 @@ section:not(.fxs):not(.nbg):not(.scan):not(.future):nth-of-type(odd){background-
  #program .bp.fj{padding:20px 18px 18px 22px!important}
  #program .bp.fj .fjr{aspect-ratio:16/9}
 }
+/* SP COMPACT */
+@media(max-width:820px){
+ section{padding-top:48px!important;padding-bottom:48px!important}
+ .wrap{padding-left:18px!important;padding-right:18px!important}
+ h2.sec{font-size:24px!important;margin-bottom:10px!important}
+ .eyebrow{margin-bottom:10px!important}
+ .lead{font-size:14px!important;line-height:1.8!important}
+ .phero{padding:96px 0 36px!important;min-height:0!important}
+ .tk{font-size:11px}
+ footer.f{padding:30px 0!important}
+}
+@media(max-width:820px){
+ .ng{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px!important;margin-left:-18px!important;margin-right:-18px!important;padding:0 18px 8px;scrollbar-width:none}
+ .ng::-webkit-scrollbar{display:none}
+ .ng>.np{flex:0 0 84%;scroll-snap-align:start}
+ .spsw{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:14px 0 8px;font-family:var(--disp);letter-spacing:.22em;font-size:10px;color:var(--mute)}
+ .spsw::after{content:"";width:34px;height:1px;background:var(--mute)}
+}
 </style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
 <div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/" class="on">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
 <header class="phero nw fxs"><img class="bgimg" src="../images/new/main.webp" alt="2027 New Products"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">NEXT GENERATION GEAR</b><b class="t2">2027 / 11 ITEMS</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="crumb"><a href="../">30TH</a> / NEW</div><div class="cnt"><b data-count="11">00</b> NEW ITEMS</div><h1 class="glt"><span class="o">2027</span><span class="r">New<br>Products</span></h1><p class="sub">30周年の先へ。2027年の新製品をまとめてご覧ください。<span class="draft">仮：発売日・価格は確認用</span></p></div><div class="tk"><div class="tki"><span>ATLAS 2027</span><em>◆</em><span>NAVAL 2027</span><em>◆</em><span>GRANDAGE WORLD OCEAN EXIII</span><em>◆</em><span>GRANDAGE MEGASOUL</span><em>◆</em><span>LAMMTARRA108FL</span><em>◆</em><span>LAMMTARRA BADEL108SPL</span><em>◆</em><span>BUZZ WALKER</span><em>◆</em><span>bit-V26</span><em>◆</em><span>bit-V35</span><em>◆</em><span>絶対ズレないライフベルト</span><em>◆</em><span>BARE GRIP キャスティンググローブ</span><em>◆</em><span>ATLAS 2027</span><em>◆</em><span>NAVAL 2027</span><em>◆</em><span>GRANDAGE WORLD OCEAN EXIII</span><em>◆</em><span>GRANDAGE MEGASOUL</span><em>◆</em><span>LAMMTARRA108FL</span><em>◆</em><span>LAMMTARRA BADEL108SPL</span><em>◆</em><span>BUZZ WALKER</span><em>◆</em><span>bit-V26</span><em>◆</em><span>bit-V35</span><em>◆</em><span>絶対ズレないライフベルト</span><em>◆</em><span>BARE GRIP キャスティンググローブ</span><em>◆</em></div></div></header>
@@ -171,4 +189,4 @@ document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),d
  tr.addEventListener('dragstart',e=>e.preventDefault())});
 </script><script>(function(){document.querySelectorAll('.fxs').forEach(s=>{
 new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){s.classList.add('go');o.disconnect();const c=s.querySelector('[data-count]');if(c){const T=+c.dataset.count;let n=0;const t=setInterval(()=>{n++;c.textContent=String(n).padStart(2,'0');if(n>=T)clearInterval(t)},90)}}},{threshold:.15}).observe(s);
-if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})})();</script><script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.np').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f))})</script></body></html>
+if(matchMedia('(hover:hover)').matches)s.addEventListener('mousemove',e=>{const r=s.getBoundingClientRect();s.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(3));s.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(3))})})})();</script><script>document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.np').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f))})</script><script>/*SPJS*/if(matchMedia('(max-width:820px)').matches){const g=document.querySelector('.ng');if(g){const d=document.createElement('div');d.className='spsw';d.textContent='SWIPE';g.parentNode.insertBefore(d,g)}}</script></body></html>
