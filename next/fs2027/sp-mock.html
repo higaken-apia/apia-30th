@@ -298,6 +298,24 @@ footer.f .fl a:hover{color:var(--gold-hi)}
  .bp.fj .bn{display:inline-block;vertical-align:middle;font-size:46px!important;line-height:1;margin-right:12px}
  .bp.fj .be{display:inline-block;vertical-align:middle;margin:0!important}
 }
+
+@media(max-width:820px){
+ /* いつ・どこで：スワイプをやめ、コンパクトな縦3枚に（崩れ防止） */
+ .evs{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:none!important;grid-auto-flow:row!important;grid-auto-columns:auto!important;overflow:visible!important;margin:20px 0 0!important;padding:0!important;gap:12px!important;scroll-snap-type:none!important}
+ .evs>.evc{display:grid!important;grid-row:auto!important;grid-template-rows:none!important;grid-template-columns:118px 1fr;column-gap:14px;row-gap:0;align-content:start;flex:none;padding:16px 16px 18px 18px!important}
+ .evc .evh{grid-column:1/-1;grid-row:1;margin-bottom:6px}
+ .evc .dt{grid-column:1;grid-row:2;font-size:34px!important;margin-top:0!important;line-height:1.05;white-space:nowrap}
+ .evc .wd{grid-column:1;grid-row:3;margin-top:4px!important}
+ .evc .city{grid-column:2;grid-row:2;margin-top:0!important;font-size:20px!important;align-self:end}
+ .evc .en{grid-column:2;grid-row:3;margin-top:2px!important;font-size:15px!important}
+ .evc .vn{grid-column:2;grid-row:4;margin-top:6px!important;font-size:13px!important}
+ .evc .bow{grid-column:1/-1;grid-row:5;margin-top:12px!important}
+ .evc .mpw{display:none!important}
+ .evc .cd{grid-column:1;grid-row:6;margin-top:12px!important;align-self:center}
+ .evc .mpl{grid-column:2;grid-row:6;margin-top:12px!important;justify-self:start;align-self:center}
+ .evc .cd b{font-size:34px!important}
+}
+@media(max-width:820px){.evc .cd{border-top:0!important;padding-top:0!important}}
 </style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
 <div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/" class="on">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
 <header class="phero fsh fxs"><img class="bgimg fsb" src="../images/fs/main.webp" alt="APIA FISHING SHOW 2027 BOOTH"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">APIA BOOTH 2027</b><b class="t2">3 EVENTS / 2027.1–3</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FS2027</div><div class="cnt"><b>3</b> EVENTS ／ 2027.1.22 – 2.7</div><h1 class="glt" style="font-size:clamp(50px,10.5vw,140px)"><span class="o">Fishing Show</span><span class="r">2027</span></h1><p class="sub">釣りフェス2027、APIAギャラリー、フィッシングショー大阪2027に出展します。<span class="draft">仮：内容は確認用</span></p>
@@ -390,7 +408,7 @@ document.querySelectorAll('.evc').forEach(e=>{const t=new Date(e.dataset.d+'T00:
 })();</script><script>(function(){const t=new Date("2027-01-27T12:00:00+09:00"),n=Math.ceil((t-Date.now())/864e5),b=document.getElementById("wocd"),l=document.getElementById("wocl");if(!b)return;if(n>0){b.textContent=n}else{b.textContent="NOW";l.textContent="ON SALE"}})();</script><script>document.querySelectorAll('.ws-tabs button').forEach(b=>b.onclick=()=>{const d=b.dataset.d;document.querySelectorAll('.ws-tabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.ws-day').forEach(x=>x.classList.toggle('on',x.dataset.d===d))});</script><script>(function(){
 if(!matchMedia('(max-width:820px)').matches)return;
 /* swipe hint */
-['.evs','.ws-wo','#merch .mg','.cmg'].forEach(q=>{const e=document.querySelector(q);if(!e)return;const d=document.createElement('div');d.className='spsw';d.textContent='SWIPE';e.parentNode.insertBefore(d,e)});
+['.ws-wo','#merch .mg','.cmg'].forEach(q=>{const e=document.querySelector(q);if(!e)return;const d=document.createElement('div');d.className='spsw';d.textContent='SWIPE';e.parentNode.insertBefore(d,e)});
 /* read more */
 const rm=(el,l1,l2)=>{if(!el)return;const b=document.createElement('button');b.className='sprm';b.textContent=l1;b.onclick=()=>{const o=el.classList.toggle('open');b.textContent=o?l2:l1};el.parentNode.insertBefore(b,el.nextSibling)};
 rm(document.querySelector('.mkt'),'プロフィールを続けて読む ▾','閉じる ▴');
