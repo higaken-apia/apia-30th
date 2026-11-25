@@ -383,7 +383,7 @@ section:not(.fxs):not(.nbg):not(.scan):not(.future):nth-of-type(odd){background-
 }
 #program .bp.fj::before{content:""!important;display:block!important;position:absolute!important;left:0!important;top:0!important;bottom:0!important;right:auto!important;width:4px!important;height:auto!important;background:#e60013!important;z-index:4;opacity:1!important}
 </style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
-<div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/" class="on">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
+<div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/" class="on">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div><button class="bg" aria-label="メニュー" aria-expanded="false"><i></i><i></i><i></i></button></nav><div class="ndr" id="ndr"><div class="lb">PAGES</div><a class="i" href="../">30TH TOP<small>トップ</small></a><a class="i" href="../foojin-ad/">FOOJIN’AD<small>30周年アニバーサリー</small></a><a class="i" href="../new/">NEW PRODUCTS<small>新製品</small></a><a class="i on" href="../fs2027/">FS2027<small>フィッシングショー</small></a><a class="i" href="../tournament/">ONLINE BATTLE<small>オンライン大会</small></a><a class="big" href="../fs2027/">FISHING SHOW 2027<small>会期・会場・タイムテーブル・物販情報</small></a></div>
 <header class="phero fsh fxs"><img class="bgimg fsb" src="../images/fs/main.webp" alt="APIA FISHING SHOW 2027 BOOTH"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">APIA BOOTH 2027</b><b class="t2">3 EVENTS / 2027.1–3</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FS2027</div><div class="cnt"><b>3</b> EVENTS ／ 2027.1.22 – 2.7</div><h1 class="glt" style="font-size:clamp(50px,10.5vw,140px)"><span class="o">Fishing Show</span><span class="r">2027</span></h1><p class="sub">釣りフェス2027、APIAギャラリー、フィッシングショー大阪2027に出展します。<span class="draft">仮：内容は確認用</span></p>
 <div class="row"><a class="btn red" href="#info">日程・会場を見る</a><a class="btn ghost" href="#merch">限定アイテム</a></div></div><div class="tk"><div class="tki"><span>FISHING SHOW 2027</span><em>◆</em><span>YOKOHAMA 1.22-24</span><em>◆</em><span>OSAKA 2.5-7</span><em>◆</em><span>FISHING SHOW OSAKA 2.6-7</span><em>◆</em><span>APIA BOOTH</span><em>◆</em><span>30TH LIMITED</span><em>◆</em><span>FOOJIN’AD</span><em>◆</em><span>FISHING SHOW 2027</span><em>◆</em><span>YOKOHAMA 1.22-24</span><em>◆</em><span>OSAKA 2.5-7</span><em>◆</em><span>FISHING SHOW OSAKA 2.6-7</span><em>◆</em><span>APIA BOOTH</span><em>◆</em><span>30TH LIMITED</span><em>◆</em><span>FOOJIN’AD</span><em>◆</em></div></div></header>
 <div class="spnav" id="spnav"><a href="#info">日程・会場</a><a href="#whatson">会場で何が</a><a href="#stage">タイムテーブル</a><a href="#program">ブース</a><a href="#merch">限定アイテム</a><a href="#collab">風神×鱸</a></div>
@@ -487,4 +487,46 @@ rm(document.querySelector('.ck'),'ストーリーを続けて読む ▾','閉じ
 const links=[...document.querySelectorAll('#spnav a')];
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));const a=links.find(a=>a.classList.contains('on'));if(a)a.scrollIntoView({inline:'center',block:'nearest'})}}),{rootMargin:'-40% 0px -55% 0px'});
 links.forEach(a=>{const t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t)});
-})();</script></body></html>
+})();</script><style id="navv2">
+/* NAV v2: solid slim bar, auto-hide on scroll-down, drawer menu */
+nav.top{position:fixed!important;top:0!important;left:0!important;transform:translateY(0)!important;width:100%!important;height:56px;padding:0 18px!important;border-radius:0!important;background:#050505!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important;transition:transform .3s ease;z-index:100;box-sizing:border-box}
+nav.top::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--np,0%);background:#e60013;transition:width .1s linear}
+body.nav-hide nav.top{transform:translateY(-100%)!important}
+nav.top .links{gap:22px!important}
+nav.top .links a.cta{padding:9px 16px!important;border-radius:4px!important;background:#e60013!important}
+nav.top .links a.on{color:#fff;border-bottom:2px solid #e60013;padding-bottom:3px}
+nav.top .bg{display:none;width:40px;height:40px;margin-left:8px;background:none;border:1px solid rgba(255,255,255,.28);border-radius:4px;cursor:pointer;position:relative;flex:0 0 auto}
+nav.top .bg i{position:absolute;left:10px;right:10px;height:2px;background:#fff;transition:.25s}
+nav.top .bg i:nth-child(1){top:13px}nav.top .bg i:nth-child(2){top:19px}nav.top .bg i:nth-child(3){top:25px}
+body.nav-open nav.top .bg i:nth-child(1){top:19px;transform:rotate(45deg)}
+body.nav-open nav.top .bg i:nth-child(2){opacity:0}
+body.nav-open nav.top .bg i:nth-child(3){top:19px;transform:rotate(-45deg)}
+body.nav-open nav.top{transform:translateY(0)!important}
+.ndr{position:fixed;inset:56px 0 0 0;z-index:99;background:#050505;padding:8px 20px 28px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s;display:none}
+.ndr .lb{font-family:var(--disp);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.45);margin:18px 0 4px}
+.ndr a.i{display:flex;justify-content:space-between;align-items:center;padding:16px 2px;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;font-family:var(--disp);font-size:17px;letter-spacing:.14em}
+.ndr a.i small{font-family:inherit;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-left:10px;font-weight:400}
+.ndr a.i::after{content:"→";color:#e60013;font-size:15px}
+.ndr a.i.on{color:#fff;border-left:3px solid #e60013;padding-left:12px}
+.ndr a.i.s{font-size:14px;padding:12px 2px}
+.ndr a.big{display:block;margin-top:22px;background:#e60013;color:#fff;text-align:center;padding:18px 12px;font-family:var(--disp);letter-spacing:.2em;font-size:14px;border-radius:4px}
+.ndr a.big small{display:block;font-size:11px;letter-spacing:.06em;opacity:.9;margin-top:4px;font-family:inherit}
+body.nav-open{overflow:hidden}
+@media(max-width:860px){
+ nav.top .bg{display:block}
+ .ndr{display:block}
+ body.nav-open .ndr{opacity:1;visibility:visible;transform:none}
+ nav.top .links a.cta{padding:9px 12px!important;font-size:10px!important;letter-spacing:.1em!important}
+ .fb{display:none!important}
+ .spnav{top:56px!important;transition:top .3s}
+ body.nav-hide .spnav{top:0!important}
+}
+@media(max-width:480px){nav.top{padding:0 10px 0 12px!important}}
+html{scroll-padding-top:64px}
+</style><script>(function(){var b=document.body,n=document.querySelector('nav.top'),y=0,t=false;
+var bg=n.querySelector('.bg');if(bg)bg.addEventListener('click',function(){b.classList.toggle('nav-open');bg.setAttribute('aria-expanded',b.classList.contains('nav-open'))});
+document.querySelectorAll('.ndr a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('nav-open')})});
+addEventListener('keydown',function(e){if(e.key==='Escape')b.classList.remove('nav-open')});
+function u(){t=false;var c=scrollY,h=document.documentElement.scrollHeight-innerHeight;n.style.setProperty('--np',(h>0?c/h*100:0)+'%');
+if(!b.classList.contains('nav-open')){if(c>y+6&&c>120)b.classList.add('nav-hide');else if(c<y-6||c<=120)b.classList.remove('nav-hide')}y=c}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});u()})();</script></body></html>

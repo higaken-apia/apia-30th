@@ -117,7 +117,7 @@ section:not(.fxs):not(.nbg):not(.scan):not(.future):nth-of-type(odd){background-
  footer.f{padding:30px 0!important}
 }
 </style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
-<div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/" class="on">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
+<div class="links"><a href="../foojin-ad/">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/" class="on">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div><button class="bg" aria-label="メニュー" aria-expanded="false"><i></i><i></i><i></i></button></nav><div class="ndr" id="ndr"><div class="lb">PAGES</div><a class="i" href="../">30TH TOP<small>トップ</small></a><a class="i" href="../foojin-ad/">FOOJIN’AD<small>30周年アニバーサリー</small></a><a class="i" href="../new/">NEW PRODUCTS<small>新製品</small></a><a class="i" href="../fs2027/">FS2027<small>フィッシングショー</small></a><a class="i on" href="../tournament/">ONLINE BATTLE<small>オンライン大会</small></a><a class="big" href="../fs2027/">FISHING SHOW 2027<small>会期・会場・タイムテーブル・物販情報</small></a></div>
 <header class="phero"><div class="wrap"><div class="crumb"><a href="../">30TH</a> / BATTLE</div><h1>Online<br><i>Seabass Battle</i></h1><p class="sub">2027年秋、全国の釣り人で競うオンライン大会。<span class="draft">仮：内容は未定</span></p></div></header>
 
 <div class="vw on" id="v-simple"><section><div class="wrap"><div class="eyebrow rv">SIMPLE EDITION</div><h2 class="sec rv">シンプルな釣り大会</h2>
@@ -154,4 +154,46 @@ document.querySelectorAll('.sl').forEach(sl=>{const tr=sl.querySelector('.tr'),d
  window.addEventListener('mouseup',()=>{if(!dn)return;dn=false;if(mv){tr.classList.remove('dg');go(cur())}});
  tr.addEventListener('dragstart',e=>e.preventDefault())});
 </script><script>const MODE='simple';function setM(m){document.querySelectorAll('.vw').forEach(v=>v.classList.toggle('on',v.id==='v-'+m));document.querySelectorAll('.mode button').forEach(b=>b.classList.toggle('on',b.dataset.m===m))}
-document.querySelectorAll('.mode button').forEach(b=>b.onclick=()=>setM(b.dataset.m));setM(MODE);</script></body></html>
+document.querySelectorAll('.mode button').forEach(b=>b.onclick=()=>setM(b.dataset.m));setM(MODE);</script><style id="navv2">
+/* NAV v2: solid slim bar, auto-hide on scroll-down, drawer menu */
+nav.top{position:fixed!important;top:0!important;left:0!important;transform:translateY(0)!important;width:100%!important;height:56px;padding:0 18px!important;border-radius:0!important;background:#050505!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important;transition:transform .3s ease;z-index:100;box-sizing:border-box}
+nav.top::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--np,0%);background:#e60013;transition:width .1s linear}
+body.nav-hide nav.top{transform:translateY(-100%)!important}
+nav.top .links{gap:22px!important}
+nav.top .links a.cta{padding:9px 16px!important;border-radius:4px!important;background:#e60013!important}
+nav.top .links a.on{color:#fff;border-bottom:2px solid #e60013;padding-bottom:3px}
+nav.top .bg{display:none;width:40px;height:40px;margin-left:8px;background:none;border:1px solid rgba(255,255,255,.28);border-radius:4px;cursor:pointer;position:relative;flex:0 0 auto}
+nav.top .bg i{position:absolute;left:10px;right:10px;height:2px;background:#fff;transition:.25s}
+nav.top .bg i:nth-child(1){top:13px}nav.top .bg i:nth-child(2){top:19px}nav.top .bg i:nth-child(3){top:25px}
+body.nav-open nav.top .bg i:nth-child(1){top:19px;transform:rotate(45deg)}
+body.nav-open nav.top .bg i:nth-child(2){opacity:0}
+body.nav-open nav.top .bg i:nth-child(3){top:19px;transform:rotate(-45deg)}
+body.nav-open nav.top{transform:translateY(0)!important}
+.ndr{position:fixed;inset:56px 0 0 0;z-index:99;background:#050505;padding:8px 20px 28px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s;display:none}
+.ndr .lb{font-family:var(--disp);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.45);margin:18px 0 4px}
+.ndr a.i{display:flex;justify-content:space-between;align-items:center;padding:16px 2px;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;font-family:var(--disp);font-size:17px;letter-spacing:.14em}
+.ndr a.i small{font-family:inherit;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-left:10px;font-weight:400}
+.ndr a.i::after{content:"→";color:#e60013;font-size:15px}
+.ndr a.i.on{color:#fff;border-left:3px solid #e60013;padding-left:12px}
+.ndr a.i.s{font-size:14px;padding:12px 2px}
+.ndr a.big{display:block;margin-top:22px;background:#e60013;color:#fff;text-align:center;padding:18px 12px;font-family:var(--disp);letter-spacing:.2em;font-size:14px;border-radius:4px}
+.ndr a.big small{display:block;font-size:11px;letter-spacing:.06em;opacity:.9;margin-top:4px;font-family:inherit}
+body.nav-open{overflow:hidden}
+@media(max-width:860px){
+ nav.top .bg{display:block}
+ .ndr{display:block}
+ body.nav-open .ndr{opacity:1;visibility:visible;transform:none}
+ nav.top .links a.cta{padding:9px 12px!important;font-size:10px!important;letter-spacing:.1em!important}
+ .fb{display:none!important}
+ .spnav{top:56px!important;transition:top .3s}
+ body.nav-hide .spnav{top:0!important}
+}
+@media(max-width:480px){nav.top{padding:0 10px 0 12px!important}}
+html{scroll-padding-top:64px}
+</style><script>(function(){var b=document.body,n=document.querySelector('nav.top'),y=0,t=false;
+var bg=n.querySelector('.bg');if(bg)bg.addEventListener('click',function(){b.classList.toggle('nav-open');bg.setAttribute('aria-expanded',b.classList.contains('nav-open'))});
+document.querySelectorAll('.ndr a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('nav-open')})});
+addEventListener('keydown',function(e){if(e.key==='Escape')b.classList.remove('nav-open')});
+function u(){t=false;var c=scrollY,h=document.documentElement.scrollHeight-innerHeight;n.style.setProperty('--np',(h>0?c/h*100:0)+'%');
+if(!b.classList.contains('nav-open')){if(c>y+6&&c>120)b.classList.add('nav-hide');else if(c<y-6||c<=120)b.classList.remove('nav-hide')}y=c}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});u()})();</script></body></html>

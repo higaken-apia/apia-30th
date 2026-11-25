@@ -194,7 +194,7 @@ section:not(.fxs):not(.nbg):not(.scan):not(.future):nth-of-type(odd){background-
  .spbtn:active{background:#e60013;border-color:#e60013}
 }
 </style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
-<div class="links"><a href="../foojin-ad/" class="on">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
+<div class="links"><a href="../foojin-ad/" class="on">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div><button class="bg" aria-label="メニュー" aria-expanded="false"><i></i><i></i><i></i></button></nav><div class="ndr" id="ndr"><div class="lb">PAGES</div><a class="i" href="../">30TH TOP<small>トップ</small></a><a class="i on" href="../foojin-ad/">FOOJIN’AD<small>30周年アニバーサリー</small></a><a class="i" href="../new/">NEW PRODUCTS<small>新製品</small></a><a class="i" href="../fs2027/">FS2027<small>フィッシングショー</small></a><a class="i" href="../tournament/">ONLINE BATTLE<small>オンライン大会</small></a><a class="big" href="../fs2027/">FISHING SHOW 2027<small>会期・会場・タイムテーブル・物販情報</small></a></div>
 <header class="phero fd fxs"><img class="bgimg fj" src="../images/foojin/main.png" alt="Foojin’AD 30th"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">30TH LIMITED EDITION</b><b class="t2">FOOJIN’AD / 07 MODELS</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FOOJIN’AD</div><img class="logo30" src="../images/foojin/logo.png" alt="Foojin’AD"><div class="cnt"><b data-count="7">00</b> LIMITED MODELS</div><div class="glt hlx"><span class="o">What Once Moved Us,</span><span class="r">Returns.</span></div><p class="hs">〜かつて僕らを動かしたものが、帰ってくる。</p>
 <div class="row"><a class="btn red" href="#lineup">全7モデルを見る</a><a class="btn ghost" href="#order">限定予約について</a></div></div><div class="tk"><div class="tki"><span>NATURAL SEVEN 77MH</span><em>◆</em><span>LAPAGE 88MH</span><em>◆</em><span>NIGHT HAWK 93ML</span><em>◆</em><span>BEAST BRAWL 95MH</span><em>◆</em><span>ANGEL SHOOTER 96MLX</span><em>◆</em><span>HIGH ROLLER 104ML</span><em>◆</em><span>PODEROSA 106M</span><em>◆</em><span>NATURAL SEVEN 77MH</span><em>◆</em><span>LAPAGE 88MH</span><em>◆</em><span>NIGHT HAWK 93ML</span><em>◆</em><span>BEAST BRAWL 95MH</span><em>◆</em><span>ANGEL SHOOTER 96MLX</span><em>◆</em><span>HIGH ROLLER 104ML</span><em>◆</em><span>PODEROSA 106M</span><em>◆</em></div></div></header>
 <section id="movie" style="padding-bottom:30px"><div class="wrap"><div class="eyebrow rv">MOVIE</div><h2 class="sec rv">動画で見る Foojin’AD<span class="draft">仮動画</span></h2>
@@ -233,4 +233,46 @@ const mk=(q)=>{const f=document.createElement('iframe');f.src='https://www.youtu
 let f=mk('autoplay=1&mute=1&loop=1&playlist='+id+'&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1');
 new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){v.prepend(f);o.disconnect()}},{rootMargin:'200px'}).observe(v);
 v.addEventListener('click',()=>{if(v.classList.contains('on'))return;v.classList.add('on');f.remove();f=mk('autoplay=1&controls=1&playsinline=1&modestbranding=1&rel=0');v.prepend(f)})})();
-const a=document.getElementById('allo');a.onclick=()=>{const ds=document.querySelectorAll('.ch');const o=![...ds].every(d=>d.open);ds.forEach(d=>d.open=o);a.textContent=o?'すべて閉じる －':'すべて開く ＋'}</script><script>/*SPJS*/if(matchMedia('(max-width:820px)').matches)document.querySelectorAll('.md').forEach(m=>{const h=m.querySelector('.spechd');if(!h)return;const b=document.createElement('button');b.className='spbtn';b.textContent='SPECを見る ▾';b.onclick=()=>{const o=m.classList.toggle('sp-open');b.textContent=o?'SPECを閉じる ▴':'SPECを見る ▾'};h.parentNode.insertBefore(b,h)});</script></body></html>
+const a=document.getElementById('allo');a.onclick=()=>{const ds=document.querySelectorAll('.ch');const o=![...ds].every(d=>d.open);ds.forEach(d=>d.open=o);a.textContent=o?'すべて閉じる －':'すべて開く ＋'}</script><script>/*SPJS*/if(matchMedia('(max-width:820px)').matches)document.querySelectorAll('.md').forEach(m=>{const h=m.querySelector('.spechd');if(!h)return;const b=document.createElement('button');b.className='spbtn';b.textContent='SPECを見る ▾';b.onclick=()=>{const o=m.classList.toggle('sp-open');b.textContent=o?'SPECを閉じる ▴':'SPECを見る ▾'};h.parentNode.insertBefore(b,h)});</script><style id="navv2">
+/* NAV v2: solid slim bar, auto-hide on scroll-down, drawer menu */
+nav.top{position:fixed!important;top:0!important;left:0!important;transform:translateY(0)!important;width:100%!important;height:56px;padding:0 18px!important;border-radius:0!important;background:#050505!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border:0!important;border-bottom:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important;transition:transform .3s ease;z-index:100;box-sizing:border-box}
+nav.top::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:var(--np,0%);background:#e60013;transition:width .1s linear}
+body.nav-hide nav.top{transform:translateY(-100%)!important}
+nav.top .links{gap:22px!important}
+nav.top .links a.cta{padding:9px 16px!important;border-radius:4px!important;background:#e60013!important}
+nav.top .links a.on{color:#fff;border-bottom:2px solid #e60013;padding-bottom:3px}
+nav.top .bg{display:none;width:40px;height:40px;margin-left:8px;background:none;border:1px solid rgba(255,255,255,.28);border-radius:4px;cursor:pointer;position:relative;flex:0 0 auto}
+nav.top .bg i{position:absolute;left:10px;right:10px;height:2px;background:#fff;transition:.25s}
+nav.top .bg i:nth-child(1){top:13px}nav.top .bg i:nth-child(2){top:19px}nav.top .bg i:nth-child(3){top:25px}
+body.nav-open nav.top .bg i:nth-child(1){top:19px;transform:rotate(45deg)}
+body.nav-open nav.top .bg i:nth-child(2){opacity:0}
+body.nav-open nav.top .bg i:nth-child(3){top:19px;transform:rotate(-45deg)}
+body.nav-open nav.top{transform:translateY(0)!important}
+.ndr{position:fixed;inset:56px 0 0 0;z-index:99;background:#050505;padding:8px 20px 28px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.25s;display:none}
+.ndr .lb{font-family:var(--disp);font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.45);margin:18px 0 4px}
+.ndr a.i{display:flex;justify-content:space-between;align-items:center;padding:16px 2px;border-bottom:1px solid rgba(255,255,255,.14);color:#fff;font-family:var(--disp);font-size:17px;letter-spacing:.14em}
+.ndr a.i small{font-family:inherit;font-size:11px;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-left:10px;font-weight:400}
+.ndr a.i::after{content:"→";color:#e60013;font-size:15px}
+.ndr a.i.on{color:#fff;border-left:3px solid #e60013;padding-left:12px}
+.ndr a.i.s{font-size:14px;padding:12px 2px}
+.ndr a.big{display:block;margin-top:22px;background:#e60013;color:#fff;text-align:center;padding:18px 12px;font-family:var(--disp);letter-spacing:.2em;font-size:14px;border-radius:4px}
+.ndr a.big small{display:block;font-size:11px;letter-spacing:.06em;opacity:.9;margin-top:4px;font-family:inherit}
+body.nav-open{overflow:hidden}
+@media(max-width:860px){
+ nav.top .bg{display:block}
+ .ndr{display:block}
+ body.nav-open .ndr{opacity:1;visibility:visible;transform:none}
+ nav.top .links a.cta{padding:9px 12px!important;font-size:10px!important;letter-spacing:.1em!important}
+ .fb{display:none!important}
+ .spnav{top:56px!important;transition:top .3s}
+ body.nav-hide .spnav{top:0!important}
+}
+@media(max-width:480px){nav.top{padding:0 10px 0 12px!important}}
+html{scroll-padding-top:64px}
+</style><script>(function(){var b=document.body,n=document.querySelector('nav.top'),y=0,t=false;
+var bg=n.querySelector('.bg');if(bg)bg.addEventListener('click',function(){b.classList.toggle('nav-open');bg.setAttribute('aria-expanded',b.classList.contains('nav-open'))});
+document.querySelectorAll('.ndr a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('nav-open')})});
+addEventListener('keydown',function(e){if(e.key==='Escape')b.classList.remove('nav-open')});
+function u(){t=false;var c=scrollY,h=document.documentElement.scrollHeight-innerHeight;n.style.setProperty('--np',(h>0?c/h*100:0)+'%');
+if(!b.classList.contains('nav-open')){if(c>y+6&&c>120)b.classList.add('nav-hide');else if(c<y-6||c<=120)b.classList.remove('nav-hide')}y=c}
+addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u)}},{passive:true});u()})();</script></body></html>
