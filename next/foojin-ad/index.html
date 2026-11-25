@@ -127,6 +127,52 @@ summary::after{content:"+";position:absolute;right:6px;top:50%;transform:transla
 .btn.ghost:hover,.cta-row .btn.ghost:hover,.hashbox .cpy:hover{background:rgba(255,255,255,.12)!important;color:#fff!important}
 .sl .ar:hover{background:rgba(255,255,255,.2)!important;color:#fff!important;border-color:rgba(255,255,255,.6)!important}
 .phero .crumb a:hover,footer.f .fl a:hover{color:#fff!important}
+/* ===== UNIFIED DESIGN RULES（全ページ共通：区切り・枠・色の統一）===== */
+/* 1) セクションの区切り：赤い短線＋細い白線、隣り合う背景を交互に */
+section{border-top:3px solid;border-image:linear-gradient(90deg,#e60013 0,#e60013 96px,rgba(255,255,255,.16) 96px) 1}
+section:not(.fxs):not(.nbg):not(.scan):not(.future):nth-of-type(even){background-color:#0e0e0e!important}
+section:not(.fxs):not(.nbg):not(.scan):not(.future):nth-of-type(odd){background-color:#050505!important}
+/* 2) 枠線の統一：ゴールド枠をやめ、白の細線＋赤のアクセントに */
+.draft{border-color:rgba(255,255,255,.35)!important;color:#c9c7bf!important}
+.btn.ghost{border-color:rgba(255,255,255,.5)!important}
+.hud i{border-color:rgba(255,255,255,.45)!important}
+.tk{border-top-color:rgba(255,255,255,.18)!important}
+.dist,.td,.chips li,.bp.fj,.fdb,.buy,.evc .mpw,.evc .mpl,.tcb,.tcb em,.dt2 b.soon{border-color:rgba(255,255,255,.18)!important}
+.dh,.tdh{border-bottom-color:rgba(255,255,255,.18)!important}
+.tm{border-right-color:rgba(255,255,255,.18)!important}
+.rodm{border-top-color:rgba(255,255,255,.18)!important;border-bottom-color:rgba(255,255,255,.18)!important}
+.tl,.pro .prose{border-left-color:#e60013!important}
+.hc .cap{border-top-color:#e60013!important}
+.pj a .arr,.hashbox .cpy{border-color:rgba(255,255,255,.5)!important}
+.mode{border-color:rgba(255,255,255,.4)!important}
+.np::before,.np::after{border-color:#e60013!important}
+.evc::before{background:#e60013!important}
+.evc:hover,.mi:hover,.hc:hover,.np:hover,.tabs button:hover,.sl .ar:hover{border-color:rgba(255,255,255,.45)!important;box-shadow:none!important}
+.tabs button.on{border-color:#e60013!important}
+/* 3) ブースでの体験：1項目＝1枚のカード（画像サイズ統一・赤い左バー・番号を明示） */
+#program .bps{gap:28px!important;margin-top:40px!important}
+#program .bp{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0!important;align-items:stretch!important;border:1px solid rgba(255,255,255,.2)!important;background:#0c0c0c;position:relative;overflow:hidden}
+#program .bp::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#e60013;z-index:4}
+#program .bp .bi{order:0!important;border:0!important;box-shadow:none!important;max-height:none!important;aspect-ratio:4/3!important;height:100%;width:100%}
+#program .bp.rev .bi{order:2!important}
+#program .bp .bi img{width:100%;height:100%;object-fit:cover}
+#program .bp .bx{padding:clamp(24px,3.4vw,48px) clamp(24px,3.6vw,56px)!important;align-self:center}
+#program .bp .bn{font-size:60px!important;line-height:1!important;-webkit-text-stroke:1.5px rgba(255,255,255,.55)!important;display:inline-block;vertical-align:middle;margin-right:14px}
+#program .bp .be{display:inline-block;vertical-align:middle;margin:0!important}
+#program .bp .bx h3{margin-top:14px}
+#program .bp.fj{display:block!important;padding:clamp(24px,3.4vw,48px) clamp(24px,3.6vw,56px)!important}
+#program .bp.fj .fjr{aspect-ratio:4/3;overflow:hidden}
+#program .bp.fj .fjr img{max-height:100%;height:100%;object-fit:contain}
+#program .bp.fj .bn{font-size:60px!important}
+@media(max-width:860px){
+ #program .bp{grid-template-columns:1fr!important}
+ #program .bp .bi{aspect-ratio:16/9!important;height:auto;order:0!important}
+ #program .bps{gap:16px!important}
+ #program .bp .bx{padding:18px 18px 22px 22px!important}
+ #program .bp .bn{font-size:46px!important}
+ #program .bp.fj{padding:20px 18px 18px 22px!important}
+ #program .bp.fj .fjr{aspect-ratio:16/9}
+}
 </style></head><body><nav class="top"><a class="logo" href="../"><img src="../images/logo-30th.png" alt="APIA 30th"></a>
 <div class="links"><a href="../foojin-ad/" class="on">FOOJIN’AD</a><a href="../new/">NEW</a><a href="../fs2027/">FS2027</a><a href="../tournament/">BATTLE</a><a class="cta" href="../fs2027/">FISHING SHOW 2027</a></div></nav>
 <header class="phero fd fxs"><img class="bgimg fj" src="../images/foojin/main.png" alt="Foojin’AD 30th"><div class="fxglow"></div><div class="fxgrid"></div><div class="fxbeam"></div><div class="hud"><i></i><i></i><i></i><i></i><b class="t1">30TH LIMITED EDITION</b><b class="t2">FOOJIN’AD / 07 MODELS</b><b class="t3">SCROLL ▾</b></div><div class="wrap"><div class="crumb"><a href="../">30TH</a> / FOOJIN’AD</div><img class="logo30" src="../images/foojin/logo.png" alt="Foojin’AD"><div class="cnt"><b data-count="7">00</b> LIMITED MODELS</div><div class="glt hlx"><span class="o">What Once Moved Us,</span><span class="r">Returns.</span></div><p class="hs">〜かつて僕らを動かしたものが、帰ってくる。</p>
