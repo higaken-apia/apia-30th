@@ -524,7 +524,7 @@ html,body{overflow-x:clip}
 .s2-ft:hover .s2-go,.s2-cd:hover .s2-go{background:#ff1a2c}
 /* cards */
 .s2-sub-h{display:flex;align-items:center;gap:16px;margin:60px 0 20px;font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--mute)}.s2-sub-h::after{content:"";flex:1;height:1px;background:var(--line)}
-.s2-cds{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.s2-cds{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .s2-cd{display:flex;flex-direction:column;border:1px solid var(--line);background:#0d0d0d;overflow:hidden;transition:border-color .3s,transform .3s}
 .s2-cd:hover{border-color:rgba(255,255,255,.4);transform:translateY(-4px)}
 .s2-cd .s2-im{position:relative;aspect-ratio:4/3;overflow:hidden;background:#111}
@@ -868,7 +868,7 @@ section:not(.fxs):not(.nbg):not(.scan):not(.future):nth-of-type(odd){background-
 <!-- STORIES -->
 <section id="stories" class="sty s2sec"><div class="wrap"><div class="eyebrow rv">30 YEARS, 3 STORIES</div><h2 class="sec rv" style="margin-bottom:12px"><span class="ph">宇津木が綴る、</span><span class="ph">3つのストーリー。</span></h2><p class="lead rv">創業から、Foojin’、そして出会いへ。順番に、あるいは気になるところから。</p>
 <div class="s2-ltr rv"><div class="s2-lm">LETTER</div><div><p>APIAの30年を、いつか自分の言葉で残したかった。<br>うまくいった話も、そうでない話も。ここに書いたのは、すべて本当にあったことです。<span class="s2-dr">仮：文面は確認用</span></p><div class="s2-sg">株式会社アピア<b>代表取締役　宇津木善生</b></div></div></div>
-<div id="s2ftw"></div><div class="s2-sub-h">MORE STORIES</div><div class="s2-cds" id="s2cds"></div></div></section>
+<div id="s2ftw"></div><div class="s2-cds" id="s2cds"></div></div></section>
 <div class="s2-rdr" id="s2rdr"><div class="s2-rbk" id="s2rbk"></div><div class="s2-rpn" role="dialog" aria-modal="true"><div class="s2-rtop"><div class="s2-t" id="s2rt">STORY<b></b></div><button class="s2-rx" id="s2rx" aria-label="閉じる">×</button></div><div class="s2-rprog"><i id="s2rpg"></i></div><div class="s2-chips" id="s2chips"></div><div class="s2-rmain"><nav class="s2-rail" id="s2rail"></nav><div class="s2-rbody" id="s2rbody"></div></div></div></div>
 
 <!-- VOICES -->
@@ -1247,8 +1247,7 @@ const card=(i,f)=>{const d=D[i],m=META[i];
  if(f)return `<button class="s2-ft" data-i="${i}"><div class="s2-im"><img src="${m.img}" alt=""></div><div class="s2-bd"><div class="s2-fl"><i>FEATURED</i>STORY ${pad(i+1)}</div><h3>${d.t}</h3><div class="s2-jp">${d.jp}</div><div class="s2-q">${m.q}<small>— ${m.qs}</small></div><p class="s2-sub">${d.sub}</p>${meta}<span class="s2-go">このストーリーを読む<i>→</i></span></div></button>`;
  const vis=m.img?`<img src="${m.img}" alt="" loading="lazy">`:`<div class="s2-typo"><b>19<em>97</em></b></div>`;
  return `<button class="s2-cd" data-i="${i}"><div class="s2-im">${vis}<span class="s2-no">${pad(i+1)}</span><span class="s2-rt">約${rt(i)}分</span></div><div class="s2-bd"><div class="s2-q">${m.q}</div><h3>${d.t}</h3><div class="s2-jp">${d.jp} ／ ${nch(i)} CHAPTERS</div><span class="s2-go">読む<i>→</i></span></div></button>`;};
-document.getElementById('s2ftw').innerHTML=card(FEAT,true);
-document.getElementById('s2cds').innerHTML=[0,1].map(i=>card(i)).join('');
+document.getElementById('s2cds').innerHTML=[0,1,2].map(i=>card(i)).join('');
 /* reader */
 const R=document.getElementById('s2rdr'),B=document.getElementById('s2rbody'),rail=document.getElementById('s2rail'),chips=document.getElementById('s2chips');let cur=0;
 function open(i){cur=i;const d=D[i];
